@@ -10,7 +10,7 @@
       <confirmed-cases-number-card />
       <tested-number-card />
       <confirmed-cases-attributes-card />
-      <telephone-advisory-reports-number-card />
+      <!--<telephone-advisory-reports-number-card />-->
     </v-row>
   </div>
 </template>
