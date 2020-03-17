@@ -7,7 +7,7 @@
       :chart-data="patientsGraph"
       :date="patientsSummary.last_update"
       :unit="$t('人')"
-      :url="'https://www.pref.okayama.jp/page/645925.html#kennaijoukyou'"
+      :url="'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#F'"
     />
   </v-col>
 </template>
