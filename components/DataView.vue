@@ -25,7 +25,7 @@
               target="_blank"
               rel="noopener"
             >
-              {{ $t('岡山県公式HP') }}
+              {{ $t('京都府公式HP') }}
               <v-icon
                 class="ExternalLinkIcon"
                 size="15"

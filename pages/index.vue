@@ -27,7 +27,8 @@ import News from '@/data/news.json'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
-import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+// 電話相談者数の表示は今ないのでコメントアウト
+// import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 
 export default {
   components: {
@@ -35,8 +36,9 @@ export default {
     WhatsNew,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
-    TestedNumberCard,
-    TelephoneAdvisoryReportsNumberCard
+    TestedNumberCard
+    // 電話相談者数の表示は今ないのでコメントアウト
+    // TelephoneAdvisoryReportsNumberCard
   },
   data() {
     // 退院者グラフ
@@ -51,7 +53,7 @@ export default {
       Data,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
-        title: this.$t('岡山県内の最新感染動向'),
+        title: this.$t('京都府内の最新感染動向'),
         date: Data.lastUpdate
       },
       newsItems: News.newsItems
@@ -60,7 +62,7 @@ export default {
   },
   head() {
     return {
-      title: this.$t('岡山県内の最新感染動向')
+      title: this.$t('京都府内の最新感染動向')
     }
   }
 }
