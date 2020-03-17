@@ -27,7 +27,7 @@ export default {
       items: [
         {
           title: '危機対策資金の取扱いについて',
-          link: 'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#E',
+          link: 'https://www.pref.kyoto.jp/kinyu/taisaku.html',
           body:
             '新型コロナウイルス感染症の影響を受ける中小企業者の資金繰り支援として、信用保証制度の特例措置であるセーフティネット保証4号が発動されたので、危機対策資金の取扱いを開始します。'
         },
