@@ -5,8 +5,8 @@
       :title-id="'number-of-tested'"
       :chart-id="'time-bar-chart-inspections'"
       :chart-data="contractsGraph"
-      :date="Data.inspections_summary.date"
-      comment="※ 3月12日のデータは岡山県が1日ごとの実施値の推移を公開していないため、その日までの累計を入力しています。"
+      :date="inspectionsSummary.last_update"
+      comment="※ 3月13日のデータは岡山県が1日ごとの実施値の推移を公開していないため、その日までの累計を入力しています。"
       :unit="$t('件.tested')"
       :url="'https://www.pref.okayama.jp/page/645925.html#kennaijoukyou'"
     />
@@ -69,7 +69,7 @@
 </i18n>
 
 <script>
-import Data from '@/data/data.json'
+import inspectionsSummary from '@/data/inspections_summary.json'
 import formatGraph from '@/utils/formatGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 
@@ -78,10 +78,10 @@ export default {
     TimeBarChart
   },
   data() {
-    const contractsGraph = formatGraph(Data.inspections_summary.data)
+    const contractsGraph = formatGraph(inspectionsSummary.data)
 
     const data = {
-      Data,
+      inspectionsSummary,
       contractsGraph
     }
 
