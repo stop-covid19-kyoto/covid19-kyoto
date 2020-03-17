@@ -50,9 +50,8 @@ export default {
             '「新型コロナウイルス感染症対策のためのテレワークコース」「職場意識改善特例コース」について、申請の受付を開始しましたので、お知らせいたします。'
         },
         {
-          title: '雇用調整助成金の相談窓口について (岡山労働局)',
-          link:
-            'https://jsite.mhlw.go.jp/okayama-roudoukyoku/content/contents/000611698.pdf',
+          title: '雇用調整助成金の相談窓口について (京都労働局)',
+          link: 'https://jsite.mhlw.go.jp/kyoto-roudoukyoku/newpage_00129.html',
           body:
             '県内の各公共職業安定所（ハローワーク）に新型コロナウイルス感染症の影響に伴う雇用調整助成金の相談窓口を開設しました。'
         },
