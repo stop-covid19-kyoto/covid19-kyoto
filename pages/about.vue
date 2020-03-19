@@ -11,7 +11,7 @@
       }}<br />
       {{
         $t(
-          '運営・開発は以下の学生エンジニアによってボランティアで行われています。'
+          '運営・開発は以下のエンジニアによってボランティアで行われています。'
         )
       }}<br />
       <br />
@@ -26,6 +26,18 @@
         {{ $t('@genbugraphy') }}
       </a>
       )
+      <br />
+      ・0505Keitan (
+      <a href="//twitter.com/0505Keitan" target="_blank">
+        {{ $t('@0505Keitan') }}
+      </a>
+      )
+      <br />
+      ・y-chan
+      <br />
+      ・f0reach
+      <br />
+      ・maco
       <br /><br />
       複製・改変が許されたオープンソースライセンスで公開されている、
       <a href="//stopcovid19.metro.tokyo.lg.jp/" target="_blank">
