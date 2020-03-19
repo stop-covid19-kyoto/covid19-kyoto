@@ -6,7 +6,7 @@
       :chart-id="'time-bar-chart-inspections'"
       :chart-data="contractsGraph"
       :date="inspectionsSummary.last_update"
-      comment="※ 3月13日のデータは岡山県が1日ごとの実施値の推移を公開していないため、その日までの累計を入力しています。"
+      comment="※ 3月13日のデータは京都府が1日ごとの実施値の推移を公開していないため、その日までの累計を入力しています。"
       :unit="$t('件.tested')"
       :url="'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#F'"
     />
