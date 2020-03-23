@@ -1,7 +1,7 @@
 <template>
   <v-app class="app">
     <div v-if="loading" class="loader">
-      <img src="/logo.svg" alt="岡山県" />
+      <img src="/logo.svg" alt="京都府" />
       <scale-loader color="#a51e7c" />
     </div>
     <div v-else-if="hasNavigation" class="appContainer">
@@ -78,7 +78,7 @@ export default Vue.extend({
       link: [
         {
           rel: 'canonical',
-          href: `https://stopcovid19.metro.tokyo.lg.jp${this.$route.path}`
+          href: `https://pedantic-torvalds-7494d6.netlify.com${this.$route.path}`
         }
       ]
     }
