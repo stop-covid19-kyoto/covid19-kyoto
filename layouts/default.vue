@@ -2,7 +2,7 @@
   <v-app class="app">
     <div v-if="loading" class="loader">
       <img src="/logo.svg" alt="岡山県" />
-      <scale-loader color="#e813a4" />
+      <scale-loader color="#a51e7c" />
     </div>
     <div v-else-if="hasNavigation" class="appContainer">
       <div class="naviContainer">
