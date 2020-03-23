@@ -192,7 +192,7 @@ const config: Configuration = {
   },
   manifest: {
     name: '京都府 新型コロナウイルス感染症対策サイト(非公式)',
-    theme_color: '#eb42b5',
+    theme_color: '#85005d',
     background_color: '#ffffff',
     display: 'standalone',
     Scope: '/',
