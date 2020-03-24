@@ -1,6 +1,6 @@
 # 京都府 新型コロナウイルス 総合情報サイト (非公式)
 
-[![京都府 新型コロナウイルス 総合情報サイト (非公式)](https://user-images.githubusercontent.com/43156990/76674468-40fcf780-65f3-11ea-8d1e-2682eb980926.png)](#)
+[![京都府 新型コロナウイルス 総合情報サイト (非公式)](https://raw.githubusercontent.com/stop-covid19-kyoto/covid19-kyoto/development/static/ogp.jpg)](#)
 
 ## 貢献の仕方
 
@@ -27,7 +27,7 @@ Discord でディスカッションを行っております。
 
 サイト制作に関わったエンジニアやデザイナーはもちろん、制作には関わらないけど貢献していただいた方々もご紹介できればと思ってます。何かしらの貢献を行った方はぜひ追記をお願いします。
 
-追加をご希望の場合は Pull Request を送っていただくか、この [Issue](#) にコメントをお願いします。
+追加をご希望の場合は Pull Request を送っていただくか、この [Issue](https://github.com/stop-covid19-kyoto/covid19-kyoto/issues/24) にコメントをお願いします。
 
 ## ライセンス
 
