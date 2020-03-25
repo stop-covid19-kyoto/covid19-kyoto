@@ -30,7 +30,7 @@ const config: Configuration = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://pedantic-torvalds-7494d6.netlify.com'
+        content: 'https://stop-covid19-kyoto.netlify.com'
       },
       {
         hid: 'og:title',
@@ -46,7 +46,7 @@ const config: Configuration = {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://pedantic-torvalds-7494d6.netlify.com/ogp.png'
+        content: 'https://stop-covid19-kyoto.netlify.com/ogp.png'
       },
       {
         hid: 'twitter:card',
@@ -56,17 +56,17 @@ const config: Configuration = {
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@fujiwaraizuho'
+        content: '@covid19_kyoto'
       },
       {
         hid: 'twitter:creator',
         name: 'twitter:creator',
-        content: '@fujiwaraizuho'
+        content: '@covid19_kyoto'
       },
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://pedantic-torvalds-7494d6.netlify.com/ogp.jpg'
+        content: 'https://stop-covid19-kyoto.netlify.com/ogp.jpg'
       }
     ],
     link: [
