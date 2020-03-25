@@ -178,7 +178,7 @@
       }}
     </TextCard>
     <TextCard :title="$t('お問い合わせ先')">
-      {{ $t('岡山県 新型コロナウイルス感染症 対策サイト 運営者代表') }}<br />
+      {{ $t('京都府 新型コロナウイルス感染症 対策サイト 運営者代表') }}<br />
       {{ $t('メール') }}:
       <a href="mail:contact@fujishan.jp">contact@fujishan.jp</a>
     </TextCard>
