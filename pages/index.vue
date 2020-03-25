@@ -7,6 +7,7 @@
     />
     <whats-new class="mb-4" :items="newsItems" />
     <v-row class="DataBlock">
+      <confirmed-cases-details-card />
       <confirmed-cases-number-card />
       <tested-number-card />
       <confirmed-cases-attributes-card />
@@ -21,11 +22,12 @@
 import PageHeader from '@/components/PageHeader.vue'
 // ニュースはまだ今のところないのでコメントアウト
 // import WhatsNew from '@/components/WhatsNew.vue'
-import Data from '@/data/data.json'
+import lastUpdate from '@/data/last_update.json'
 // import formatGraph from '@/utils/formatGraph'
 // import formatTable from '@/utils/formatTable'
 // ニュースはまだ今のところないのでコメントアウト
 // import News from '@/data/news.json'
+import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
@@ -37,6 +39,7 @@ export default {
     PageHeader,
     // ニュースはまだ今のところないのでコメントアウト
     // WhatsNew,
+    ConfirmedCasesDetailsCard,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
     TestedNumberCard
@@ -53,11 +56,10 @@ export default {
     // )
 
     const data = {
-      Data,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
         title: this.$t('京都府内の最新感染動向'),
-        date: Data.lastUpdate
+        date: lastUpdate.last_update
       }
       // ニュースは今のところないのでコメントアウト
       // newsItems: News.newsItems
