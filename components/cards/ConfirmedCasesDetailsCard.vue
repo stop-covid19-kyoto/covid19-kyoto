@@ -3,7 +3,8 @@
     <svg-card
       :title="$t('検査陽性者の状況')"
       :title-id="'details-of-confirmed-cases'"
-      :date="Data.inspections_summary.date"
+      :date="mainSummary.last_update"
+      :url="'https://www.pref.kyoto.jp/kentai/pcrkensa.html'"
     >
       <confirmed-cases-table
         :aria-label="$t('検査陽性者の状況')"
@@ -37,7 +38,7 @@
 </i18n>
 
 <script>
-import Data from '@/data/data.json'
+import mainSummary from '@/data/main_summary.json'
 import formatConfirmedCases from '@/utils/formatConfirmedCases'
 import SvgCard from '@/components/SvgCard.vue'
 import ConfirmedCasesTable from '@/components/ConfirmedCasesTable.vue'
@@ -49,10 +50,10 @@ export default {
   },
   data() {
     // 検査陽性者の状況
-    const confirmedCases = formatConfirmedCases(Data.main_summary)
+    const confirmedCases = formatConfirmedCases(mainSummary)
 
     const data = {
-      Data,
+      mainSummary,
       confirmedCases
     }
     return data

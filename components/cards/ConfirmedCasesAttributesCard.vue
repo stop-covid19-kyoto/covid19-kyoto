@@ -5,9 +5,9 @@
       :title-id="'attributes-of-confirmed-cases'"
       :chart-data="patientsTable"
       :chart-option="{}"
-      :date="Data.patients.date"
+      :date="patients.last_update"
       :info="sumInfoOfPatients"
-      :url="'https://www.pref.okayama.jp/page/645925.html#kennaijoukyou'"
+      :url="'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#F'"
     />
   </v-col>
 </template>
@@ -126,7 +126,8 @@
 </i18n>
 
 <script>
-import Data from '@/data/data.json'
+import patients from '@/data/patients.json'
+import patientsSummary from '@/data/patients_summary.json'
 import formatGraph from '@/utils/formatGraph'
 import formatTable from '@/utils/formatTable'
 import DataTable from '@/components/DataTable.vue'
@@ -137,9 +138,9 @@ export default {
   },
   data() {
     // 感染者数グラフ
-    const patientsGraph = formatGraph(Data.patients_summary.data)
+    const patientsGraph = formatGraph(patientsSummary.data)
     // 感染者数
-    const patientsTable = formatTable(Data.patients.data)
+    const patientsTable = formatTable(patients.data)
 
     const sumInfoOfPatients = {
       lText: patientsGraph[
@@ -161,16 +162,18 @@ export default {
       row['居住地'] = this.$t(row['居住地'])
       row['性別'] = this.$t(row['性別'])
 
+      /*
       if (row['年代'] === '10歳未満') {
         row['年代'] = this.$t('10歳未満')
       } else {
         const age = row['年代'].substring(0, 2)
         row['年代'] = this.$t('{age}代', { age })
       }
+      */
     }
 
     const data = {
-      Data,
+      patients,
       patientsTable,
       sumInfoOfPatients
     }

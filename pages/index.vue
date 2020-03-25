@@ -7,10 +7,11 @@
     />
     <whats-new class="mb-4" :items="newsItems" />
     <v-row class="DataBlock">
+      <confirmed-cases-details-card />
       <confirmed-cases-number-card />
       <tested-number-card />
       <confirmed-cases-attributes-card />
-      <telephone-advisory-reports-number-card />
+      <!--<telephone-advisory-reports-number-card />-->
     </v-row>
   </div>
 </template>
@@ -19,24 +20,31 @@
 
 <script>
 import PageHeader from '@/components/PageHeader.vue'
-import WhatsNew from '@/components/WhatsNew.vue'
-import Data from '@/data/data.json'
+// ニュースはまだ今のところないのでコメントアウト
+// import WhatsNew from '@/components/WhatsNew.vue'
+import lastUpdate from '@/data/last_update.json'
 // import formatGraph from '@/utils/formatGraph'
 // import formatTable from '@/utils/formatTable'
-import News from '@/data/news.json'
+// ニュースはまだ今のところないのでコメントアウト
+// import News from '@/data/news.json'
+import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
-import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+// 電話相談者数の表示は今ないのでコメントアウト
+// import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 
 export default {
   components: {
     PageHeader,
-    WhatsNew,
+    // ニュースはまだ今のところないのでコメントアウト
+    // WhatsNew,
+    ConfirmedCasesDetailsCard,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
-    TestedNumberCard,
-    TelephoneAdvisoryReportsNumberCard
+    TestedNumberCard
+    // 電話相談者数の表示は今ないのでコメントアウト
+    // TelephoneAdvisoryReportsNumberCard
   },
   data() {
     // 退院者グラフ
@@ -48,19 +56,19 @@ export default {
     // )
 
     const data = {
-      Data,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
-        title: this.$t('岡山県内の最新感染動向'),
-        date: Data.lastUpdate
-      },
-      newsItems: News.newsItems
+        title: this.$t('京都府内の最新感染動向'),
+        date: lastUpdate.last_update
+      }
+      // ニュースは今のところないのでコメントアウト
+      // newsItems: News.newsItems
     }
     return data
   },
   head() {
     return {
-      title: this.$t('岡山県内の最新感染動向')
+      title: this.$t('京都府内の最新感染動向')
     }
   }
 }
