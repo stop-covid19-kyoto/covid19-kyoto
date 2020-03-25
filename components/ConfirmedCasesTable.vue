@@ -28,48 +28,39 @@
       </div>
       <ul class="group">
         <li class="item in-hospital">
-          <div class="gutter oneThird">
+          <div class="gutter">
             <div class="box">
-              <span>{{ $t('入院中') }}</span>
+              <!-- eslint-disable vue/no-v-html-->
+              <span v-html="$t('症状の<br />ある方')" />
+              <!-- eslint-enable vue/no-v-html-->
               <span>
-                <b>{{ 入院中 }}</b>
+                <b>{{ 症状のある方 }}</b>
                 <span class="unit">{{ $t('人') }}</span>
               </span>
             </div>
           </div>
-          <ul class="group">
-            <li class="item mild">
-              <div class="gutter">
-                <div class="box short">
-                  <!-- eslint-disable vue/no-v-html-->
-                  <span v-html="$t('軽症・<br />中等症')" />
-                  <!-- eslint-enable vue/no-v-html-->
-                  <span>
-                    <b>{{ 軽症中等症 }}</b>
-                    <span class="unit">{{ $t('人') }}</span>
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li class="item serious">
-              <div class="gutter">
-                <div class="box short">
-                  <span>{{ $t('重症') }}</span>
-                  <span>
-                    <b>{{ 重症 }}</b>
-                    <span class="unit">{{ $t('人') }}</span>
-                  </span>
-                </div>
-              </div>
-            </li>
-          </ul>
+        </li>
+        <li class="item mild">
+          <div class="gutter">
+            <div class="box">
+              <!-- eslint-disable vue/no-v-html-->
+              <span v-html="$t('症状の<br />ない方')" />
+              <!-- eslint-enable vue/no-v-html-->
+              <span>
+                <b>{{ 症状のない方 }}</b>
+                <span class="unit">{{ $t('人') }}</span>
+              </span>
+            </div>
+          </div>
         </li>
         <li class="item deceased">
           <div class="gutter">
             <div class="box">
-              <span>{{ $t('死亡') }}</span>
+              <!-- eslint-disable vue/no-v-html-->
+              <span v-html="$t('亡くな<br />られた方')" />
+              <!-- eslint-enable vue/no-v-html-->
               <span>
-                <b>{{ 死亡 }}</b>
+                <b>{{ 亡くなられた方 }}</b>
                 <span class="unit">{{ $t('人') }}</span>
               </span>
             </div>
@@ -78,9 +69,11 @@
         <li class="item recovered">
           <div class="gutter">
             <div class="box">
-              <span>{{ $t('退院') }}</span>
+              <!-- eslint-disable vue/no-v-html-->
+              <span v-html="$t('退院<br />した方')" />
+              <!-- eslint-enable vue/no-v-html-->
               <span>
-                <b>{{ 退院 }}</b>
+                <b>{{ 退院した方 }}</b>
                 <span class="unit">{{ $t('人') }}</span>
               </span>
             </div>
@@ -96,13 +89,18 @@
 <script>
 export default {
   props: [
+    // eslint-disable-next-line vue/prop-name-casing,vue/require-prop-types
     '検査実施人数',
+    // eslint-disable-next-line vue/prop-name-casing,vue/require-prop-types
     '陽性物数',
-    '入院中',
-    '軽症中等症',
-    '重症',
-    '死亡',
-    '退院'
+    // eslint-disable-next-line vue/prop-name-casing,vue/require-prop-types
+    '症状のある方',
+    // eslint-disable-next-line vue/prop-name-casing,vue/require-prop-types
+    '症状のない方',
+    // eslint-disable-next-line vue/prop-name-casing,vue/require-prop-types
+    '亡くなられた方',
+    // eslint-disable-next-line vue/prop-name-casing,vue/require-prop-types
+    '退院した方'
   ],
   methods: {
     /** 桁数に応じて位置の調整をする */
@@ -176,7 +174,7 @@ export default {
   justify-content: flex-end;
   position: relative;
   padding-bottom: 26px;
-  width: 100%;
+  width: 80%;
   height: $box-height;
   border: 3px solid $green-1;
   color: $green-1;
@@ -203,7 +201,7 @@ export default {
 
 // 検査
 .item.checked {
-  width: calc(100% / 7);
+  width: calc(100% / 6);
   > .gutter > .box {
     border-color: $gray-1;
     color: $gray-1;
@@ -213,39 +211,39 @@ export default {
 .item.positive {
   display: flex;
   justify-content: space-between;
-  width: calc(100% / 7 * 6);
+  width: calc(100% / 6 * 5);
   > .group {
-    width: calc(100% / 6 * 5);
+    width: calc(100% / 5 * 4);
   }
 }
 // 入院
 .item.in-hospital {
-  display: flex;
-  justify-content: space-between;
-  width: calc(100% / 5 * 3);
-  > .group {
-    width: calc(100% / 3 * 2);
-  }
+  //  display: flex;
+  //  justify-content: space-between;
+  width: calc(100% / 4);
+  //  > .group {
+  //    width: calc(100% / 3 * 2);
+  //  }
 }
 // 軽症・中等症
 .item.mild {
-  width: calc(100% / 2);
+  width: calc(100% / 4);
 }
-// 重症
-.item.serious {
-  width: calc(100% / 2);
-}
+//// 重症
+//.item.serious {
+//  width: calc(100% / 2);
+//}
 // 死亡
 .item.deceased {
-  width: calc(100% / 5);
+  width: calc(100% / 4);
 }
 // 退院
 .item.recovered {
-  width: calc(100% / 5);
+  width: calc(100% / 4);
 }
 
 .item.positive > .gutter > .box::before,
-.item.in-hospital > .gutter > .box::before,
+// .item.in-hospital > .gutter > .box::before,
 .item.serious > .gutter > .box::before,
 .item.recovered > .gutter > .box::before {
   content: '';
@@ -255,8 +253,8 @@ export default {
   position: absolute;
   height: 32px;
 }
-.item.positive > .gutter > .box::before,
-.item.in-hospital > .gutter > .box::before {
+.item.positive > .gutter > .box::before {
+  // .item.in-hospital > .gutter > .box::before {
   border-right: none;
   top: -3px;
   right: calc(-100% - 3px - 3px);
@@ -309,8 +307,8 @@ export default {
     border-width: px2vw($bdw, $vw);
     height: px2vw($boxdiff - $bdw, $vw);
   }
-  .item.positive > .gutter > .box::before,
-  .item.in-hospital > .gutter > .box::before {
+  .item.positive > .gutter > .box::before {
+    // .item.in-hospital > .gutter > .box::before {
     top: px2vw(-$bdw, $vw);
     right: calc(-100% - #{px2vw($bdw * 2, $vw)} + 0.3px);
     width: calc(100% + #{px2vw($bdw * 2, $vw)});
