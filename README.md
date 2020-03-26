@@ -32,3 +32,9 @@ Discord でディスカッションを行っております。
 ## ライセンス
 
 本ソフトウェアは、[MITライセンス](./LICENSE.txt)の元提供されています。
+
+### ステージング・本番環境への反映
+
+`master` ブランチがアップデートされると、自動的に本番サイト https://stop-covid19-kyoto.netlify.com/ が更新されます。
+
+`development` ブランチがアップデートされると、自動的に開発用サイト https://pedantic-torvalds-7494d6.netlify.com/ が更新されます。
