@@ -68,7 +68,7 @@ import ChiyodaVisitorsCard from '@/components/cards/ChiyodaVisitorsCard.vue' */
 export default {
   components: {
     ConfirmedCasesDetailsCard,
-    TestedCasesDetailsCard,
+    // TestedCasesDetailsCard,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
     TestedNumberCard /*,
@@ -87,10 +87,10 @@ export default {
         title = this.$t('検査陽性者の状況')
         updatedAt = inspectionsSummary.last_update
         break
-      case 'details-of-tested-cases':
+      /* case 'details-of-tested-cases':
         title = this.$t('検査実施状況')
         updatedAt = Data.inspection_status_summary.date
-        break
+        break */
       case 'number-of-confirmed-cases':
         title = this.$t('陽性患者数')
         updatedAt = patients.last_update

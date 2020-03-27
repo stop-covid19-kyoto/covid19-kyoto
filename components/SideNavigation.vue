@@ -19,7 +19,8 @@
           <div class="SideNavigation-HeaderText">
             {{ $t('menu/新型コロナウイルス感染症') }}<br />{{
               $t('menu/対策サイト')
-            }} {{ $t('(非公式)') }}
+            }}
+            {{ $t('(非公式)') }}
           </div>
         </nuxt-link>
       </h1>

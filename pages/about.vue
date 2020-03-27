@@ -250,7 +250,8 @@
       <h3>{{ $t('お問い合わせ先') }}</h3>
       <p>{{ $t('京都府 新型コロナウイルス感染症 対策サイト 運営組織') }}</p>
       <p>
-        {{ $t('メール') }}: <a href="mail:stop.covid19.kyoto.contact@gmail.com"
+        {{ $t('メール') }}:
+        <a href="mail:stop.covid19.kyoto.contact@gmail.com"
           >stop.covid19.kyoto.contact@gmail.com</a
         >
       </p>

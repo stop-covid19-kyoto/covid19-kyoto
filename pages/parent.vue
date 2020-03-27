@@ -43,7 +43,11 @@
             href="http://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html"
             target="_blank"
             rel="noopener"
-            >{{ $t('「新型コロナウイルス感染症にかかる相談窓口について」 (京都府感染症情報センター)') }}</a
+            >{{
+              $t(
+                '「新型コロナウイルス感染症にかかる相談窓口について」 (京都府感染症情報センター)'
+              )
+            }}</a
           >
         </li>
       </ul>
