@@ -10,7 +10,7 @@ Kyoto Covid-19 response site contributors
 | [Genbu](https://twitter.com/genbugraphy/) | Project facilitation |
 | [Fujiwara Izuho](https://twitter.com/fujiwaraizuho) | Project facilitation |
 | [0505Keitan](https://twitter.com/0505Keitan) | Coding |
-| y-chan ||
+| [y-chan](https://twitter.com/Xperia_Build_Y) | Data analysis / Coding |
 | f0reach ||
 | maco ||
 | -add your name here!- | -what did you do?- |

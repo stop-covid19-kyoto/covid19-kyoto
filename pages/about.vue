@@ -33,7 +33,11 @@
       </a>
       )
       <br />
-      ・y-chan
+      ・y-chan (
+      <a href="//twitter.com/Xperia_Build_Y" target="_blank">
+        {{ $t('@Xperia_Build_Y') }}
+      </a>
+      )
       <br />
       ・f0reach
       <br />
