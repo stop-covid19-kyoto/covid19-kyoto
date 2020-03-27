@@ -4,7 +4,7 @@
       <div :class="$style.AdvisoryContents">
         <div>
           <span :class="$style.AdvisoryContentsTitle">{{
-            $t('新型コロナ受診相談窓口')
+            $t('新型コロナ受診相談窓口（日本語のみ）')
           }}</span>
         </div>
         <div :class="[$style.AdvisoryContentsColsSentense, 'mt-4']">
@@ -64,15 +64,23 @@
             'mt-1'
           ]"
         >
-          <img src="/flow/phone-24px.svg" />
-          <span :class="$style.AdvisoryTelephone">03-5320-4592</span>
+          <a :class="$style.AdvisoryTelephone" href="tel:0353204592">
+            <img
+              :class="$style.AdvisoryTelephoneIcon"
+              src="/flow/phone-24px.svg"
+              aria-hidden="true"
+              :alt="$t('電話番号')"
+            />
+            03-5320-4592
+          </a>
+        </div>
+        <div v-if="!['ja', 'ja-basic'].includes($i18n.locale)" class="pt-8">
+          <span>{{ $t('ひまわり') }}</span>
         </div>
       </div>
     </div>
   </div>
 </template>
-
-<i18n src="./FlowPcAdvisory.i18n.json"></i18n>
 
 <style module lang="scss">
 .Advisory {
@@ -81,6 +89,7 @@
   justify-content: space-between;
   height: 100%;
   color: $gray-2;
+
   &Container {
     background-color: $gray-5;
     border-radius: 4px;
@@ -89,60 +98,91 @@
     margin-bottom: 10px;
     text-align: center;
   }
+
   &Contents {
     font-weight: bold;
+
     &:not(:first-child) {
       border-top: 0.5px solid $gray-4;
     }
-    &:not(:last-child) {
-    }
+
     &Title {
       font-size: 26px;
       line-height: 28px;
     }
+
     &Title2 {
       font-size: 18px;
     }
+
     &SubTitle {
       font-size: 18px;
     }
+
     &ColsSentense {
       line-height: 18px;
     }
   }
+
   &BlockCentering {
     display: flex;
     justify-content: center;
   }
+
   &Link {
     line-height: 22px;
     text-align: left;
+
     a {
       color: rgba(0, 0, 0, 0.87);
       text-decoration: none;
+
       &:hover {
         text-decoration: underline;
       }
     }
   }
+
   &TelephoneArea {
     display: inline-flex;
   }
+
   &Telephone {
+    display: flex;
+    align-items: center;
     font-size: 27px;
     font-weight: bold;
-    margin-left: 4px;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+      color: inherit;
+      text-decoration: none;
+      outline: 1px dotted $gray-3;
+    }
+
+    &Icon {
+      display: inline-block;
+      margin-right: 5px;
+      width: 26px;
+      height: 26px;
+    }
   }
+
   &BoxContainer {
     border-radius: 4px;
     text-align: center;
     padding: 20px 10px;
     margin: 24px auto;
   }
+
   &WhiteBox {
     background-color: $white;
-    width: 160px;
+    max-width: 160px;
     padding: 10px;
+
     &Sentense {
       color: $green-1;
       font-size: 18px;

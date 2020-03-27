@@ -35,7 +35,10 @@
     </div>
 
     <a
-      v-scroll-to="'#consult'"
+      v-scroll-to="{
+        el: '#consult',
+        onDone: onDoneScroll
+      }"
       href="#consult"
       :class="[$style.button, $style.clickable]"
     >
@@ -45,15 +48,15 @@
   </div>
 </template>
 
-<i18n src="./FlowSpSuspect.i18n.json"></i18n>
-
 <script lang="ts">
+import { onDoneScroll } from '@/utils/vueScrollTo'
 import ArrowForwardIcon from '@/static/flow/responsive/arrow_forward.svg'
 import PhoneIcon from '@/static/flow/responsive/phone.svg'
 import SentimentIcon from '@/static/flow/responsive/sentiment_very_dissatisfied.svg'
 
 export default {
-  components: { ArrowForwardIcon, PhoneIcon, SentimentIcon }
+  components: { ArrowForwardIcon, PhoneIcon, SentimentIcon },
+  methods: { onDoneScroll }
 }
 </script>
 
@@ -65,6 +68,7 @@ export default {
   &.triple {
     margin-left: px2vw(-11);
     margin-right: px2vw(-11);
+
     > .symptom {
       margin-left: px2vw(11);
       margin-right: px2vw(11);
@@ -76,6 +80,7 @@ export default {
 .callcenter {
   margin-top: px2vw(25);
   text-align: center;
+
   .open {
     margin-top: px2vw(10);
   }
@@ -83,10 +88,12 @@ export default {
 
 @include largerThan($small) {
   $vw: 960;
+
   .rectContainer {
     &.triple {
       margin-left: px2vw(-11, $vw);
       margin-right: px2vw(-11, $vw);
+
       > .symptom {
         margin-left: px2vw(11, $vw);
         margin-right: px2vw(11, $vw);
@@ -96,6 +103,7 @@ export default {
   // suspect
   .callcenter {
     margin-top: px2vw(25, $vw);
+
     .open {
       margin-top: px2vw(10, $vw);
     }
