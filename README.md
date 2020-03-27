@@ -1,3 +1,5 @@
+<!-- PLEASE SAVE OUR HOMETOWN OF KYOTO -->
+
 # 京都府 新型コロナウイルス 総合情報サイト (非公式)
 
 ![](https://github.com/stop-covid19-kyoto/covid19-kyoto/workflows/production%20deploy/badge.svg)
@@ -89,7 +91,7 @@ $ docker-compose run --rm app yarn install
 
 
 ## ステージング・本番環境への反映
-`master`ブランチがアップデートされると、自動的に本番サイト https://stop-covid19-kyoto.netlify.com/ が更新されます。
+`master`ブランチがアップデートされると、自動的に本番サイト https://stop-covid19-kyoto.netlify.com/ または https://kyoto.stopcovid19.jp/ が更新されます。
 
 `development`ブランチがアップデートされると、自動的に開発用サイト https://dev-stop-covid19-kyoto.netlify.com/ が更新されます。
 
