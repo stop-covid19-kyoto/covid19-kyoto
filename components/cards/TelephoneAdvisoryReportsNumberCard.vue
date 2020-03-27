@@ -7,7 +7,7 @@
       :chart-data="contactsGraph"
       :date="Data.contacts.date"
       :unit="$t('件.reports')"
-      comment="※ 3月11日のデータは岡山県が1日ごとの相談件数の推移を公開していないため、その日までの累計を入力しています。"
+      comment="※ 3月11日のデータは京都府が1日ごとの相談件数の推移を公開していないため、その日までの累計を入力しています。"
       :url="'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#F'"
     />
     <!-- 件.reports = 窓口相談件数 -->

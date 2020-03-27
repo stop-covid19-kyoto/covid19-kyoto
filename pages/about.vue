@@ -11,7 +11,7 @@
       }}<br />
       {{
         $t(
-          '運営・開発は以下のエンジニアによってボランティアで行われています。'
+          '運営・開発は以下の学生エンジニアによってボランティアで行われています。'
         )
       }}<br />
       <br />
@@ -248,10 +248,10 @@
     </StaticCard>
     <StaticCard>
       <h3>{{ $t('お問い合わせ先') }}</h3>
-      <p>{{ $t('岡山県 新型コロナウイルス感染症 対策サイト 運営者代表') }}</p>
+      <p>{{ $t('京都府 新型コロナウイルス感染症 対策サイト 運営組織') }}</p>
       <p>
-        {{ $t('メール') }}:<a href="mail:contact@fujishan.jp"
-          >contact@fujishan.jp</a
+        {{ $t('メール') }}: <a href="mail:stop.covid19.kyoto.contact@gmail.com"
+          >stop.covid19.kyoto.contact@gmail.com</a
         >
       </p>
     </StaticCard>

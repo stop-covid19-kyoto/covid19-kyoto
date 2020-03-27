@@ -148,7 +148,7 @@ export default Vue.extend({
         {
           icon: 'CovidIcon',
           title: this.$t('感染予防と相談窓口'),
-          link: 'https://www.pref.okayama.jp/page/644784.html'
+          link: 'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html'
         },
         {
           icon: 'ParentIcon',

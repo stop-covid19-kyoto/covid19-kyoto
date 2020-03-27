@@ -23,7 +23,7 @@ const config: Configuration = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://pedantic-torvalds-7494d6.netlify.com'
+        content: 'https://stop-covid19-kyoto.netlify.com'
       },
       {
         hid: 'twitter:card',
@@ -33,12 +33,12 @@ const config: Configuration = {
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@fujiwaraizuho'
+        content: '@covid19_kyoto'
       },
       {
         hid: 'twitter:creator',
         name: 'twitter:creator',
-        content: '@fujiwaraizuho'
+        content: '@covid19_kyoto'
       },
       {
         hid: 'fb:app_id',
@@ -117,7 +117,7 @@ const config: Configuration = {
     }
   },
   googleAnalytics: {
-    id: 'UA-98485251-15'
+    id: 'UA-161807316-1'
   },
   build: {
     plugins: [
