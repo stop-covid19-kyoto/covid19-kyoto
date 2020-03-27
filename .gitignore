@@ -97,5 +97,5 @@ sw.*
 # OGP images
 ogp/*
 
-# .history directory
-.history/
+# Vagrant
+.vagrant
