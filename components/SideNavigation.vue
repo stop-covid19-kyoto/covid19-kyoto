@@ -49,8 +49,8 @@
       </nav>
 
       <footer class="SideNavigation-Footer">
-        <!--<div class="SideNavigation-Social">
-          <a
+        <div class="SideNavigation-Social">
+          <!--<a
             href="https://line.me/R/ti/p/%40822sysfc"
             target="_blank"
             rel="noopener"
@@ -82,9 +82,9 @@
               <source srcset="/facebook.webp" type="image/webp" />
               <img src="/facebook.png" alt="Facebook" />
             </picture>
-          </a>
+          </a>-->
           <a
-            href="https://github.com/tokyo-metropolitan-gov/covid19"
+            href="https://github.com/stop-covid19-kyoto/covid19-kyoto"
             target="_blank"
             rel="noopener"
             class="SideNavigation-SocialLink"
@@ -94,7 +94,7 @@
               <img src="/github.png" alt="GitHub" />
             </picture>
           </a>
-        </div>-->
+        </div>
         <small class="SideNavigation-Copyright">
           <!--{{ $t('このサイトの内容物は') }}
           <a
