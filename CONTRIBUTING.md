@@ -30,7 +30,7 @@
 [#24](https://github.com/stop-covid19-kyoto/covid19-kyoto/issues/24) の Issue に、掲載名、リンク先（あれば）、役割をコメントください。
 
 ## 開発に関する情報
-* 開発サイト https://pedantic-torvalds-7494d6.netlify.com/
+* 開発サイト https://dev-stop-covid19-kyoto.netlify.com/
 * 本番サイト https://stop-covid19-kyoto.netlify.com/
 
 本 ドキュメント の更新も大歓迎です！
