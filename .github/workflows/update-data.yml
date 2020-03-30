@@ -1,8 +1,8 @@
 name: update json data
 on:
-  push:
-    paths:
-      - '.github/workflows/update-data.yml'
+  # push:
+  #  paths:
+  #    - '.github/workflows/update-data.yml'
   # pull_request:
   #   paths:
   #     - '.github/workflows/update_data.yml'
