@@ -6,6 +6,8 @@ on:
   # pull_request:
   #   paths:
   #     - '.github/workflows/update_data.yml'
+  repository_dispatch:
+    types: [update_data]
   schedule:
     - cron:  '15 2,13 * * *'
 
