@@ -4,7 +4,7 @@
     "children": [
         {
             "attr": "陽性患者数",
-            "value": 51,
+            "value": 54,
             "children": [
                 {
                     "attr": "症状のない方",
@@ -25,5 +25,5 @@
             ]
         }
     ],
-    "last_update": "2020/03/30 19:00"
+    "last_update": "2020/03/30 23:00"
 }
