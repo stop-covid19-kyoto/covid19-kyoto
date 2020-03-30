@@ -47,3 +47,4 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         title: ${{ format('Update json data {0}', github.event.head_commit.timestamp) }}
         branch-suffix: 'short-commit-hash'
+        branch: update-data
