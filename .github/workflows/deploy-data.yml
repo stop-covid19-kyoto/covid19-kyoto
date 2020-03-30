@@ -1,19 +1,29 @@
-name: production deploy
+name: Production Deploy with latest approved data
 
 on:
-  push:
-    branches:
-      - master
+  pull_request:
+    types: labeled
 
 jobs:
   deploy:
     runs-on: ubuntu-18.04
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    if: github.event.pull_request.merged && contains(github.base_ref, 'development') && contains(github.head_ref, 'update-data-') && contains(github.event.pull_request.labels.*.name, 'deploy-ready')
     steps:
       - uses: actions/checkout@v2
         with:
           ref: master
+
+      - uses: actions/checkout@v2
+        with:
+          ref: development
+          path: 'dev-covid19'
+
+      - name: copy files
+        run: |
+          cp -p dev-covid19/data/*.json data/
+          rm -rf dev-covid19/
 
       - name: Setup Node
         uses: actions/setup-node@v1
@@ -54,8 +64,3 @@ jobs:
           owner: stop-covid19-kyoto
           repo: covid19-kyoto
           branch: production
-      - name: Create GitHub release
-        uses: rymndhng/release-on-push-action@master
-        continue-on-error: true
-        with:
-          bump_version_scheme: patch
