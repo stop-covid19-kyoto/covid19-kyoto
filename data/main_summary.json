@@ -1,22 +1,22 @@
 {
     "attr": "検査実施人数",
-    "value": 974,
+    "value": 997,
     "children": [
         {
             "attr": "陽性患者数",
-            "value": 35,
+            "value": 40,
             "children": [
                 {
                     "attr": "症状のない方",
-                    "value": 5
+                    "value": 6
                 },
                 {
                     "attr": "症状のある方",
-                    "value": 30
+                    "value": 34
                 },
                 {
                     "attr": "退院した方",
-                    "value": 13
+                    "value": 15
                 },
                 {
                     "attr": "亡くなられた方",
@@ -25,5 +25,5 @@
             ]
         }
     ],
-    "last_update": "2020/03/27 19:00"
+    "last_update": "2020/03/28 23:00"
 }

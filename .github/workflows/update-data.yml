@@ -1,0 +1,49 @@
+name: update json data
+on:
+  push:
+    paths:
+      - '.github/workflows/update-data.yml'
+  # pull_request:
+  #   paths:
+  #     - '.github/workflows/update_data.yml'
+  schedule:
+    - cron:  '15 12 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout covid19
+      uses: actions/checkout@v2
+      with:
+        ref: 'development'
+
+    - name: Checkout covid19-scraping
+      uses: actions/checkout@v2
+      with:
+        repository: stop-covid19-kyoto/covid19kyoto-scraping
+        ref: 'gh-pages'
+        path: 'covid19-scraping'
+
+    - name: copy files
+      run: |
+        cp -p covid19-scraping/*.json data
+        rm -rf covid19-scraping
+
+    - run: git diff
+
+    - name: Commit files
+      continue-on-error: true
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data
+        git commit -m "update json data `date '+%Y-%m-%dT%H:%M:%SZ'`"
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: ${{ format('Update json data {0}', github.event.head_commit.timestamp) }}
+        branch-suffix: 'short-commit-hash'
