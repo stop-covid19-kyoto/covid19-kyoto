@@ -39,6 +39,18 @@
       </a>
       )
       <br />
+      ・laminne (
+      <a href="//resume.id/lamin" target="_blank">
+        {{ $t('Resume.id') }}
+      </a>
+      )
+      <br />
+      ・はす (
+      <a href="//twitter.com/83_hasu" target="_blank">
+        {{ $t('@83_hasu') }}
+      </a>
+      )
+      <br />
       ・f0reach
       <br />
       ・maco
