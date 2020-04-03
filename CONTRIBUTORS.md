@@ -12,6 +12,7 @@ Kyoto Covid-19 response site contributors
 | [0505Keitan](https://twitter.com/0505Keitan) | Coding |
 | [y-chan](https://twitter.com/Xperia_Build_Y) | Data analysis / Coding |
 | [laminne](https://resume.id/lamin) | Coding |
+| [はす](https://twitter.com/83_hasu) | Coding |
 | f0reach ||
 | maco ||
 | -add your name here!- | -what did you do?- |
