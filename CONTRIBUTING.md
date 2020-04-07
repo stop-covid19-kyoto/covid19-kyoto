@@ -24,7 +24,7 @@
 * 提案なども受け付けます！積極的に新しく Issue を作ってください。
 
 ## CONTRIBUTORS.md への追加について
-ご協力いただいた皆様のお名前（ハンドルネーム）や役割を記す、[CONTRIBUTORS.md](https://github.com/stop-covid19-kyoto/covid19-kyoto/blob/development/CONTRIBUTORS.md) というファイルがあります。
+ご協力いただいた皆様のお名前（ハンドルネーム）や役割を記す、[CONTRIBUTORS.md](./CONTRIBUTORS.md) というファイルがあります。
 何かしらの貢献を行った方は、ぜひこちらにもお名前をお載せください。
 [#24](https://github.com/stop-covid19-kyoto/covid19-kyoto/issues/24) の Issue に、掲載名、リンク先（あれば）、役割をコメントください。
 
