@@ -30,6 +30,6 @@
 
 ## 開発に関する情報
 * 開発サイト https://dev-stop-covid19-kyoto.netlify.com/
-* 本番サイト https://stop-covid19-kyoto.netlify.com/
+* 本番サイト https://stop-covid19-kyoto.netlify.com/ もしくは https://kyoto.stopcovid19.jp
 
 本 ドキュメント の更新も大歓迎です！
