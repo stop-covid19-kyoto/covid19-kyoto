@@ -10,7 +10,7 @@
         '※ 3月13日のデータは京都府が1日ごとの実施値の推移を公開していないため、その日までの累計を入力しています。'
       "
       :unit="$t('件.tested')"
-      :url="'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#F'"
+      :url="'https://www.pref.kyoto.jp/kentai/corona/pcrkensa.html'"
     />
     <!-- 件.tested = 検査数 -->
   </v-col>
