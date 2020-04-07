@@ -17,7 +17,6 @@
 
 ## 参加にあたって
 * 開発に参加する前に、[Principle/行動規範](./CODE_OF_CONDUCT.md) をご一読ください。
-* コミュニケーションにあたっては、Code for Japan の [行動規範](https://github.com/codeforjapan/codeofconduct) もご確認ください。
 * 自分ができそうな Issue に誰もアサインされていない場合、Issueに「やります！」等とコメントしてから開発をはじめてください。
 * 半日以上作業から離れそうな場合は、他の人が作業を引き継げるようにしておいてください。（Issue を抱えたまま長時間オフになると、そのIssueがブロックされてしまいます。）
 * 1日以上更新されない Issue については、当方で assign を外させていただくことがあります。作業途中でも、[Draft Pull Request](https://qiita.com/tatane616/items/13da1b6797a7b871ad58) を送ってもらえると、動きが把握しやすくなります。
