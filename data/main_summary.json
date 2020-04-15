@@ -4,7 +4,7 @@
     "children": [
         {
             "attr": "陽性患者数",
-            "value": 205,
+            "value": 210,
             "children": [
                 {
                     "attr": "症状のない方",
@@ -12,11 +12,11 @@
                 },
                 {
                     "attr": "症状のある方",
-                    "value": 192
+                    "value": 202
                 },
                 {
                     "attr": "退院した方",
-                    "value": 33
+                    "value": 35
                 },
                 {
                     "attr": "亡くなられた方",
