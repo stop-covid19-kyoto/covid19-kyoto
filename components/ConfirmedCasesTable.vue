@@ -31,11 +31,9 @@
         <li :class="[$style.box, $style.hospitalized]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <!-- eslint-disable vue/no-v-html-->
-              <span v-html="$t('症状の<br />ある方')" />
-              <!-- eslint-enable vue/no-v-html-->
+              <span>{{ $t('入院中') }}</span>
               <span>
-                <strong>{{ 症状のある方 }}</strong>
+                <strong>{{ 入院中 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
@@ -44,43 +42,48 @@
         <li :class="[$style.box, $style.minor]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <!-- eslint-disable vue/no-v-html-->
-              <span v-html="$t('症状の<br />ない方')" />
-              <!-- eslint-enable vue/no-v-html-->
+              <span>{{ $t('宿泊施設') }}</span>
               <span>
-                <strong>{{ 症状のない方 }}</strong>
+                <strong>{{ 宿泊施設 }}</strong>
+                <span :class="$style.unit">{{ $t('人') }}</span>
+              </span>
+            </div>
+          </div>
+        </li>
+        <li :class="[$style.box, $style.minor]">
+          <div :class="$style.pillar">
+            <div :class="$style.content">
+              <span>{{ $t('自宅療養') }}</span>
+              <span>
+                <strong>{{ 自宅療養 }}</strong>
+                <span :class="$style.unit">{{ $t('人') }}</span>
+              </span>
+            </div>
+          </div>
+        </li>
+        <li :class="[$style.box, $style.deceased]">
+          <div :class="$style.pillar">
+            <div :class="$style.content">
+              <span>{{ $t('死亡') }}</span>
+              <span>
+                <strong>{{ 死亡 }}</strong>
+                <span :class="$style.unit">{{ $t('人') }}</span>
+              </span>
+            </div>
+          </div>
+        </li>
+        <li :class="[$style.box, $style.recovered]">
+          <div :class="$style.pillar">
+            <div :class="$style.content">
+              <span>{{ $t('退院') }}</span>
+              <span>
+                <strong>{{ 退院 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
           </div>
         </li>
       </ul>
-    </li>
-    <li :class="[$style.box, $style.tall, $style.deceased]">
-      <div :class="$style.pillar">
-        <div :class="$style.content">
-          <!-- eslint-disable vue/no-v-html-->
-          <span v-html="$t('亡くな<br />られた方')" />
-          <!-- eslint-enable vue/no-v-html-->
-          <span>
-            <strong>{{ 亡くなられた方 }}</strong>
-            <span :class="$style.unit">{{ $t('人') }}</span>
-          </span>
-        </div>
-      </div>
-    </li>
-    <li :class="[$style.box, $style.tall, $style.recovered]">
-      <div :class="$style.pillar">
-        <div :class="$style.content">
-          <!-- eslint-disable vue/no-v-html-->
-          <span v-html="$t('退院<br />した方')" />
-          <!-- eslint-enable vue/no-v-html-->
-          <span>
-            <strong>{{ 退院した方 }}</strong>
-            <span :class="$style.unit">{{ $t('人') }}</span>
-          </span>
-        </div>
-      </div>
     </li>
   </ul>
 </template>
@@ -99,19 +102,23 @@ export default Vue.extend({
       type: Number,
       required: true
     },
-    症状のない方: {
+    入院中: {
       type: Number,
       required: true
     },
-    症状のある方: {
+    宿泊施設: {
       type: Number,
       required: true
     },
-    亡くなられた方: {
+    自宅療養: {
       type: Number,
       required: true
     },
-    退院した方: {
+    死亡: {
+      type: Number,
+      required: true
+    },
+    退院: {
       type: Number,
       required: true
     }
@@ -227,8 +234,8 @@ $default-boxdiff: 35px;
   &.tested {
     display: flex;
     flex: 0 0 auto;
-    // [6列] 1/6セル
-    width: calc((100% - #{$default-bdw} * 3) / 6);
+    // [7列] 1/7セル
+    width: calc((100% - #{$default-bdw} * 3) / 7);
     color: $gray-1;
   }
 
@@ -237,13 +244,13 @@ $default-boxdiff: 35px;
     width: 100%;
 
     > .pillar {
-      // [3列] 1/3
-      width: calc((100% + #{$default-bdw} * 2) / 3 - #{$default-bdw} * 3);
+      // [6列] 1/6
+      width: calc((100% + #{$default-bdw} * 2) / 6 - #{$default-bdw} * 3);
     }
 
     > .group {
-      // [3列] 2/3
-      width: calc((100% + #{$default-bdw} * 2) / 3 * 2 + #{$default-bdw});
+      // [6列] 5/6 最後の+1は微調整
+      width: calc((100% + #{$default-bdw} * 2) / 6 * 5 + #{$default-bdw + 1});
     }
   }
 
@@ -265,18 +272,20 @@ $default-boxdiff: 35px;
 
   &.hospitalized,
   &.minor,
-  &.severe {
+  &.severe,
+  &.deceased,
+  &.recovered {
     margin-left: $default-bdw;
-    // [2列] 1/2
-    width: calc(100% / 2 - #{$default-bdw});
+    // [5列] 1/5
+    width: calc(100% / 5 - #{$default-bdw});
   }
 
-  &.deceased,
+  /* &.deceased,
   &.recovered {
     margin-left: $default-bdw;
     // [2列] 1/2
     width: calc(100% / 3 - #{$default-bdw});
-  }
+  } */
 }
 
 .content {
@@ -359,20 +368,20 @@ $default-boxdiff: 35px;
     }
 
     &.tested {
-      width: calc((100% - #{px2vw($bdw, $vw)} * 3) / 6);
+      width: calc((100% - #{px2vw($bdw, $vw)} * 3) / 7);
     }
 
     &.confirmed {
       margin-left: px2vw($bdw, $vw);
       > .pillar {
         width: calc(
-          (100% + #{px2vw($bdw, $vw)} * 2) / 3 - #{px2vw($bdw, $vw)} * 3
+          (100% + #{px2vw($bdw, $vw)} * 2) / 6 - #{px2vw($bdw, $vw)} * 3
         );
       }
 
       > .group {
         width: calc(
-          (100% + #{px2vw($bdw, $vw)} * 2) / 3 * 2 + #{px2vw($bdw, $vw)}
+          (100% + #{px2vw($bdw, $vw)} * 2) / 6 * 5 + #{px2vw($bdw, $vw)}
         );
       }
     }
@@ -396,16 +405,18 @@ $default-boxdiff: 35px;
 
     &.hospitalized,
     &.minor,
-    &.severe {
-      margin-left: px2vw($bdw, $vw);
-      width: calc(100% / 2 - #{px2vw($bdw, $vw)});
-    }
-
+    &.severe,
     &.deceased,
     &.recovered {
       margin-left: px2vw($bdw, $vw);
-      width: calc(100% / 3 - #{px2vw($bdw, $vw)});
+      width: calc(100% / 5 - #{px2vw($bdw, $vw)});
     }
+
+    /* &.deceased,
+    &.recovered {
+      margin-left: px2vw($bdw, $vw);
+      width: calc(100% / 3 - #{px2vw($bdw, $vw)});
+    } */
   }
 }
 
