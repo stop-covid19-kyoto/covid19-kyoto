@@ -2,3 +2,9 @@
   from = "/*"
   to = "/404.html"
   status = 404
+
+[[redirects]]
+  from = "https://stop-covid19-kyoto.netlify.app/*"
+  to = "https://kyoto.stopcovid19.jp/:splat"
+  status = 301
+  force = true
