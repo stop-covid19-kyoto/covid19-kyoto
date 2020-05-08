@@ -5,7 +5,7 @@
   */
 
 /*!
-  * vue-scrollto v2.17.1
+  * vue-scrollto v2.18.1
   * (c) 2019 Randjelovic Igor
   * @license MIT
   */
@@ -45,7 +45,7 @@
  */
 
 /*!
- * vue-i18n v8.15.4 
+ * vue-i18n v8.17.4 
  * (c) 2020 kazuya kawaguchi
  * Released under the MIT License.
  */
@@ -69,6 +69,8 @@
 /*! ../../../mixins/themeable */
 
 /*! ../../../util/colorUtils */
+
+/*! ../../../util/dateTimeUtils */
 
 /*! ../../../util/helpers */
 
@@ -193,6 +195,8 @@
 /*! ../../util/colors */
 
 /*! ../../util/console */
+
+/*! ../../util/dateTimeUtils */
 
 /*! ../../util/dedupeModelListeners */
 
@@ -1002,7 +1006,7 @@
 
 /*! exports provided: Mutate, default */
 
-/*! exports provided: PARSE_REGEX, PARSE_TIME, DAYS_IN_MONTH, DAYS_IN_MONTH_LEAP, DAYS_IN_MONTH_MIN, DAYS_IN_MONTH_MAX, MONTH_MAX, MONTH_MIN, DAY_MIN, DAYS_IN_WEEK, MINUTES_IN_HOUR, HOURS_IN_DAY, FIRST_HOUR, getStartOfWeek, getEndOfWeek, getStartOfMonth, getEndOfMonth, parseTime, validateTimestamp, parseTimestamp, parseDate, getDayIdentifier, getTimeIdentifier, getTimestampIdentifier, updateRelative, updateMinutes, updateWeekday, updateFormatted, getWeekday, isLeapYear, daysInMonth, copyTimestamp, padNumber, getDate, getTime, nextMinutes, nextDay, prevDay, relativeDays, diffMinutes, findWeekday, getWeekdaySkips, createDayList, createIntervalList, createNativeLocaleFormatter */
+/*! exports provided: PARSE_REGEX, PARSE_TIME, DAYS_IN_MONTH, DAYS_IN_MONTH_LEAP, DAYS_IN_MONTH_MIN, DAYS_IN_MONTH_MAX, MONTH_MAX, MONTH_MIN, DAY_MIN, DAYS_IN_WEEK, MINUTES_IN_HOUR, HOURS_IN_DAY, FIRST_HOUR, OFFSET_YEAR, OFFSET_MONTH, OFFSET_HOUR, OFFSET_TIME, getStartOfWeek, getEndOfWeek, getStartOfMonth, getEndOfMonth, parseTime, validateTimestamp, parseTimestamp, parseDate, getDayIdentifier, getTimeIdentifier, getTimestampIdentifier, updateRelative, updateMinutes, updateWeekday, updateFormatted, getWeekday, daysInMonth, copyTimestamp, padNumber, getDate, getTime, nextMinutes, nextDay, prevDay, relativeDays, diffMinutes, findWeekday, getWeekdaySkips, createDayList, createIntervalList, createNativeLocaleFormatter */
 
 /*! exports provided: Presets */
 
@@ -1242,6 +1246,8 @@
 
 /*! exports provided: stack */
 
+/*! exports provided: weekNumber, isLeapYear */
+
 /*! no static exports found */
 
 /*! vue */
@@ -1440,6 +1446,10 @@
 
 /*!***********************************!*\
   !*** ./src/services/goto/util.ts ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/util/dateTimeUtils.ts ***!
   \***********************************/
 
 /*!************************************!*\
