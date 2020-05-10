@@ -46,6 +46,7 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v2
       with:
+        labels: auto_merge, deploy-ready
         token: ${{ secrets.GITHUB_TOKEN }}
         title: ${{ format('Update json data {0}', github.event.head_commit.timestamp) }}
         branch-suffix: 'short-commit-hash'
