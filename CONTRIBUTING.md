@@ -29,7 +29,7 @@
 [#24](https://github.com/stop-covid19-kyoto/covid19-kyoto/issues/24) の Issue に、掲載名、リンク先（あれば）、役割をコメントください。
 
 ## 開発に関する情報
-* 開発サイト https://dev-stop-covid19-kyoto.netlify.com/
-* 本番サイト https://stop-covid19-kyoto.netlify.com/ もしくは https://kyoto.stopcovid19.jp
+* 開発サイト https://dev-stop-covid19-kyoto.netlify.app/
+* 本番サイト https://stop-covid19-kyoto.netlify.app/ もしくは https://kyoto.stopcovid19.jp
 
 本 ドキュメント の更新も大歓迎です！
