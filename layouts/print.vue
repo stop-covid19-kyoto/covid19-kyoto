@@ -32,7 +32,7 @@
                 {{ $t('※最新の情報はWebページをご覧ください') }}
               </p>
               <p class="PrintMeta-Link">
-                https://stop-covid19-kyoto.netlify.com/
+                https://kyoto.stopcovid19.jp/
               </p>
             </v-card>
           </v-card>
@@ -49,11 +49,11 @@ import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue'
 
 export default Vue.extend({
   components: {
-    ScaleLoader
+    ScaleLoader,
   },
   data() {
     return {
-      loading: true
+      loading: true,
     }
   },
   mounted() {
@@ -66,7 +66,7 @@ export default Vue.extend({
   methods: {
     print() {
       window.print()
-    }
+    },
   },
   head(): MetaInfo {
     return {
@@ -74,17 +74,17 @@ export default Vue.extend({
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
+          content: 'noindex',
+        },
       ],
       link: [
         {
           rel: 'canonical',
-          href: `https://stop-covid19-kyoto.netlify.com${this.$route.path}`
-        }
-      ]
+          href: `https://kyoto.stopcovid19.jp${this.$route.path}`,
+        },
+      ],
     }
-  }
+  },
 })
 </script>
 <style lang="scss">
