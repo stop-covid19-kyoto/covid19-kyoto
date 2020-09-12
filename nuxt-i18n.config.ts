@@ -1,13 +1,45 @@
-export default {
-  strategy: 'prefix_except_default',
-  detectBrowserLanguage: {
-    useCookie: true,
-    cookieKey: 'i18n_redirected'
+import type { NuxtVueI18n } from 'nuxt-i18n'
+
+const dateTimeFormatsCommon = {
+  dateTime: {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: false,
   },
+  date: {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  },
+  dateWithoutYear: {
+    month: 'long',
+    day: 'numeric',
+  },
+  dateWithDayOfWeek: {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+  },
+}
+
+const options: NuxtVueI18n.Options.AllOptionsInterface = {
+  strategy: 'prefix_except_default',
+  detectBrowserLanguage: false,
   defaultLocale: 'ja',
   vueI18n: {
     fallbackLocale: 'ja',
-    formatFallbackMessages: true
+    dateTimeFormats: {
+      ja: dateTimeFormatsCommon,
+      en: dateTimeFormatsCommon,
+      'zh-cn': dateTimeFormatsCommon,
+      'zh-tw': dateTimeFormatsCommon,
+      ko: dateTimeFormatsCommon,
+      'ja-basic': dateTimeFormatsCommon,
+    },
+    formatFallbackMessages: true,
   },
   // vueI18nLoader: true,
   lazy: true,
@@ -18,35 +50,35 @@ export default {
       name: '日本語',
       iso: 'ja-JP',
       file: 'ja.json',
-      description: 'Japanese'
+      description: 'Japanese',
     } /*,
     {
       code: 'en',
       name: 'English',
       iso: 'en-US',
       file: 'en.json',
-      description: 'English'
+      description: 'English',
     },
     {
       code: 'zh-cn',
       name: '简体中文',
       iso: 'zh-CN',
       file: 'zh_CN.json',
-      description: 'Simplified Chinese'
+      description: 'Simplified Chinese',
     },
     {
       code: 'zh-tw',
       name: '繁體中文',
       iso: 'zh-TW',
       file: 'zh_TW.json',
-      description: 'Traditional Chinese'
+      description: 'Traditional Chinese',
     },
     {
       code: 'ko',
       name: '한국어',
       iso: 'ko-KR',
       file: 'ko.json',
-      description: 'Korean'
+      description: 'Korean',
     },
     // #1126, #872 (comment)
     // ポルトガル語は訳が揃っていないため非表示
@@ -62,7 +94,10 @@ export default {
       name: 'やさしい にほんご',
       iso: 'ja-JP',
       file: 'ja-Hira.json',
-      description: 'Easy Japanese'
-    } */
-  ]
+      description: 'Easy Japanese',
+    } */,
+  ],
+  seo: false,
 }
+
+export default options

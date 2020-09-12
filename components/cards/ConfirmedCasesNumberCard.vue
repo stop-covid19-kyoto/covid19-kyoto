@@ -1,14 +1,49 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
-    <time-bar-chart
-      :title="$t('陽性患者数')"
-      :title-id="'number-of-confirmed-cases'"
-      :chart-id="'time-bar-chart-patients'"
-      :chart-data="patientsGraph"
-      :date="patientsSummary.last_update"
-      :unit="$t('人')"
-      :url="'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#F'"
-    />
+    <client-only>
+      <time-bar-chart
+        :title="$t('陽性者数')"
+        :title-id="'number-of-confirmed-cases'"
+        :chart-id="'time-bar-chart-patients'"
+        :chart-data="patientsGraph"
+        :date="patientsSummary.last_update"
+        :unit="$t('人')"
+        :by-date="true"
+        :url="'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#F'"
+      >
+        <!--<template v-slot:description>
+          <nuxt-link
+            :to="`${
+              $i18n.locale !== 'ja' ? $i18n.locale : ''
+            }/cards/positive-number-by-developed-date`"
+            class="Description-Link"
+          >
+            {{ $t('発症日別による陽性者数の推移はこちら') }}
+          </nuxt-link>
+        </template>
+        <template v-slot:additionalDescription>
+          <div class="Description-ExternalLink">
+            <external-link
+              url="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/todokedehcyouseisya.html"
+            >
+              {{ $t('届出保健所別の内訳') }}
+            </external-link>
+          </div>
+          <span>{{ $t('（注）') }}</span>
+          <ul>
+            <li>
+              {{ $t('保健所から発生届が提出された日を基準とする') }}
+            </li>
+            <li>
+              {{ $t('医療機関等が行った検査も含む') }}
+            </li>
+            <li>
+              {{ $t('チャーター機帰国者、クルーズ船乗客等は含まれていない') }}
+            </li>
+          </ul>
+        </template>-->
+      </time-bar-chart>
+    </client-only>
   </v-col>
 </template>
 
@@ -16,20 +51,31 @@
 import patientsSummary from '@/data/patients_summary.json'
 import formatGraph from '@/utils/formatGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
+// import ExternalLink from '@/components/ExternalLink.vue'
 
 export default {
   components: {
-    TimeBarChart
+    TimeBarChart,
+    // ExternalLink,
   },
   data() {
     // 感染者数グラフ
     const patientsGraph = formatGraph(patientsSummary.data)
 
-    const data = {
+    return {
       patientsSummary,
-      patientsGraph
+      patientsGraph,
     }
-    return data
-  }
+  },
 }
 </script>
+
+<style lang="scss" scoped>
+.Description-Link {
+  text-decoration: none;
+  @include button-text('sm');
+}
+.Description-ExternalLink {
+  margin-bottom: 10px;
+}
+</style>

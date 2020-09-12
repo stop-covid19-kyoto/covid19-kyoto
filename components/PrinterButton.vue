@@ -9,8 +9,8 @@
       @mouseleave="mouseleave"
     >
       <div class="PrinterButton-PrinterIcon">
-        <PrinterWhiteIcon v-if="hover" aria-hidden="true" />
-        <PrinterIcon v-else aria-hidden="true" />
+        <printer-white-icon v-if="hover" aria-hidden="true" />
+        <printer-icon v-else aria-hidden="true" />
       </div>
       <span class="PrinterButton-Text">
         {{ $t('print') }}
@@ -26,21 +26,21 @@ import PrinterWhiteIcon from '@/static/printer-white.svg'
 export default {
   components: {
     PrinterIcon,
-    PrinterWhiteIcon
+    PrinterWhiteIcon,
   },
   props: {
     wrapperClass: {
       type: String,
-      default: ''
+      default: '',
     },
     to: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      hover: this.hover
+      hover: this.hover,
     }
   },
   methods: {
@@ -49,8 +49,8 @@ export default {
     },
     mouseleave() {
       this.hover = false
-    }
-  }
+    },
+  },
 }
 </script>
 

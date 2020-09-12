@@ -20,17 +20,27 @@ jobs:
         with:
           node-version: '10.x'
 
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
       - name: Cache dependencies
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
-          path: ~/.cache/yarn
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
 
       - run: yarn install --frozen-lockfile
       - run: yarn run test
-      - run: yarn run generate:deploy --fail-on-page-error
+      - name: generate
+        run: |
+          echo "GOOGLE_ANALYTICS_ID=${GOOGLE_ANALYTICS_ID}" >> .env.production
+          cat .env.production
+          yarn run generate:deploy --fail-on-page-error
+        env:
+          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
 
       - name: Temporarily disable "include administrators" branch protection
         uses: benjefferies/branch-protection-bot@master
@@ -54,6 +64,7 @@ jobs:
           owner: stop-covid19-kyoto
           repo: covid19-kyoto
           branch: production
+
       - name: Create GitHub release
         uses: rymndhng/release-on-push-action@master
         continue-on-error: true
