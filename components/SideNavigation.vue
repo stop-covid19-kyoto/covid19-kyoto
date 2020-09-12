@@ -96,7 +96,7 @@
               <img src="/github.png" alt="GitHub" />
             </picture>
           </a>
-          <a
+          <!--<a
             href="https://www.youtube.com/user/tokyo/videos"
             target="_blank"
             rel="noopener noreferrer"
@@ -106,7 +106,7 @@
               <source srcset="/youtube.webp" type="image/webp" />
               <img src="/youtube.png" alt="YouTube" />
             </picture>
-          </a>
+          </a>-->
         </div>
         <small class="SideNavigation-Copyright">
           <!--{{ $t('このサイトの内容物は') }}
@@ -180,7 +180,7 @@ export default Vue.extend({
         {
           icon: 'CovidIcon',
           title: this.$t('感染予防と相談窓口'),
-          link: 'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html'
+          link: 'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html',
         },
         {
           icon: 'ParentIcon',
@@ -190,7 +190,7 @@ export default Vue.extend({
         {
           icon: 'mdi-account-multiple',
           title: this.$t('京都府民の皆様へ'),
-          link: 'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#A'
+          link: 'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#A',
         },
         {
           icon: 'mdi-domain',
@@ -233,7 +233,7 @@ export default Vue.extend({
         }, */
         {
           title: this.$t('京都府公式ホームページ'),
-          link: 'https://www.pref.kyoto.jp/'
+          link: 'https://www.pref.kyoto.jp/',
         },
       ]
     },
