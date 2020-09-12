@@ -22,8 +22,7 @@
           <tr v-for="item in items" :key="item.text">
             <th class="text-start" scope="row">{{ item['公表日'] }}</th>
             <td class="text-start">{{ item['居住地'] }}</td>
-            <td class="text-start">{{ item['年代'] }}</td>
-            <td class="text-start">{{ item['性別'] }}</td>
+            <td class="text-start">{{ item['年代と性別など'] }}</td>
             <td class="text-center">{{ item['退院'] }}</td>
           </tr>
         </tbody>
