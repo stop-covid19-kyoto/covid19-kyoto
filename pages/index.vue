@@ -13,6 +13,7 @@
       </div>
     </div>
     <whats-new class="mb-4" :items="newsItems" />
+    <static-info :text="contactInfo.text" :url="contactInfo.url" />
     <v-row class="DataBlock">
       <confirmed-cases-details-card />
       <confirmed-cases-number-card />
@@ -81,13 +82,15 @@
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
-// ニュースはまだ今のところないのでコメントアウト
-// import WhatsNew from '@/components/WhatsNew.vue'
+
+import WhatsNew from '@/components/WhatsNew.vue'
 import lastUpdate from '@/data/last_update.json'
 // import formatGraph from '@/utils/formatGraph'
 // import formatTable from '@/utils/formatTable'
-// ニュースはまだ今のところないのでコメントアウト
-// import News from '@/data/news.json'
+
+import StaticInfo from '@/components/StaticInfo.vue'
+
+import News from '@/data/news.json'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 // import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
@@ -105,9 +108,9 @@ import ChiyodaVisitorsCard from '@/components/cards/ChiyodaVisitorsCard.vue' */
 export default Vue.extend({
   components: {
     PageHeader,
-    /* WhatsNew,
+    WhatsNew,
     StaticInfo,
-    MapCard, */
+    // MapCard,
     ConfirmedCasesDetailsCard,
     // TestedCasesDetailsCard,
     ConfirmedCasesNumberCard,
@@ -119,29 +122,34 @@ export default Vue.extend({
     MetroCard,
     AgencyCard,
     ShinjukuVisitorsCard,
-    ChiyodaVisitorsCard */
+    ChiyodaVisitorsCard */,
   },
   data() {
     const data = {
       lastUpdate,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
-        title: this.$t('京都府内の最新感染動向')
-      } //,
-      // newsItems: News.newsItems
+        title: this.$t('京都府内の最新感染動向'),
+      },
+      newsItems: News.newsItems,
+      contactInfo: {
+        url: 'http://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#C',
+        text:
+          '自分や家族の症状に不安や心配があれば、まずは電話相談等をご利用ください（帰国者・接触者相談センター）',
+      },
     }
     return data
   },
   computed: {
     updatedAt() {
       return convertDatetimeToISO8601Format(this.$data.lastUpdate.last_update)
-    }
+    },
   },
   head(): MetaInfo {
     return {
-      title: this.$t('京都府内の最新感染動向') as string
+      title: this.$t('京都府内の最新感染動向') as string,
     }
-  }
+  },
 })
 </script>
 

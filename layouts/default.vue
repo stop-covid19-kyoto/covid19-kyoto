@@ -2,7 +2,7 @@
   <v-app class="app">
     <v-overlay v-if="loading" color="#F8F9FA" opacity="1" z-index="9999">
       <div class="loader">
-        <img src="/logo.svg" alt="京都府" />
+        <img src="/hlogo.gif" alt="京都府" />
         <scale-loader color="#A51E7C" />
       </div>
     </v-overlay>
@@ -50,7 +50,7 @@ export default Vue.extend({
     DevelopmentModeMark,
     ScaleLoader,
     SideNavigation,
-    NoScript
+    NoScript,
   },
   data(): LocalData {
     let hasNavigation = true
@@ -66,7 +66,7 @@ export default Vue.extend({
     return {
       hasNavigation,
       loading,
-      isOpenNavigation: false
+      isOpenNavigation: false,
     }
   },
   mounted() {
@@ -78,7 +78,7 @@ export default Vue.extend({
     },
     hideNavigation(): void {
       this.isOpenNavigation = false
-    }
+    },
   },
   head(): MetaInfo {
     const { htmlAttrs } = this.$nuxtI18nSeo()
@@ -87,25 +87,25 @@ export default Vue.extend({
       link: [
         {
           rel: 'canonical',
-          href: `https://stop-covid19-kyoto.netlify.com${this.$route.path}`
+          href: `https://kyoto.stopcovid19.jp${this.$route.path}`,
         },
         {
           rel: 'stylesheet',
-          href: 'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css'
-        }
+          href: 'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css',
+        },
       ],
       meta: [
         {
           hid: 'author',
           name: 'author',
-          content: this.$tc('京都府')
+          content: this.$tc('京都府'),
         },
         {
           hid: 'description',
           name: 'description',
           content: this.$tc(
-            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、学生エンジニアが開設したものです。'
-          )
+            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、京都府が開設したものです。'
+          ),
         },
         {
           hid: 'og:site_name',
@@ -115,19 +115,17 @@ export default Vue.extend({
             ' ' +
             this.$t('新型コロナウイルス感染症') +
             ' ' +
-            this.$t('対策サイト') +
-            ' ' +
-            this.$t('(非公式)')
+            this.$t('対策サイト'),
         },
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://stopcovid19.metro.tokyo.lg.jp${this.$route.path}`
+          content: `https://kyoto.stopcovid19.jp${this.$route.path}`,
         },
         {
           hid: 'og:locale',
           property: 'og:locale',
-          content: this.$i18n.locale
+          content: this.$i18n.locale,
         },
         {
           hid: 'og:title',
@@ -137,21 +135,19 @@ export default Vue.extend({
             ' ' +
             this.$t('新型コロナウイルス感染症') +
             ' ' +
-            this.$t('対策サイト') +
-            ' ' +
-            this.$t('(非公式)')
+            this.$t('対策サイト'),
         },
         {
           hid: 'og:description',
           property: 'og:description',
           content: this.$tc(
-            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、学生エンジニアが開設したものです。'
-          )
+            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、京都府が開設したものです。'
+          ),
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.$tc('ogp.og:image')
+          content: this.$tc('ogp.og:image'),
         },
         {
           hid: 'apple-mobile-web-app-title',
@@ -161,18 +157,16 @@ export default Vue.extend({
             ' ' +
             this.$t('新型コロナウイルス感染症') +
             ' ' +
-            this.$t('対策サイト') +
-            ' ' +
-            this.$t('(非公式)')
+            this.$t('対策サイト'),
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: this.$tc('ogp.og:image')
-        }
-      ]
+          content: this.$tc('ogp.og:image'),
+        },
+      ],
     }
-  }
+  },
 })
 </script>
 <style lang="scss">
