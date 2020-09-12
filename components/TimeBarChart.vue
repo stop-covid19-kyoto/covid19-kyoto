@@ -37,9 +37,11 @@
         :unit="displayInfo.unit"
       />
     </template>
-    <template v-slot:footer>
-      <open-data-link v-show="url" :url="url" />
-    </template>
+    <!--
+      <template v-slot:footer>
+        <open-data-link v-show="url" :url="url" />
+      </template>
+    -->
   </data-view>
 </template>
 
@@ -51,7 +53,7 @@ import { GraphDataType } from '@/utils/formatGraph'
 import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-import OpenDataLink from '@/components/OpenDataLink.vue'
+// import OpenDataLink from '@/components/OpenDataLink.vue'
 
 import { single as color } from '@/utils/colors'
 
@@ -124,45 +126,49 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   created() {
     this.canvas = process.browser
   },
-  components: { DataView, DataSelector, DataViewBasicInfoPanel, OpenDataLink },
+  components: {
+    DataView,
+    DataSelector,
+    DataViewBasicInfoPanel /** OpenDataLink */,
+  },
   props: {
     title: {
       type: String,
-      default: ''
+      default: '',
     },
     titleId: {
       type: String,
-      default: ''
+      default: '',
     },
     chartId: {
       type: String,
-      default: 'time-bar-chart'
+      default: 'time-bar-chart',
     },
     chartData: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     date: {
       type: String,
-      required: true
+      required: true,
     },
     comment: {
       type: String,
       required: false,
-      default: ''
+      default: '',
     },
     unit: {
       type: String,
-      default: ''
+      default: '',
     },
     url: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   data: () => ({
     dataKind: 'transition',
-    canvas: true
+    canvas: true,
   }),
   computed: {
     displayCumulativeRatio() {
@@ -182,7 +188,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           sText: `${this.$t('実績値')}（${this.$t('前日比')}: ${
             this.displayTransitionRatio
           } ${this.unit}）`,
-          unit: this.unit
+          unit: this.unit,
         }
       }
       return {
@@ -194,39 +200,39 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         )}（${this.$t('前日比')}: ${this.displayCumulativeRatio} ${
           this.unit
         }）`,
-        unit: this.unit
+        unit: this.unit,
       }
     },
     displayData() {
       if (this.dataKind === 'transition') {
         return {
-          labels: this.chartData.map(d => {
+          labels: this.chartData.map((d) => {
             return d.label
           }),
           datasets: [
             {
               label: this.dataKind,
-              data: this.chartData.map(d => {
+              data: this.chartData.map((d) => {
                 return d.transition
               }),
               backgroundColor: color,
-              borderWidth: 0
-            }
-          ]
+              borderWidth: 0,
+            },
+          ],
         }
       }
       return {
-        labels: this.chartData.map(d => d.label),
+        labels: this.chartData.map((d) => d.label),
         datasets: [
           {
             label: this.dataKind,
-            data: this.chartData.map(d => {
+            data: this.chartData.map((d) => {
               return d.cumulative
             }),
             backgroundColor: color,
-            borderWidth: 0
-          }
-        ]
+            borderWidth: 0,
+          },
+        ],
       }
     },
     displayOption() {
@@ -244,13 +250,13 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             },
             title(tooltipItem: any, data: any) {
               return data.labels[tooltipItem[0].index]
-            }
-          }
+            },
+          },
         },
         responsive: true,
         maintainAspectRatio: false,
         legend: {
-          display: false
+          display: false,
         },
         scales: {
           xAxes: [
@@ -258,22 +264,22 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               id: 'day',
               stacked: true,
               gridLines: {
-                display: false
+                display: false,
               },
               ticks: {
                 fontSize: 9,
                 maxTicksLimit: 20,
                 fontColor: '#808080',
-                minRotation: 0
+                minRotation: 0,
               },
               type: 'time',
               time: {
                 displayFormats: {
-                  day: 'D'
+                  day: 'D',
                 },
                 parser: 'M/D',
-                unit: 'day'
-              }
+                unit: 'day',
+              },
             },
             {
               id: 'month',
@@ -282,7 +288,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 drawOnChartArea: false,
                 drawTicks: true,
                 drawBorder: false,
-                tickMarkLength: 10
+                tickMarkLength: 10,
               },
               ticks: {
                 fontSize: 11,
@@ -290,18 +296,18 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 padding: 3,
                 fontStyle: 'bold',
                 gridLines: {
-                  display: true
-                }
+                  display: true,
+                },
               },
               type: 'time',
               time: {
                 unit: 'month',
                 parser: 'M/D',
                 displayFormats: {
-                  month: 'MMM'
-                }
-              }
-            }
+                  month: 'MMM',
+                },
+              },
+            },
           ],
           yAxes: [
             {
@@ -309,17 +315,17 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               stacked: true,
               gridLines: {
                 display: true,
-                color: '#E5E5E5'
+                color: '#E5E5E5',
               },
               ticks: {
                 suggestedMin: 0,
                 maxTicksLimit: 8,
                 fontColor: '#808080',
-                suggestedMax: scaledTicksYAxisMax
-              }
-            }
-          ]
-        }
+                suggestedMax: scaledTicksYAxisMax,
+              },
+            },
+          ],
+        },
       }
       if (this.$route.query.ogp === 'true') {
         Object.assign(options, { animation: { duration: 0 } })
@@ -330,13 +336,13 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       const yAxisMax = 1.2
       const dataKind =
         this.dataKind === 'transition' ? 'transition' : 'cumulative'
-      const values = this.chartData.map(d => d[dataKind])
+      const values = this.chartData.map((d) => d[dataKind])
       return Math.max(...values) * yAxisMax
     },
     tableHeaders() {
       return [
         { text: this.$t('日付'), value: 'text' },
-        { text: this.title, value: '0' }
+        { text: this.title, value: '0' },
       ]
     },
     tableData() {
@@ -346,7 +352,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           { '0': this.displayData.datasets[0].data[i] }
         )
       })
-    }
+    },
   },
   methods: {
     formatDayBeforeRatio(dayBeforeRatio: number): string {
@@ -359,8 +365,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         default:
           return `${dayBeforeRatioLocaleString}`
       }
-    }
-  }
+    },
+  },
 }
 
 export default Vue.extend(options)

@@ -12,7 +12,7 @@
         <nuxt-link :to="localePath('/')" class="SideNavigation-HeaderLink">
           <img
             class="SideNavigation-HeaderLogo"
-            src="/logo.svg"
+            src="/hlogo.gif"
             :alt="$t('京都府')"
             width="110"
           />
@@ -20,7 +20,6 @@
             {{ $t('menu/新型コロナウイルス感染症') }}<br />{{
               $t('menu/対策サイト')
             }}
-            {{ $t('(非公式)') }}
           </div>
         </nuxt-link>
       </h1>
@@ -130,61 +129,277 @@ type Item = {
 export default Vue.extend({
   components: {
     LanguageSelector,
-    MenuList
+    MenuList,
   },
   props: {
     isNaviOpen: {
       type: Boolean,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     items(): Item[] {
       return [
         {
-          icon: 'mdi-chart-timeline-variant',
+          // icon: 'mdi-chart-timeline-variant',
           title: this.$t('京都府内の最新感染動向'),
-          link: this.localePath('/')
+          link: this.localePath('/'),
         },
         {
-          icon: 'CovidIcon',
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('「新しい生活様式」の実践例'),
+          link: 'http://www.pref.kyoto.jp/kikikanri/corona_youshiki.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('個人の方へ'),
+          link: 'http://www.pref.kyoto.jp/koho/corona/kojin.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('事業者の方へ'),
+          link: 'http://www.pref.kyoto.jp/koho/corona/jigyosha.html',
+          divider: true,
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t(
+            '京都府新型コロナウイルス緊急連絡サービス（こことろ）'
+          ),
+          link: 'http://www.pref.kyoto.jp/kikikanri/coronakinkyurenraku.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t(
+            '京都府LINE公式アカウント「京都府-新型コロナ対策パーソナルサポート」'
+          ),
+          link:
+            'http://www.pref.kyoto.jp/gyomusuishin/novelcoronavirus-line.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('京都府公式Twitter'),
+          link: 'https://twitter.com/KyotoPrefPR',
+          divider: true,
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t(
+            '京都府からの注目情報、各種コールセンター問い合わせ先'
+          ),
+          link: 'http://www.pref.kyoto.jp/index.html#tyumokujoho',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('新型コロナウイルス感染症に関連する情報について'),
+          link: 'http://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('新型コロナウイルスに関する支援制度まとめ'),
+          link: 'http://www.pref.kyoto.jp/koho/corona/index.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('新型コロナウイルス感染症対策応援寄附金'),
+          link: 'http://www.pref.kyoto.jp/somucho/news/coronakifukin.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t(
+            '京都府新型コロナウイルス感染症対策本部会議（きょうと危機管理WEB）'
+          ),
+          link: 'http://www.pref.kyoto.jp/kikiweb/information/index.html',
+          divider: true,
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('京都市の情報'),
+          link:
+            'https://www.city.kyoto.lg.jp/hokenfukushi/page/0000266590.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('福知山市の情報'),
+          link: 'https://www.city.fukuchiyama.lg.jp/site/coronavirus/',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('舞鶴市の情報'),
+          link:
+            'https://www.city.maizuru.kyoto.jp/kurashi/category/8-3-8-0-0.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('綾部市の情報'),
+          link:
+            'http://www.city.ayabe.lg.jp/bosai/kurashi/anzen/bosai/singatakoronatyukubo.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('宇治市の情報'),
+          link: 'https://www.city.uji.kyoto.jp/site/corona/',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('宮津市の情報'),
+          link: 'http://www.city.miyazu.kyoto.jp/www/info/detail.jsp?id=4431',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('亀岡市の情報'),
+          link: 'http://www.city.kameoka.kyoto.jp/korona-index.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('城陽市の情報'),
+          link: 'https://www.city.joyo.kyoto.jp/category/10-0-0-0-0.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('向日市の情報'),
+          link:
+            'https://www.city.muko.kyoto.jp/kurashi/soshiki/hurusatosouseisuisinnbu/kikakukouhouka/1/30/osirase/1585896380695.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('城陽市の情報'),
+          link: 'https://www.city.joyo.kyoto.jp/category/10-0-0-0-0.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('長岡京市の情報'),
+          link: 'http://www.city.nagaokakyo.lg.jp/category/14-0-0-0-0.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('八幡市の情報'),
+          link: 'http://www.city.yawata.kyoto.jp/category/4-6-0-0-0.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('京田辺市の情報'),
+          link: 'https://www.kyotanabe.jp/',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('京丹後市の情報'),
+          link: 'https://www.city.kyotango.lg.jp/covid_19/index.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('南丹市の情報'),
+          link:
+            'https://www.city.nantan.kyoto.jp/www/life/113/006/000/index_74314.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('木津川市の情報'),
+          link: 'http://www.city.kizugawa.lg.jp/index.cfm',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('大山崎町の情報'),
+          link:
+            'http://www.town.oyamazaki.kyoto.jp/annai/kenkoka/kenkokakenkozoshinkakari/korona/index.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('久御山町の情報'),
+          link: 'http://www.town.kumiyama.lg.jp/contents_detail.php?frmId=3421',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('井手町の情報'),
+          link: 'http://www.town.ide.kyoto.jp/soshiki/kinkyu2020/index.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('宇治田原町の情報'),
+          link: 'http://www.town.ujitawara.kyoto.jp/0000002634.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('笠置町の情報'),
+          link: 'https://www.town.kasagi.lg.jp/topics_list.php',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('和束町の情報'),
+          link: 'http://www.town.wazuka.lg.jp/index.php',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('精華町の情報'),
+          link: 'https://www.town.seika.kyoto.jp/kinkyu_list/13612.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('南山城村の情報'),
+          link:
+            'http://www.vill.minamiyamashiro.lg.jp/category_list.php?frmCd=11-15-0-0-0',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('京丹波町の情報'),
+          link: 'http://www.town.kyotamba.kyoto.jp/category/8-0-0-0-0.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('井根町の情報'),
+          link: 'http://www.town.ine.kyoto.jp/kinkyu/1583369396903.html',
+        },
+        {
+          // icon: 'mdi-chart-timeline-variant',
+          title: this.$t('与謝野町の情報'),
+          link: 'http://www.town-yosano.jp/wwwg/index.jsp',
+          divider: true,
+        },
+        /**
+        {
+          // icon: 'CovidIcon',
           title: this.$t('感染予防と相談窓口'),
-          link: 'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html'
+          link: 'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html',
         },
         {
-          icon: 'ParentIcon',
+          // icon: 'ParentIcon',
           title: this.$t('お子様をお持ちの皆様へ'),
-          link: this.localePath('/parent')
+          link: this.localePath('/parent'),
         },
         {
-          icon: 'mdi-account-multiple',
+          // icon: 'mdi-account-multiple',
           title: this.$t('京都府民の皆様へ'),
-          link: 'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#A'
+          link: 'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#A',
         },
         {
-          icon: 'mdi-domain',
+          // icon: 'mdi-domain',
           title: this.$t('企業の皆様・はたらく皆様へ'),
           link: this.localePath('/worker'),
-          divider: true
+          divider: true,
         },
+        */
         // 知事からのメッセージが京都府では確認できていないのでコメントアウト
         // {
         //  title: this.$t('知事からのメッセージ'),
         //  link: 'https://www.youtube.com/watch?v=Mm-xFX7Csf8'
         // },
         {
+          title: this.$t('知事からのメッセージ'),
+          link: 'http://www.pref.kyoto.jp/kentai/corona/chijimessage.html',
+        },
+        {
           title: this.$t('当サイトについて'),
-          link: this.localePath('/about')
+          link: this.localePath('/about'),
         },
         {
           title: this.$t('京都府公式ホームページ'),
-          link: 'https://www.pref.kyoto.jp/'
-        }
+          link: 'https://www.pref.kyoto.jp/',
+        },
       ]
-    }
+    },
   },
   watch: {
-    $route: 'handleChageRoute'
+    $route: 'handleChageRoute',
   },
   methods: {
     handleChageRoute() {
@@ -195,8 +410,8 @@ export default Vue.extend({
           $Side.focus()
         }
       })
-    }
-  }
+    },
+  },
 })
 </script>
 

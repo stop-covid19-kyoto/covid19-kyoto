@@ -13,9 +13,9 @@ const config: Configuration = {
    */
   head: {
     htmlAttrs: {
-      prefix: 'og: http://ogp.me/ns#'
+      prefix: 'og: http://ogp.me/ns#',
     },
-    titleTemplate: '%s | 京都府 新型コロナウイルス感染症対策サイト(非公式)',
+    titleTemplate: '%s | 京都府 新型コロナウイルス感染症対策サイト',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -23,42 +23,42 @@ const config: Configuration = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://stop-covid19-kyoto.netlify.com'
+        content: 'https://kyoto.stopcovid19.jp',
       },
       {
         hid: 'twitter:card',
         name: 'twitter:card',
-        content: 'summary_large_image'
+        content: 'summary_large_image',
       },
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@covid19_kyoto'
+        content: '@covid19_kyoto',
       },
       {
         hid: 'twitter:creator',
         name: 'twitter:creator',
-        content: '@covid19_kyoto'
+        content: '@covid19_kyoto',
       },
       {
         hid: 'fb:app_id',
         property: 'fb:app_id',
-        content: '2879625188795443'
+        content: '2879625188795443',
       },
       {
         hid: 'note:card',
         property: 'note:card',
-        content: 'summary_large_image'
-      }
+        content: 'summary_large_image',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'apple-touch-icon', href: '/apple-touch-icon-precomposed.png' },
       {
         rel: 'stylesheet',
-        href: 'https://use.fontawesome.com/releases/v5.6.1/css/all.css'
-      }
-    ]
+        href: 'https://use.fontawesome.com/releases/v5.6.1/css/all.css',
+      },
+    ],
   },
   /*
    ** Customize the progress-bar color
@@ -74,16 +74,16 @@ const config: Configuration = {
   plugins: [
     {
       src: '@/plugins/vue-chart.ts',
-      ssr: true
+      ssr: true,
     },
     {
       src: '@/plugins/axe',
-      ssr: true
+      ssr: true,
     },
     {
       src: '@/plugins/vuetify.ts',
-      ssr: true
-    }
+      ssr: true,
+    },
   ],
   /*
    ** Nuxt.js dev-modules
@@ -92,7 +92,7 @@ const config: Configuration = {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
     '@nuxt/typescript-build',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
   ],
   /*
    ** Nuxt.js modules
@@ -104,7 +104,7 @@ const config: Configuration = {
     ['nuxt-i18n', i18n],
     'nuxt-svg-loader',
     'nuxt-purgecss',
-    ['vue-scrollto/nuxt', { duration: 1000, offset: -72 }]
+    ['vue-scrollto/nuxt', { duration: 1000, offset: -72 }],
   ],
   /*
    ** vuetify module configuration
@@ -113,17 +113,17 @@ const config: Configuration = {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     defaultAssets: {
-      icons: false
-    }
+      icons: false,
+    },
   },
   googleAnalytics: {
-    id: 'UA-161807316-1'
+    id: 'UA-161807316-1',
   },
   build: {
     plugins: [
       new webpack.ProvidePlugin({
-        mapboxgl: 'mapbox-gl'
-      })
+        mapboxgl: 'mapbox-gl',
+      }),
     ],
     postcss: {
       plugins: [
@@ -134,28 +134,28 @@ const config: Configuration = {
             './layouts/**/*.vue',
             './components/**/*.vue',
             './node_modules/vuetify/dist/vuetify.js',
-            './node_modules/vue-spinner/src/ScaleLoader.vue'
+            './node_modules/vue-spinner/src/ScaleLoader.vue',
           ],
           whitelist: ['html', 'body', 'nuxt-progress', 'DataCard'],
-          whitelistPatterns: [/(col|row)/]
-        })
-      ]
+          whitelistPatterns: [/(col|row)/],
+        }),
+      ],
     },
     extend(config: WebpackConfiguration, _) {
       // default externals option is undefined
       config.externals = [{ moment: 'moment' }]
-    }
+    },
     // https://ja.nuxtjs.org/api/configuration-build/#hardsource
     // hardSource: process.env.NODE_ENV === 'development'
   },
   manifest: {
-    name: '京都府 新型コロナウイルス感染症対策サイト(非公式)',
+    name: '京都府 新型コロナウイルス感染症対策サイト',
     theme_color: '#85005d',
     background_color: '#ffffff',
     display: 'standalone',
     Scope: '/',
     start_url: '/',
-    splash_pages: null
+    splash_pages: null,
   },
   generate: {
     fallback: true,
@@ -173,12 +173,12 @@ const config: Configuration = {
         '/cards/predicted-number-of-toei-subway-passengers',
         '/cards/agency',
         '/cards/shinjuku-visitors',
-        '/cards/chiyoda-visitors'
+        '/cards/chiyoda-visitors',
       ]
 
       const routes: string[] = []
-      locales.forEach(locale => {
-        pages.forEach(page => {
+      locales.forEach((locale) => {
+        pages.forEach((page) => {
           if (locale === 'ja') {
             routes.push(page)
             return
@@ -188,16 +188,16 @@ const config: Configuration = {
         })
       })
       return routes
-    }
+    },
   },
   // /*
   // ** hot read configuration for docker
   // */
   watchers: {
     webpack: {
-      poll: true
-    }
-  }
+      poll: true,
+    },
+  },
 }
 
 export default config
