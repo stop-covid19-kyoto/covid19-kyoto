@@ -173,7 +173,7 @@ const config: NuxtConfig = {
   },
   generate: {
     fallback: true,
-    routes() {
+    /* routes() {
       const locales = ['en', 'zh-cn', 'zh-tw', 'ko', 'ja-basic']
       const pages = [
         '/cards/details-of-confirmed-cases',
@@ -201,7 +201,7 @@ const config: NuxtConfig = {
         .map((locale) => pages.map((page) => `/${locale}${page}`))
         .reduce((a, b) => [...a, ...b], [])
       return [...pages, ...localizedPages]
-    },
+    }, */
   },
   // /*
   // ** hot read configuration for docker
