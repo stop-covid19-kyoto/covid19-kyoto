@@ -122,7 +122,7 @@ export default {
         ? `${url}/ogp/${this.$route.params.card}.png?t=${timestamp}`
         : `${url}/ogp/${this.$i18n.locale}/${this.$route.params.card}.png?t=${timestamp}` */
     const description = `${this.$t(
-      '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、学生エンジニアが開設したものです。'
+      '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、京都府が開設したものです。'
     )}`
     const defaultTitle = `${this.$t('京都府')} ${this.$t(
       '新型コロナウイルス感染症'
