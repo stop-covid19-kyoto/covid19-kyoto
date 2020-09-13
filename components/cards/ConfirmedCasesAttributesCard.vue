@@ -54,19 +54,17 @@ export default {
         header.value === '退院' ? this.$t('退院※') : this.$t(header.value)
     }
     // 陽性患者の属性 中身の翻訳
-    /* for (const row of patientsTable.datasets) {
+    for (const row of patientsTable.datasets) {
       row['居住地'] = this.getTranslatedWording(row['居住地'])
-      row['性別'] = this.getTranslatedWording(row['性別'])
-      row['退院'] = this.getTranslatedWording(row['退院'])
+      row['年代と性別など'] = this.getTranslatedWording(row['年代と性別など'])
 
-      if (row['年代'].substr(-1, 1) === '代') {
+      /* if (row['年代'].substr(-1, 1) === '代') {
         const age = row['年代'].substring(0, 2)
         row['年代'] = this.$t('{age}代', { age })
       } else {
         row['年代'] = this.$t(row['年代'])
-      }
-    } */
-
+      } */
+    }
 
     return {
       patients,
