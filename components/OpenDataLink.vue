@@ -1,7 +1,12 @@
 <template>
   <p>
     {{ $t('出典:') }}
-    <a class="OpenDataLink" :href="url" target="_blank" rel="noopener noreferrer">
+    <a
+      class="OpenDataLink"
+      :href="url"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {{ $t('京都府公式HP') }}
       <v-icon
         class="ExternalLinkIcon"

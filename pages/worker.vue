@@ -40,7 +40,7 @@
         <external-link
           url="http://acsa.jp/htm/news/2020022803.htm"
           :icon-size="24"
-        >{{ $t('ベビーシッター派遣事業の取扱いについて') }}
+          >{{ $t('ベビーシッター派遣事業の取扱いについて') }}
         </external-link>
       </h3>
       <p>
@@ -56,7 +56,9 @@
         <external-link
           url="https://www.mhlw.go.jp/stf/newpage_10037.html"
           :icon-size="24"
-        >{{ $t('時間外労働等改善助成金の特例的なコースの申請受付開始について') }}
+          >{{
+            $t('時間外労働等改善助成金の特例的なコースの申請受付開始について')
+          }}
         </external-link>
       </h3>
       <p>
