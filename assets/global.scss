@@ -1,5 +1,6 @@
 :root {
   box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 body {
@@ -22,4 +23,19 @@ img {
 
 *:focus {
   outline: dotted $gray-3 1px;
+}
+
+.visually-hidden {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 4px !important;
+  height: 4px !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  visibility: visible !important;
 }
