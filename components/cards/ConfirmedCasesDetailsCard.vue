@@ -32,11 +32,11 @@
           :aria-label="$t('検査陽性者の状況')"
           v-bind="confirmedCases"
         />
-        <template v-slot:footer>
+        <!--<template v-slot:footer>
           <open-data-link
             url="https://www.pref.kyoto.jp/kentai/corona/pcrkensa.html"
           />
-        </template>
+        </template>-->
       </data-view>
     </client-only>
   </v-col>
@@ -47,13 +47,13 @@ import mainSummary from '@/data/main_summary.json'
 import formatConfirmedCases from '@/utils/formatConfirmedCases'
 import DataView from '@/components/DataView.vue'
 import ConfirmedCasesDetailsTable from '@/components/ConfirmedCasesDetailsTable.vue'
-import OpenDataLink from '@/components/OpenDataLink.vue'
+// import OpenDataLink from '@/components/OpenDataLink.vue'
 
 export default {
   components: {
     DataView,
     ConfirmedCasesDetailsTable,
-    OpenDataLink,
+    // OpenDataLink,
   },
   data() {
     // 検査陽性者の状況

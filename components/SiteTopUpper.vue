@@ -22,6 +22,7 @@
       :text="$t('自分や家族の症状に不安や心配があればまずは電話相談をどうぞ')"
       :btn-text="$t('相談の手順を見る')"
     />-->
+    <static-info class="mb-4" :text="contactInfo.text" :url="contactInfo.url" />
   </div>
 </template>
 
@@ -30,8 +31,8 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
-/* import StaticInfo from '@/components/StaticInfo.vue'
-import TokyoAlertCard from '@/components/TokyoAlertCard.vue'
+import StaticInfo from '@/components/StaticInfo.vue'
+/* import TokyoAlertCard from '@/components/TokyoAlertCard.vue'
 import MonitoringCommentCard from '@/components/MonitoringCommentCard.vue'
 import Data from '@/data/data.json' */
 import lastUpdate from '@/data/last_update.json'
@@ -43,8 +44,8 @@ export default Vue.extend({
   components: {
     PageHeader,
     WhatsNew,
-    /* StaticInfo,
-    TokyoAlertCard,
+    StaticInfo,
+    /* TokyoAlertCard,
     MonitoringCommentCard, */
   },
   data() {
@@ -58,6 +59,11 @@ export default Vue.extend({
       },
       lastUpdate: lastUpdate.last_update,
       newsItems: News.newsItems,
+      contactInfo: {
+        url: 'http://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#C',
+        text:
+          '自分や家族の症状に不安や心配があれば、まずは電話相談等をご利用ください（帰国者・接触者相談センター）',
+      },
     }
   },
   computed: {

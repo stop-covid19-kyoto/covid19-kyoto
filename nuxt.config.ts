@@ -1,5 +1,6 @@
 import { NuxtConfig } from '@nuxt/types'
 import i18n from './nuxt-i18n.config'
+const webpack = require('webpack')
 const purgecss = require('@fullhuman/postcss-purgecss')
 const autoprefixer = require('autoprefixer')
 const environment = process.env.NODE_ENV || 'development'
@@ -21,7 +22,7 @@ const config: NuxtConfig = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://kyoto.stopcovid19.jp'
+        content: 'https://kyoto.stopcovid19.jp',
       },
       {
         hid: 'twitter:card',
@@ -31,12 +32,12 @@ const config: NuxtConfig = {
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@covid19_kyoto'
+        content: '@covid19_kyoto',
       },
       {
         hid: 'twitter:creator',
         name: 'twitter:creator',
-        content: '@covid19_kyoto'
+        content: '@covid19_kyoto',
       },
       {
         hid: 'fb:app_id',
@@ -52,6 +53,10 @@ const config: NuxtConfig = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'apple-touch-icon', href: '/apple-touch-icon-precomposed.png' },
+      {
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.6.1/css/all.css',
+      },
     ],
   },
   /*
@@ -129,6 +134,11 @@ const config: NuxtConfig = {
     }
   ], */
   build: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        mapboxgl: 'mapbox-gl',
+      }),
+    ],
     postcss: {
       plugins: [
         autoprefixer({ grid: 'autoplace' }),
@@ -153,7 +163,7 @@ const config: NuxtConfig = {
     // hardSource: process.env.NODE_ENV === 'development'
   },
   manifest: {
-    name: '京都府 新型コロナウイルス感染症対策サイト(非公式)',
+    name: '京都府 新型コロナウイルス感染症対策サイト',
     theme_color: '#85005d',
     background_color: '#ffffff',
     display: 'standalone',

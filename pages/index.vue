@@ -37,7 +37,7 @@ export default Vue.extend({
     SiteTopUpper,
     // CardsMonitoring,
     // CardsReference,
-    CardsKyoto
+    CardsKyoto,
   },
   data() {
     return {

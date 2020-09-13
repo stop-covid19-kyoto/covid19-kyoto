@@ -6,65 +6,9 @@
     <static-card>
       {{
         $t(
-          '当サイトは京都府内の新型コロナウイルス感染症（COVID-19）に関する最新情報を提供するために作成されました。'
+          '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、京都府が開設したものです。'
         )
       }}<br />
-      {{
-        $t(
-          '運営・開発は以下の学生エンジニアによってボランティアで行われています。'
-        )
-      }}<br />
-      <br />
-      ・藤原出帆 (
-      <a href="//twitter.com/fujiwaraizuho" target="_blank">
-        {{ $t('@fujiwaraizuho') }}
-      </a>
-      )
-      <br />
-      ・Genbu (
-      <a href="//twitter.com/genbugraphy" target="_blank">
-        {{ $t('@genbugraphy') }}
-      </a>
-      )
-      <br />
-      ・0505Keitan (
-      <a href="//twitter.com/0505Keitan" target="_blank">
-        {{ $t('@0505Keitan') }}
-      </a>
-      )
-      <br />
-      ・y-chan (
-      <a href="//twitter.com/Xperia_Build_Y" target="_blank">
-        {{ $t('@Xperia_Build_Y') }}
-      </a>
-      )
-      <br />
-      ・laminne (
-      <a href="//resume.id/lamin" target="_blank">
-        {{ $t('Resume.id') }}
-      </a>
-      )
-      <br />
-      ・はす (
-      <a href="//twitter.com/83_hasu" target="_blank">
-        {{ $t('@83_hasu') }}
-      </a>
-      )
-      <br />
-      ・f0reach
-      <br />
-      ・maco
-      <br /><br />
-      複製・改変が許されたオープンソースライセンスで公開されている、
-      <a href="//stopcovid19.metro.tokyo.lg.jp/" target="_blank">
-        {{ $t('東京都公式新型コロナウイルス対策サイト') }}
-      </a>
-      の
-      <a href="//github.com/tokyo-metropolitan-gov/covid19" target="_blank">
-        {{ $t('仕組み') }}
-      </a>
-      を利用しています
-      <br />
       <br />
       {{
         $t(
@@ -223,7 +167,7 @@
       <p>
         {{
           $t(
-            '当サイトに掲載されている情報の正確性については万全を期していますが、京都府やサイト運営者は利用者が当サイトの情報を用いて行う一切の行為について責任を負うものではありません。'
+            '当サイトに掲載されている情報の正確性については万全を期していますが、京都府が当サイトの情報を用いて行う一切の行為について責任を負うものではありません。'
           )
         }}
       </p>
@@ -246,14 +190,14 @@
       <h3>{{ $t('データについて') }}</h3>
       <i18n
         tag="p"
-        path="本サイトで使用しているデータは、{officialWebsite}にて誰でも閲覧可能です。（データは順次追加予定です）"
+        path="本サイトで公表している元データは、京都府ホームページ「{officialWebsite}」で公表しています。"
       >
         <template v-slot:officialWebsite>
           <external-link
             url="https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html"
             :icon-size="16"
           >
-            {{ $t('京都府公式サイト') }}
+            {{ $t('新型コロナウイルス感染症に関連する情報について') }}
           </external-link>
         </template>
       </i18n>
@@ -276,16 +220,6 @@
             </external-link>
           </template>
         </i18n>
-      </p>
-    </static-card>
-    <static-card>
-      <h3>{{ $t('お問い合わせ先') }}</h3>
-      <p>{{ $t('京都府 新型コロナウイルス感染症 対策サイト 運営組織') }}</p>
-      <p>
-        {{ $t('メール') }}:
-        <a href="mail:stop.covid19.kyoto.contact@gmail.com">
-          stop.covid19.kyoto.contact@gmail.com
-        </a>
       </p>
     </static-card>
   </div>

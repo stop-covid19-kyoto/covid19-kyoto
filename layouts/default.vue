@@ -2,7 +2,7 @@
   <v-app class="app">
     <v-overlay :value="loading" color="#F8F9FA" opacity="1" z-index="9999">
       <div class="loader">
-        <img src="/logo.svg" alt="京都府" />
+        <img src="/hlogo.gif" alt="京都府" />
         <scale-loader color="#A51E7C" />
       </div>
     </v-overlay>
@@ -117,11 +117,15 @@ export default Vue.extend({
           rel: 'canonical',
           href: `https://kyoto.stopcovid19.jp${this.$route.path}`,
         },
+        {
+          rel: 'stylesheet',
+          href: 'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css',
+        },
         ...linksAlternate,
       ],
       // Disable prettier for readability purposes
       // eslint-disable-next-line prettier/prettier
-      titleTemplate: `%s | ${this.$t('京都府')} ${this.$t('新型コロナウイルス感染症')}${this.$t('対策サイト')} ${this.$t('(非公式)')}`,
+      titleTemplate: `%s | ${this.$t('京都府')} ${this.$t('新型コロナウイルス感染症')}${this.$t('対策サイト')}`,
       meta: [
         {
           hid: 'author',
@@ -134,7 +138,7 @@ export default Vue.extend({
           content: `${this.$t('{date} 更新', {
             date: convertDateToSimpleFormat(lastUpdate.last_update),
           })}: ${this.$tc(
-            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、学生エンジニアが開設したものです。'
+            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、京都府が開設したものです。'
           )}`,
         },
         {
@@ -142,12 +146,12 @@ export default Vue.extend({
           property: 'og:site_name',
           content: `${this.$t('京都府')} ${this.$t(
             '新型コロナウイルス感染症'
-          )}${this.$t('対策サイト')} ${this.$t('(非公式)')}`,
+          )}${this.$t('対策サイト')}`,
         },
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://stopcovid19.metro.tokyo.lg.jp${this.$route.path}`,
+          content: `https://kyoto.stopcovid19.jp${this.$route.path}`,
         },
         ogLocale,
         {
@@ -155,7 +159,7 @@ export default Vue.extend({
           property: 'og:title',
           content: `${this.$t('京都府')} ${this.$t(
             '新型コロナウイルス感染症'
-          )}${this.$t('対策サイト')} ${this.$t('(非公式)')}`,
+          )}${this.$t('対策サイト')}`,
         },
         {
           hid: 'og:description',
@@ -163,7 +167,7 @@ export default Vue.extend({
           content: `${this.$t('{date} 更新', {
             date: convertDateToSimpleFormat(lastUpdate.last_update),
           })}: ${this.$tc(
-            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、学生エンジニアが開設したものです。'
+            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、京都府が開設したものです。'
           )}`,
         },
         {
@@ -176,7 +180,7 @@ export default Vue.extend({
           name: 'apple-mobile-web-app-title',
           content: `${this.$t('京都府')} ${this.$t(
             '新型コロナウイルス感染症'
-          )}${this.$t('対策サイト')} ${this.$t('(非公式)')}`,
+          )}${this.$t('対策サイト')}`,
         },
         {
           hid: 'twitter:image',
