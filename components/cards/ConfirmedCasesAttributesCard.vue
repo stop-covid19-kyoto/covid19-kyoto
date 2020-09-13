@@ -1,15 +1,18 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
-    <data-table
-      :title="$t('陽性患者の属性')"
-      :title-id="'attributes-of-confirmed-cases'"
-      :chart-data="patientsTable"
-      :chart-option="{}"
-      :date="patients.last_update"
-      :info="sumInfoOfPatients"
-      :url="'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#F'"
-      :source="$t('オープンデータを入手')"
-    />
+    <client-only>
+      <data-table
+        :title="$t('陽性者の属性')"
+        :title-id="'attributes-of-confirmed-cases'"
+        :chart-data="patientsTable"
+        :chart-option="{}"
+        :date="patients.last_update"
+        :info="sumInfoOfPatients"
+        :url="'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#F'"
+        :source="$t('オープンデータを入手')"
+        :custom-sort="customSort"
+      />
+    </client-only>
   </v-col>
 </template>
 
@@ -18,26 +21,31 @@ import patients from '@/data/patients.json'
 import patientsSummary from '@/data/patients_summary.json'
 import formatGraph from '@/utils/formatGraph'
 import formatTable from '@/utils/formatTable'
+import { getDayjsObject } from '@/utils/formatDate'
 import DataTable from '@/components/DataTable.vue'
 
 export default {
   components: {
-    DataTable
+    DataTable,
   },
   data() {
     // 感染者数グラフ
     const patientsGraph = formatGraph(patientsSummary.data)
     // 感染者数
     const patientsTable = formatTable(patients.data)
+    // 日付
+    const lastDay = patientsGraph[patientsGraph.length - 1].label
+    const dateAsOf = this.$d(
+      getDayjsObject(lastDay).toDate(),
+      'dateWithoutYear'
+    )
 
     const sumInfoOfPatients = {
       lText: patientsGraph[
         patientsGraph.length - 1
       ].cumulative.toLocaleString(),
-      sText: this.$t('{date}の累計', {
-        date: patientsGraph[patientsGraph.length - 1].label
-      }),
-      unit: this.$t('人')
+      sText: this.$t('{date}の累計', { date: dateAsOf }),
+      unit: this.$t('人'),
     }
 
     // 陽性患者の属性 ヘッダー翻訳
@@ -47,28 +55,112 @@ export default {
     }
     // 陽性患者の属性 中身の翻訳
     for (const row of patientsTable.datasets) {
-      row['居住地'] = this.$t(row['居住地'])
-      row['性別'] = this.$t(row['性別'])
-      row['退院'] = this.$t(row['退院'])
+      row['居住地'] = this.getTranslatedWording(row['居住地'])
+      row['年代と性別など'] = this.getTranslatedWording(row['年代と性別など'])
 
-      /*
-      if (row['年代'] === '10歳未満') {
-        row['年代'] = this.$t('10歳未満')
-      } else if (row['年代'] === '不明') {
-        row['年代'] = this.$t('不明')
-      } else {
+      /* if (row['年代'].substr(-1, 1) === '代') {
         const age = row['年代'].substring(0, 2)
         row['年代'] = this.$t('{age}代', { age })
-      }
-      */
+      } else {
+        row['年代'] = this.$t(row['年代'])
+      } */
     }
 
-    const data = {
+    return {
       patients,
       patientsTable,
-      sumInfoOfPatients
+      sumInfoOfPatients,
     }
-    return data
-  }
+  },
+  methods: {
+    getTranslatedWording(value) {
+      if (
+        value === '-' ||
+        value === '‐' ||
+        value === '―' ||
+        value === '－' ||
+        value === null
+      ) {
+        // 翻訳しようとしている文字列が以下のいずれかだった場合、翻訳しない
+        // - 全角のハイフン
+        // - 半角のハイフン
+        // - 全角のダッシュ
+        // - 全角ハイフンマイナス
+        // - null
+        return value
+      }
+
+      return this.$t(value)
+    },
+    customSort(items, index, isDesc) {
+      // const lt10 = this.$t('10歳未満').toString()
+      // const lt100 = this.$t('100歳以上').toString()
+      const unknown = this.$t('不明').toString()
+      const investigating = this.$t('調査中').toString()
+      items.sort((a, b) => {
+        // 両者が等しい場合は 0 を返す
+        if (a[index[0]] === b[index[0]]) {
+          return 0
+        }
+
+        let comparison = 0
+
+        /*
+        // '10歳未満' < '10代' ... '90代' < '100歳以上' となるようにソートする
+        // 「10歳未満」同士を比較する場合、と「100歳以上」同士を比較する場合、更にそうでない場合に場合分け
+        if (
+          index[0] === '年代' &&
+          (a[index[0]] === lt10 || b[index[0]] === lt10)
+        ) {
+          comparison = a[index[0]] === lt10 ? -1 : 1
+        } else if (
+          index[0] === '年代' &&
+          (a[index[0]] === lt100 || b[index[0]] === lt100)
+        ) {
+          comparison = a[index[0]] === lt100 ? 1 : -1
+        } else {
+          comparison = String(a[index[0]]) < String(b[index[0]]) ? -1 : 1
+        }
+         */
+
+        // 公表日のソートを正しくする
+        if (index[0] === '公表日') {
+          // 2/29と3/1が正しくソートできないため、以下は使えない。
+          // 公表日に年まで含む場合は以下が使用可能になり、逆に今使用しているコードが使用不可能となる。
+          // comparison = new Date(a[index[0]]) < new Date(b[index[0]]) ? -1 : 1
+
+          const aDate = a[index[0]].split('/').map((d) => {
+            return parseInt(d)
+          })
+          const bDate = b[index[0]].split('/').map((d) => {
+            return parseInt(d)
+          })
+          comparison = aDate[1] > bDate[1] ? 1 : -1
+          if (aDate[0] > bDate[0]) {
+            comparison = 1
+          } else if (aDate[0] < bDate[0]) {
+            comparison = -1
+          }
+        }
+
+        // 「調査中」は年代に限らず、居住地にも存在するので、年代ソートの外に置いている。
+        // 内容としては、「不明」の次に高い(大きい)ものとして扱う。
+        // 日本語の場合、「調査中」は「不明」より低い(小さい)ものとして扱われるが、
+        // 他言語の場合はそうではないため、ここで統一している。
+        if (a[index[0]] === investigating || b[index[0]] === investigating) {
+          comparison = a[index[0]] === investigating ? 1 : -1
+        }
+
+        // 「不明」は年代に限らず、性別にも存在するので、年代ソートの外に置いている。
+        // 内容としては一番高い(大きい)ものとして扱う。
+        if (a[index[0]] === unknown || b[index[0]] === unknown) {
+          comparison = a[index[0]] === unknown ? 1 : -1
+        }
+
+        return isDesc[0] ? comparison * -1 : comparison
+      })
+      return items
+    },
+  },
 }
 </script>

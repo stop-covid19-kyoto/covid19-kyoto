@@ -1,0 +1,45 @@
+name: OGP Builder
+
+on:
+  repository_dispatch:
+    types: [ogp_builder]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout development
+        uses: actions/checkout@v2
+        with:
+          ref: development
+      - run: pip3 install selenium
+      - run: python3 ./ui-test/ogp_screenshot.py
+      - name: Upload screenshot
+        uses: actions/upload-artifact@v1
+        with:
+          name: ogp
+          path: ogp
+  upload:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout production
+        uses: actions/checkout@v2
+        with:
+          ref: production
+      - name: Download screenshot
+        uses: actions/download-artifact@v1
+        with:
+          name: ogp
+          path: ogp
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ogp
+          git commit -m "Update OGP images"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: production

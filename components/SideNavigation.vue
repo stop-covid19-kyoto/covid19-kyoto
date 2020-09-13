@@ -9,7 +9,7 @@
         mdi-menu
       </v-icon>
       <h1 class="SideNavigation-HeaderTitle">
-        <nuxt-link :to="localePath('/')" class="SideNavigation-HeaderLink">
+        <nuxt-link :to="`${localePath('/')}`" class="SideNavigation-HeaderLink">
           <img
             class="SideNavigation-HeaderLogo"
             src="/hlogo.gif"
@@ -35,16 +35,18 @@
       </v-icon>
 
       <nav class="SideNavigation-Menu">
-        <MenuList :items="items" @click="$emit('closeNavi', $event)" />
-        <div
-          v-if="this.$i18n.locales.length > 1"
-          class="SideNavigation-Language"
-        >
-          <label class="SideNavigation-LanguageLabel" for="LanguageSelector">
-            {{ $t('多言語対応選択メニュー') }}
-          </label>
-          <LanguageSelector />
+        <div class="SideNavigation-Language">
+          <div
+            v-if="this.$i18n.locales.length > 1"
+            class="SideNavigation-Language"
+          >
+            <label class="SideNavigation-LanguageLabel" for="LanguageSelector">
+              {{ $t('多言語対応選択メニュー') }}
+            </label>
+            <language-selector />
+          </div>
         </div>
+        <menu-list :items="items" @click="$emit('closeNavi', $event)" />
       </nav>
 
       <footer class="SideNavigation-Footer">
@@ -52,7 +54,7 @@
           <!--<a
             href="https://line.me/R/ti/p/%40822sysfc"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
           >
             <picture>
@@ -63,7 +65,7 @@
           <a
             href="https://twitter.com/tokyo_bousai"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
           >
             <picture>
@@ -74,7 +76,7 @@
           <a
             href="https://www.facebook.com/tochokoho"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
           >
             <picture>
@@ -85,7 +87,7 @@
           <a
             href="https://github.com/stop-covid19-kyoto/covid19-kyoto"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
           >
             <picture>
@@ -93,20 +95,31 @@
               <img src="/github.png" alt="GitHub" />
             </picture>
           </a>
+          <!--<a
+            href="https://www.youtube.com/user/tokyo/videos"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="SideNavigation-SocialLink"
+          >
+            <picture>
+              <source srcset="/youtube.webp" type="image/webp" />
+              <img src="/youtube.png" alt="YouTube" />
+            </picture>
+          </a>-->
         </div>
         <small class="SideNavigation-Copyright">
           <!--{{ $t('このサイトの内容物は') }}
           <a
             :href="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
             target="_blank"
-            rel="license"
+            rel="noopener noreferrer license"
             class="SideNavigation-LicenseLink"
           >
             {{ $t('クリエイティブ・コモンズ 表示 4.0 ライセンス') }}
           </a>
           {{ $t('の下に提供されています。') }}
           <br />-->
-          2020 Stop Covid19 Kyoto
+          &copy; 2020 Stop Covid19 Kyoto
         </small>
       </footer>
     </div>
@@ -355,7 +368,7 @@ export default Vue.extend({
           link: 'http://www.town-yosano.jp/wwwg/index.jsp',
           divider: true,
         },
-        /**
+        /*
         {
           // icon: 'CovidIcon',
           title: this.$t('感染予防と相談窓口'),
@@ -384,13 +397,13 @@ export default Vue.extend({
         //  link: 'https://www.youtube.com/watch?v=Mm-xFX7Csf8'
         // },
         {
-          title: this.$t('知事からのメッセージ'),
-          link: 'http://www.pref.kyoto.jp/kentai/corona/chijimessage.html',
-        },
-        {
           title: this.$t('当サイトについて'),
           link: this.localePath('/about'),
         },
+        /* {
+          title: this.$t('お問い合わせ先一覧'),
+          link: this.localePath('/contacts'),
+        }, */
         {
           title: this.$t('京都府公式ホームページ'),
           link: 'https://www.pref.kyoto.jp/',
@@ -473,8 +486,8 @@ export default Vue.extend({
 
 .SideNavigation-HeaderTitle {
   width: 100%;
-  font-size: 13px;
   color: #707070;
+  @include font-size(13);
   @include largerThan($small) {
     margin: 0;
     margin-top: 10px;
@@ -559,14 +572,10 @@ export default Vue.extend({
   }
 }
 
-.SideNavigation-Language {
-  padding-top: 20px;
-}
-
 .SideNavigation-LanguageLabel {
   display: block;
   margin-bottom: 5px;
-  font-size: 0.85rem;
+  @include font-size(14);
 }
 
 .SideNavigation-Footer {
@@ -610,9 +619,9 @@ export default Vue.extend({
   display: block;
   margin-top: 15px;
   color: $gray-1;
-  font-size: 10px;
   line-height: 1.3;
   font-weight: bold;
+  @include font-size(10);
 }
 
 .SideNavigation-LicenseLink {
