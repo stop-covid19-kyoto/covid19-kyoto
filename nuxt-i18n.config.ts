@@ -43,13 +43,13 @@ const options: NuxtVueI18n.Options.AllOptionsInterface = {
   },
   // vueI18nLoader: true,
   lazy: true,
-  langDir: 'assets/locales/',
+  langDir: 'assets/locales-mixed/',
   locales: [
     {
       code: 'ja',
       name: '日本語',
       iso: 'ja-JP',
-      file: 'ja.json',
+      file: 'ja.js',
       description: 'Japanese',
     } /*,
     {
