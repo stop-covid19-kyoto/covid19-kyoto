@@ -31,7 +31,6 @@ import SiteTopUpper from '@/components/SiteTopUpper.vue'
 // import CardsReference from '@/components/CardsReference.vue'
 import CardsKyoto from '@/components/CardsKyoto.vue'
 import { EventBus, TOGGLE_EVENT } from '@/utils/tab-event-bus.ts'
-
 export default Vue.extend({
   components: {
     SiteTopUpper,
@@ -45,7 +44,7 @@ export default Vue.extend({
       items: [
         // { label: this.$t('モニタリング項目'), component: CardsMonitoring },
         // { label: this.$t('その他 参考指標'), component: CardsReference },
-        { label: `京都府内の最新感染動向`, component: CardsKyoto },
+        { label: `京都府内の最新感染状況`, component: CardsKyoto },
       ],
     }
   },
@@ -62,7 +61,6 @@ export default Vue.extend({
   border-bottom: 1px solid $gray-2;
   background: $gray-5;
 }
-
 .v-tab {
   top: 1px;
   margin: 0 8px;
@@ -70,11 +68,9 @@ export default Vue.extend({
   border-radius: 4px 4px 0 0;
   font-weight: bold !important;
   @include font-size(16, true);
-
   &:focus {
     outline: dotted $gray-3 1px;
   }
-
   &--active {
     color: $gray-2 !important;
     background: $gray-5;
@@ -84,7 +80,6 @@ export default Vue.extend({
       background-color: transparent;
     }
   }
-
   &:not(.v-tab--active) {
     color: $green-1 !important;
     background: $white;
@@ -99,15 +94,12 @@ export default Vue.extend({
     }
   }
 }
-
 .v-tabs-items {
   background-color: transparent !important;
 }
-
 @function px2vw($px, $vw: 768) {
   @return $px / $vw * 100vw;
 }
-
 @include lessThan($medium) {
   .v-slide-group__content {
     width: 100%;
@@ -120,7 +112,6 @@ export default Vue.extend({
     padding: 0 8px !important;
   }
 }
-
 @include lessThan($small) {
   .v-tab {
     font-size: px2vw(20, 600) !important;
