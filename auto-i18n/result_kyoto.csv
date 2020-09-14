@@ -124,3 +124,9 @@ TAG_ADD,山城南保健所管内
 TAG_ADD,40代女性
 TAG_ADD,宿泊施設
 TAG_ADD,兵庫県内
+RUN,2020/09/14 21:49
+TAG_ADD,新型コロナウイルス感染症に係る緊急情報トップページ
+TAG_ADD,京都府内の最新感染状況
+TAG_REMOVE,京都府公式ホームページ
+TAG_REMOVE,京都府民の皆様へ
+TAG_REMOVE,感染予防と相談窓口
