@@ -1,6 +1,6 @@
 <template>
   <v-app class="app">
-    <v-overlay v-if="loading" color="#F8F9FA" opacity="1" z-index="9999">
+    <v-overlay :value="loading" color="#F8F9FA" opacity="1" z-index="9999">
       <div class="loader">
         <img src="/hlogo.gif" alt="京都府" />
         <scale-loader color="#A51E7C" />
@@ -8,7 +8,7 @@
     </v-overlay>
     <div v-if="hasNavigation" class="appContainer">
       <div class="naviContainer">
-        <SideNavigation
+        <side-navigation
           :is-navi-open="isOpenNavigation"
           :class="{ open: isOpenNavigation }"
           @openNavi="openNavigation"
@@ -21,30 +21,32 @@
         </v-container>
       </main>
     </div>
-    <div v-else class="embed">
+    <div v-if="!loading && !hasNavigation" class="embed">
       <v-container>
         <nuxt />
       </v-container>
     </div>
-    <NoScript />
+    <no-script />
     <development-mode-mark />
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { MetaInfo } from 'vue-meta'
+import { MetaInfo, LinkPropertyHref } from 'vue-meta'
 import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue'
+import lastUpdate from '@/data/last_update.json'
 import SideNavigation from '@/components/SideNavigation.vue'
 import NoScript from '@/components/NoScript.vue'
 import DevelopmentModeMark from '@/components/DevelopmentModeMark.vue'
+import { convertDateToSimpleFormat } from '@/utils/formatDate'
+import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 
 type LocalData = {
   hasNavigation: boolean
   isOpenNavigation: boolean
   loading: boolean
 }
-
 export default Vue.extend({
   components: {
     DevelopmentModeMark,
@@ -62,7 +64,6 @@ export default Vue.extend({
       hasNavigation = false
       loading = false
     }
-
     return {
       hasNavigation,
       loading,
@@ -71,6 +72,10 @@ export default Vue.extend({
   },
   mounted() {
     this.loading = false
+    this.getMatchMedia().addListener(this.hideNavigation)
+  },
+  beforeDestroy() {
+    this.getMatchMedia().removeListener(this.hideNavigation)
   },
   methods: {
     openNavigation(): void {
@@ -79,9 +84,32 @@ export default Vue.extend({
     hideNavigation(): void {
       this.isOpenNavigation = false
     },
+    getMatchMedia(): MediaQueryList {
+      return window.matchMedia('(min-width: 601px)')
+    },
   },
   head(): MetaInfo {
-    const { htmlAttrs } = this.$nuxtI18nSeo()
+    const { htmlAttrs, meta } = this.$nuxtI18nSeo()
+    const ogLocale =
+      meta && meta.length > 0
+        ? meta[0]
+        : {
+            hid: 'og:locale',
+            name: 'og:locale',
+            content: this.$i18n.locale,
+          }
+
+    let linksAlternate: LinkPropertyHref[] = []
+    const basename = this.getRouteBaseName()
+    // 404 エラーなどのときは this.getRouteBaseName() が null になるため除外
+    if (basename) {
+      linksAlternate = getLinksLanguageAlternative(
+        basename,
+        this.$i18n.locales,
+        this.$i18n.defaultLocale
+      )
+    }
+
     return {
       htmlAttrs,
       link: [
@@ -93,7 +121,11 @@ export default Vue.extend({
           rel: 'stylesheet',
           href: 'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css',
         },
+        ...linksAlternate,
       ],
+      // Disable prettier for readability purposes
+      // eslint-disable-next-line prettier/prettier
+      titleTemplate: `%s | ${this.$t('京都府')} ${this.$t('新型コロナウイルス感染症')}${this.$t('対策サイト')}`,
       meta: [
         {
           hid: 'author',
@@ -103,46 +135,40 @@ export default Vue.extend({
         {
           hid: 'description',
           name: 'description',
-          content: this.$tc(
+          content: `${this.$t('{date} 更新', {
+            date: convertDateToSimpleFormat(lastUpdate.last_update),
+          })}: ${this.$tc(
             '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、京都府が開設したものです。'
-          ),
+          )}`,
         },
         {
           hid: 'og:site_name',
           property: 'og:site_name',
-          content:
-            this.$t('京都府') +
-            ' ' +
-            this.$t('新型コロナウイルス感染症') +
-            ' ' +
-            this.$t('対策サイト'),
+          content: `${this.$t('京都府')} ${this.$t(
+            '新型コロナウイルス感染症'
+          )}${this.$t('対策サイト')}`,
         },
         {
           hid: 'og:url',
           property: 'og:url',
           content: `https://kyoto.stopcovid19.jp${this.$route.path}`,
         },
-        {
-          hid: 'og:locale',
-          property: 'og:locale',
-          content: this.$i18n.locale,
-        },
+        ogLocale,
         {
           hid: 'og:title',
           property: 'og:title',
-          content:
-            this.$t('京都府') +
-            ' ' +
-            this.$t('新型コロナウイルス感染症') +
-            ' ' +
-            this.$t('対策サイト'),
+          content: `${this.$t('京都府')} ${this.$t(
+            '新型コロナウイルス感染症'
+          )}${this.$t('対策サイト')}`,
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.$tc(
+          content: `${this.$t('{date} 更新', {
+            date: convertDateToSimpleFormat(lastUpdate.last_update),
+          })}: ${this.$tc(
             '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、京都府が開設したものです。'
-          ),
+          )}`,
         },
         {
           hid: 'og:image',
@@ -152,12 +178,9 @@ export default Vue.extend({
         {
           hid: 'apple-mobile-web-app-title',
           name: 'apple-mobile-web-app-title',
-          content:
-            this.$t('京都府') +
-            ' ' +
-            this.$t('新型コロナウイルス感染症') +
-            ' ' +
-            this.$t('対策サイト'),
+          content: `${this.$t('京都府')} ${this.$t(
+            '新型コロナウイルス感染症'
+          )}${this.$t('対策サイト')}`,
         },
         {
           hid: 'twitter:image',
@@ -170,40 +193,41 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss">
+@font-face {
+  font-family: Roboto;
+  font-display: swap;
+}
 .app {
   max-width: 1440px;
   margin: 0 auto;
   background-color: inherit !important;
 }
+.v-application--wrap {
+  width: 100%;
+}
 .embed {
   .container {
     padding: 0 !important;
   }
-
   .DataCard {
     padding: 0 !important;
   }
 }
-
 .appContainer {
   position: relative;
-
   @include largerThan($small) {
     display: grid;
     grid-template-columns: 240px 1fr;
     grid-template-rows: auto;
   }
-
   @include largerThan($huge) {
     grid-template-columns: 325px 1fr;
     grid-template-rows: auto;
   }
 }
-
 .naviContainer {
   background-color: $white;
 }
-
 @include lessThan($small) {
   .naviContainer {
     position: sticky;
@@ -212,7 +236,6 @@ export default Vue.extend({
     z-index: z-index-of(sp-navigation);
   }
 }
-
 @include largerThan($small) {
   .naviContainer {
     grid-column: 1/2;
@@ -227,33 +250,27 @@ export default Vue.extend({
     overscroll-behavior: contain;
   }
 }
-
 @include largerThan($huge) {
   .naviContainer {
     width: 325px;
   }
 }
-
 .open {
   height: 100vh;
-
   @include largerThan($small) {
     overflow-x: hidden;
     overflow-y: auto;
   }
 }
-
 .mainContainer {
   grid-column: 2/3;
   overflow: hidden;
-
   @include lessThan($small) {
     .container {
       padding-top: 16px;
     }
   }
 }
-
 .loader {
   height: 200px;
   width: 150px;
@@ -261,7 +278,6 @@ export default Vue.extend({
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
-
   img {
     display: block;
     margin: 0 auto 20px;
