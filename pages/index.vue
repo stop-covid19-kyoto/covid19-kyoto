@@ -1,128 +1,43 @@
 <template>
-  <div class="MainPage">
-    <div class="Header mb-3">
-      <page-header :icon="headerItem.icon">
-        {{ headerItem.title }}
-      </page-header>
-      <div class="UpdatedAt">
-        <span>{{ $t('最終更新') }} </span>
-        <time :datetime="updatedAt">{{ lastUpdate.last_update }}</time>
-      </div>
-      <div v-if="!['ja', 'ja-basic'].includes($i18n.locale)" class="Annotation">
-        <span>{{ $t('注釈') }} </span>
-      </div>
-    </div>
-    <whats-new class="mb-4" :items="newsItems" />
-    <static-info :text="contactInfo.text" :url="contactInfo.url" />
-    <v-row class="DataBlock">
-      <confirmed-cases-details-card />
-      <confirmed-cases-number-card />
-      <!--<tested-cases-details-card />-->
-      <tested-number-card />
-      <confirmed-cases-attributes-card />
-      <!--<inspection-persons-number-card />-->
-      <!--<telephone-advisory-reports-number-card />
-      <consultation-desk-reports-number-card />
-      <metro-card />
-      <agency-card />
-      <shinjuku-visitors-card />
-      <chiyoda-visitors-card />-->
-    </v-row>
-    <!--<v-divider />
-    <v-row class="DataBlock">
-      <v-col cols="12" md="6" class="DataCard">
-        <map-card
-          :title="$t('新宿駅周辺の人口推移（参考値）')"
-          :caption="$t('※7:30〜8:30の平均値')"
-          :title-id="'shinjuku-station-title'"
-          :chart-id="'shinjuku-station-chart'"
-          :map-id="'shinjuku-station-map'"
-          :initial-bounds="[
-            [139.695239, 35.685448],
-            [139.706397, 35.694493]
-          ]"
-          :unit="'人'"
-          :url="'https://ds.yahoo.co.jp/datapolicy/'"
-          :source-link-header="
-            $t('※本データは2020年3月31日までの掲載となります')
-          "
-          :detail-page-url="'/largemap'"
-          :detail-page-string="$t('東京23区の人口推移（参考値）')"
-          :link-string="$t('ヤフー・データソリューション')"
-          :date="''"
-        />
-      </v-col>
-      <v-col cols="12" md="6" class="DataCard">
-        <map-card
-          :title="$t('東京駅周辺の人口推移（参考値）')"
-          :caption="$t('※7:30〜8:30の平均値')"
-          :title-id="'tokyo-station-title'"
-          :chart-id="'tokyo-station-chart'"
-          :map-id="'tokyo-station-map'"
-          :initial-bounds="[
-            [139.761908, 35.676437],
-            [139.773774, 35.686703]
-          ]"
-          :unit="'人'"
-          :url="'https://ds.yahoo.co.jp/datapolicy/'"
-          :source-link-header="
-            $t('※本データは2020年3月31日までの掲載となります')
-          "
-          :detail-page-url="'/largemap'"
-          :detail-page-string="$t('東京23区の人口推移（参考値）')"
-          :link-string="$t('ヤフー・データソリューション')"
-          :date="''"
-        />
-      </v-col>
-    </v-row>-->
+  <div>
+    <site-top-upper />
+    <component :is="items[0].component" />
+    <!--<v-tabs v-model="tab" hide-slider>
+      <v-tab
+        v-for="(item, i) in items"
+        :key="i"
+        v-ripple="false"
+        :href="`#tab-${i}`"
+        @click="change"
+      >
+        <v-icon class="TabIcon">
+          mdi-chart-timeline-variant
+        </v-icon>
+        {{ item.label }}
+      </v-tab>
+      <v-tabs-items v-model="tab" touchless>
+        <v-tab-item v-for="(item, i) in items" :key="i" :value="`tab-${i}`">
+          <component :is="item.component" />
+        </v-tab-item>
+      </v-tabs-items>
+    </v-tabs>-->
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { MetaInfo } from 'vue-meta'
-import PageHeader from '@/components/PageHeader.vue'
-
-import WhatsNew from '@/components/WhatsNew.vue'
-import lastUpdate from '@/data/last_update.json'
-// import formatGraph from '@/utils/formatGraph'
-// import formatTable from '@/utils/formatTable'
-
-import StaticInfo from '@/components/StaticInfo.vue'
-
-import News from '@/data/news.json'
-import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
-// import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
-import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
-import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
-import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
-/* import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
-import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
-import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
-import MetroCard from '@/components/cards/MetroCard.vue'
-import AgencyCard from '@/components/cards/AgencyCard.vue' */
-import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
-/* import ShinjukuVisitorsCard from '@/components/cards/ShinjukuVisitorsCard.vue'
-import ChiyodaVisitorsCard from '@/components/cards/ChiyodaVisitorsCard.vue' */
+import SiteTopUpper from '@/components/SiteTopUpper.vue'
+// import CardsMonitoring from '@/components/CardsMonitoring.vue'
+// import CardsReference from '@/components/CardsReference.vue'
+import CardsKyoto from '@/components/CardsKyoto.vue'
+import { EventBus, TOGGLE_EVENT } from '@/utils/tab-event-bus.ts'
 
 export default Vue.extend({
   components: {
-    PageHeader,
-    WhatsNew,
-    StaticInfo,
-    // MapCard,
-    ConfirmedCasesDetailsCard,
-    // TestedCasesDetailsCard,
-    ConfirmedCasesNumberCard,
-    ConfirmedCasesAttributesCard,
-    TestedNumberCard /*,
-    InspectionPersonsNumberCard,
-    TelephoneAdvisoryReportsNumberCard,
-    ConsultationDeskReportsNumberCard,
-    MetroCard,
-    AgencyCard,
-    ShinjukuVisitorsCard,
-    ChiyodaVisitorsCard */,
+    SiteTopUpper,
+    // CardsMonitoring,
+    // CardsReference,
+    CardsKyoto,
   },
   data() {
     const data = {
@@ -137,62 +52,94 @@ export default Vue.extend({
         text:
           '自分や家族の症状に不安や心配があれば、まずは電話相談等をご利用ください（帰国者・接触者相談センター）',
       },
-    }
-    return data
-  },
-  computed: {
-    updatedAt() {
-      return convertDatetimeToISO8601Format(this.$data.lastUpdate.last_update)
-    },
-  },
-  head(): MetaInfo {
     return {
-      title: this.$t('京都府内の最新感染動向') as string,
+      tab: null,
+      items: [
+        // { label: this.$t('モニタリング項目'), component: CardsMonitoring },
+        // { label: this.$t('その他 参考指標'), component: CardsReference },
+        { label: `京都府内の最新感染動向`, component: CardsKyoto },
+      ],
     }
+  },
+  methods: {
+    change() {
+      EventBus.$emit(TOGGLE_EVENT)
+    },
   },
 })
 </script>
 
-<style lang="scss" scoped>
-.MainPage {
-  .Header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
+<style lang="scss">
+.v-slide-group__content {
+  border-bottom: 1px solid $gray-2;
+  background: $gray-5;
+}
 
-    @include lessThan($small) {
-      flex-direction: column;
-      align-items: baseline;
+.v-tab {
+  top: 1px;
+  margin: 0 8px;
+  border-style: solid;
+  border-radius: 4px 4px 0 0;
+  font-weight: bold !important;
+  @include font-size(16, true);
+
+  &:focus {
+    outline: dotted $gray-3 1px;
+  }
+
+  &--active {
+    color: $gray-2 !important;
+    background: $gray-5;
+    border-color: $gray-2 $gray-2 $gray-5 $gray-2;
+    border-width: 1px 1px 2px 1px;
+    &::before {
+      background-color: transparent;
     }
   }
 
-  .UpdatedAt {
-    @include font-size(14);
-
-    color: $gray-3;
-    margin-bottom: 0.2rem;
-  }
-
-  .Annotation {
-    @include font-size(12);
-
-    color: $gray-3;
-    @include largerThan($small) {
-      margin: 0 0 0 auto;
+  &:not(.v-tab--active) {
+    color: $green-1 !important;
+    background: $white;
+    border-color: $green-1 $green-1 $gray-2 $green-1;
+    border-width: 1px;
+    &:hover {
+      color: $white !important;
+      background: $green-1;
+    }
+    .TabIcon {
+      color: inherit !important;
     }
   }
-  .DataBlock {
-    margin: 20px -8px;
+}
 
-    .DataCard {
-      @include largerThan($medium) {
-        padding: 10px;
-      }
+.v-tabs-items {
+  background-color: transparent !important;
+}
 
-      @include lessThan($small) {
-        padding: 4px 8px;
-      }
-    }
+@function px2vw($px, $vw: 768) {
+  @return $px / $vw * 100vw;
+}
+
+@include lessThan($medium) {
+  .v-slide-group__content {
+    width: 100%;
+  }
+  .v-tab {
+    font-size: px2vw(16) !important;
+    font-weight: normal !important;
+    flex: 1 1 auto;
+    width: 100%;
+    padding: 0 8px !important;
+  }
+}
+
+@include lessThan($small) {
+  .v-tab {
+    font-size: px2vw(20, 600) !important;
+    padding: 0 4px !important;
+  }
+  .TabIcon {
+    font-size: px2vw(24, 600) !important;
   }
 }
 </style>

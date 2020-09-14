@@ -36,9 +36,9 @@
     margin: 2px;
     border-radius: 4px !important;
     height: 24px !important;
-    font-size: 12px !important;
     color: $gray-1 !important;
     background-color: $white !important;
+    @include font-size(12, true);
 
     &::before {
       background-color: inherit;
@@ -64,15 +64,14 @@ export default Vue.extend({
   props: {
     value: {
       type: String,
-      default: 'transition'
+      default: 'transition',
     },
     targetId: {
       type: String,
       default: (val: string | null) => {
-        // TODO: type は NullableString 型をとり、default: null とする
         return val && val !== '' ? val : null
-      }
-    }
-  }
+      },
+    },
+  },
 })
 </script>

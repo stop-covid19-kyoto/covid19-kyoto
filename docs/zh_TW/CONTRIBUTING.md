@@ -31,7 +31,7 @@
 * 我們也接受建議！請積極的開新的 Issue 吧。
 
 ## 参考資訊
-* [如何為東京都 新型逛轉病毒網站提供貢獻的解說(Qiita) （日文網頁）](https://qiita.com/FPC_COMMUNITY/items/b9cc072813dc2231b2b2)
+* [如何為東京都 新型冠狀病毒網站提供貢獻的解說(Qiita) （日文網頁）](https://qiita.com/FPC_COMMUNITY/items/b9cc072813dc2231b2b2)
 
 ## 補充 CONTRIBUTORS.md 的相關資訊
 對於提供貢獻的大家、在 [CONTRIBUTORS.md](https://github.com/tokyo-metropolitan-gov/covid19/blob/development/CONTRIBUTORS.md) 這份文件中記載了名字（暱稱）以及角色。
@@ -39,11 +39,11 @@
 請在[#654](https://github.com/tokyo-metropolitan-gov/covid19/issues/654) 這個 Issue 留下您要公開的名字、連結（如果有的話）、角色。
 
 ## 開發相關的資訊
-* 開發環境（Dev.）https://dev-covid19-tokyo.netlify.com/
-* Stage 站 https://stg-covid19-tokyo.netlify.com/
+* 開發環境（Dev.）https://dev-covid19-tokyo.netlify.app/
+* Stage 站 https://stg-covid19-tokyo.netlify.app/
 * 正式環境 https://stopcovid19.metro.tokyo.lg.jp/
 * [設計稿](https://www.figma.com/file/V7vt80p2gauhdgTZeVNbgj/UI%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3?node-id=121%3A156)
-* [翻譯表](https://docs.google.com/spreadsheets/d/1avT6QGInyQseYjoc_TxL8RPZfutyvrv4BtJkXfk1Nko)
+* [翻譯表 (Transifex)](https://www.transifex.com/stopcovid19-tokyo/stopcovid19tokyo)
 
 也很歡迎更新此文件！
 

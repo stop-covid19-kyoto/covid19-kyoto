@@ -3,14 +3,13 @@
     <page-header class="mb-3">
       {{ $t('企業の皆様・はたらく皆様へ') }}
     </page-header>
-    <StaticCard>
+    <static-card>
       <h3>
-        <a
-          href="https://www.pref.kyoto.jp/kinyu/taisaku.html"
-          target="_blank"
-          rel="noopener"
-          >{{ $t('危機対策資金の取扱いについて') }}</a
-        >
+        <external-link
+          url="https://www.pref.kyoto.jp/kinyu/taisaku.html"
+          :icon-size="24"
+          >{{ $t('危機対策資金の取扱いについて') }}
+        </external-link>
       </h3>
       <p>
         {{
@@ -19,15 +18,14 @@
           )
         }}
       </p>
-    </StaticCard>
-    <StaticCard>
+    </static-card>
+    <static-card>
       <h3>
-        <a
-          href="https://www.mhlw.go.jp/stf/newpage_10059.html"
-          target="_blank"
-          rel="noopener"
-          >{{ $t('小学校休業等対応助成金の創設について') }}</a
-        >
+        <external-link
+          url="https://www.mhlw.go.jp/stf/newpage_10059.html"
+          :icon-size="24"
+          >{{ $t('小学校休業等対応助成金の創設について') }}
+        </external-link>
       </h3>
       <p>
         {{
@@ -36,15 +34,14 @@
           )
         }}
       </p>
-    </StaticCard>
-    <StaticCard>
+    </static-card>
+    <static-card>
       <h3>
-        <a
-          href="http://acsa.jp/htm/news/2020022803.htm"
-          target="_blank"
-          rel="noopener"
-          >{{ $t('ベビーシッター派遣事業の取扱いについて') }}</a
-        >
+        <external-link
+          url="http://acsa.jp/htm/news/2020022803.htm"
+          :icon-size="24"
+          >{{ $t('ベビーシッター派遣事業の取扱いについて') }}
+        </external-link>
       </h3>
       <p>
         {{
@@ -53,17 +50,16 @@
           )
         }}
       </p>
-    </StaticCard>
-    <StaticCard>
+    </static-card>
+    <static-card>
       <h3>
-        <a
-          href="https://www.mhlw.go.jp/stf/newpage_10037.html"
-          target="_blank"
-          rel="noopener"
+        <external-link
+          url="https://www.mhlw.go.jp/stf/newpage_10037.html"
+          :icon-size="24"
           >{{
             $t('時間外労働等改善助成金の特例的なコースの申請受付開始について')
-          }}</a
-        >
+          }}
+        </external-link>
       </h3>
       <p>
         {{
@@ -72,15 +68,14 @@
           )
         }}
       </p>
-    </StaticCard>
-    <StaticCard>
+    </static-card>
+    <static-card>
       <h3>
-        <a
-          href="https://jsite.mhlw.go.jp/kyoto-roudoukyoku/newpage_00129.html"
-          target="_blank"
-          rel="noopener"
-          >{{ $t('雇用調整助成金の相談窓口について (京都労働局)') }}</a
-        >
+        <external-link
+          url="https://jsite.mhlw.go.jp/kyoto-roudoukyoku/newpage_00129.html"
+          :icon-size="24"
+          >{{ $t('雇用調整助成金の相談窓口について (京都労働局)') }}
+        </external-link>
       </h3>
       <p>
         {{
@@ -89,15 +84,14 @@
           )
         }}
       </p>
-    </StaticCard>
-    <StaticCard>
+    </static-card>
+    <static-card>
       <h3>
-        <a
-          href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/dengue_fever_qa_00007.html"
-          target="_blank"
-          rel="noopener"
-          >{{ $t('新型コロナウイルスに関するQ&A (企業の方向け)') }}</a
-        >
+        <external-link
+          url="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/dengue_fever_qa_00007.html"
+          :icon-size="24"
+          >{{ $t('新型コロナウイルスに関するQ&A (企業の方向け)') }}
+        </external-link>
       </h3>
       <p>
         {{
@@ -106,7 +100,7 @@
           )
         }}
       </p>
-    </StaticCard>
+    </static-card>
   </div>
 </template>
 
@@ -115,16 +109,18 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import StaticCard from '@/components/StaticCard.vue'
 import PageHeader from '@/components/PageHeader.vue'
+import ExternalLink from '@/components/ExternalLink.vue'
 
 export default Vue.extend({
   components: {
     PageHeader,
-    StaticCard
+    StaticCard,
+    ExternalLink,
   },
   head(): MetaInfo {
     return {
-      title: this.$t('企業の皆様・はたらく皆様へ') as string
+      title: this.$t('企業の皆様・はたらく皆様へ') as string,
     }
-  }
+  },
 })
 </script>

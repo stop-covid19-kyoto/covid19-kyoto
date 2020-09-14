@@ -1,10 +1,45 @@
 <template>
   <div class="Parent">
     <page-header class="mb-3">
-      {{ $t('臨時休校中の新型コロナウイルス感染症対応についてのお願い') }}
+      {{ $t('新型コロナウイルス感染症対応についてのお願い') }}
     </page-header>
-    <StaticCard>
-      <h3>1. {{ $t('感染予防・健康管理') }}</h3>
+    <static-card>
+      <h3>
+        <external-link
+          url="https://tokyodouga.jp/playlist/ohayoschool.html"
+          :icon-size="24"
+          >{{ $t('TOKYOおはようスクール') }}
+        </external-link>
+      </h3>
+      <p>
+        {{ $t('学校休校中の子供たちの生活や学習を応援するテレビ番組です。') }}
+      </p>
+    </static-card>
+    <static-card>
+      <h3>
+        <external-link
+          url="https://www.kyoiku.metro.tokyo.lg.jp/school/content/learning_support.html"
+          :icon-size="24"
+          >{{ $t('学びの支援サイト') }}
+        </external-link>
+      </h3>
+      <ul>
+        <li>
+          {{
+            $t('子供たちの学びを支援する様々なウェブサイトを紹介しています。')
+          }}
+        </li>
+        <li>
+          {{
+            $t(
+              '学習の基本的な内容を身に付けられる「東京・ベーシック・ドリル」や動画教材等があります。'
+            )
+          }}
+        </li>
+      </ul>
+    </static-card>
+    <static-card>
+      <h3>{{ $t('感染予防・健康管理') }}</h3>
       <ul>
         <li>
           {{
@@ -16,12 +51,11 @@
         <li>
           {{ $t('手洗い、咳エチケット等により、感染予防に努めてください。')
           }}<br />
-          <a
-            href="https://tokyodouga.jp/lViN9C_BS-0.html"
-            target="_blank"
-            rel="noopener"
-            >{{ $t('【参考】感染症予防のための正しい手洗い方法（動画）') }}</a
-          >
+          <external-link
+            url="https://tokyodouga.jp/lViN9C_BS-0.html"
+            :icon-size="16"
+            >{{ $t('【参考】感染症予防のための正しい手洗い方法（動画）') }}
+          </external-link>
         </li>
         <li>
           {{
@@ -31,31 +65,30 @@
           }}
         </li>
       </ul>
-    </StaticCard>
-    <StaticCard>
-      <h3>2. {{ $t('感染症を疑う場合の対応') }}</h3>
+    </static-card>
+    <static-card>
+      <h3>{{ $t('感染症を疑う場合の対応') }}</h3>
       <ul>
         <li>{{ $t('各保健所にご相談ください') }}</li>
         <li>
           {{ $t('各保健所の電話番号について') }}
           <br />
-          <a
-            href="http://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html"
-            target="_blank"
-            rel="noopener"
+          <external-link
+            url="http://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html"
+            :icon-size="16"
             >{{
               $t(
                 '「新型コロナウイルス感染症にかかる相談窓口について」 (京都府感染症情報センター)'
               )
-            }}</a
-          >
+            }}
+          </external-link>
         </li>
       </ul>
-    </StaticCard>
-    <StaticCard>
-      <h3>3. {{ $t('その他.parent') }}</h3>
+    </static-card>
+    <static-card>
+      <h3>{{ $t('その他') }}</h3>
       <p>{{ $t('詳細は、各学校からのお知らせ等をご確認ください。') }}</p>
-    </StaticCard>
+    </static-card>
   </div>
 </template>
 
@@ -64,16 +97,18 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import StaticCard from '@/components/StaticCard.vue'
 import PageHeader from '@/components/PageHeader.vue'
+import ExternalLink from '@/components/ExternalLink.vue'
 
 export default Vue.extend({
   components: {
     PageHeader,
-    StaticCard
+    StaticCard,
+    ExternalLink,
   },
   head(): MetaInfo {
     return {
-      title: this.$t('お子様をお持ちの皆様へ') as string
+      title: this.$t('お子様をお持ちの皆様へ') as string,
     }
-  }
+  },
 })
 </script>
