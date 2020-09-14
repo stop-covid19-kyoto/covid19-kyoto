@@ -129,7 +129,7 @@ export default Vue.extend({
       lastUpdate,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
-        title: this.$t('京都府内の最新感染動向'),
+        title: this.$t('京都府内の最新感染状況'),
       },
       newsItems: News.newsItems,
       contactInfo: {

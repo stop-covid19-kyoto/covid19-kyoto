@@ -364,7 +364,7 @@ export default Vue.extend({
           link: this.localePath('/about'),
         },
         {
-          title: this.$t('京都府公式ホームページ'),
+          title: this.$t('新型コロナウイルス感染症に係る緊急情報トップページ'),
           link: 'https://www.pref.kyoto.jp/',
         },
       ]
