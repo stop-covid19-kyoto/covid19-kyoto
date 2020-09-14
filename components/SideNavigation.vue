@@ -274,11 +274,13 @@ export default Vue.extend({
           link:
             'https://www.city.muko.kyoto.jp/kurashi/soshiki/hurusatosouseisuisinnbu/kikakukouhouka/1/30/osirase/1585896380695.html',
         },
+        /*
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('城陽市の情報'),
           link: 'https://www.city.joyo.kyoto.jp/category/10-0-0-0-0.html',
         },
+        */
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('長岡京市の情報'),
