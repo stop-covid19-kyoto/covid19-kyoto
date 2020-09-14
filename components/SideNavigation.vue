@@ -263,11 +263,6 @@ export default Vue.extend({
         },
         {
           // icon: 'mdi-chart-timeline-variant',
-          title: this.$t('城陽市の情報'),
-          link: 'https://www.city.joyo.kyoto.jp/category/10-0-0-0-0.html',
-        },
-        {
-          // icon: 'mdi-chart-timeline-variant',
           title: this.$t('長岡京市の情報'),
           link: 'http://www.city.nagaokakyo.lg.jp/category/14-0-0-0-0.html',
         },
@@ -355,29 +350,6 @@ export default Vue.extend({
           link: 'http://www.town-yosano.jp/wwwg/index.jsp',
           divider: true,
         },
-        /**
-        {
-          // icon: 'CovidIcon',
-          title: this.$t('感染予防と相談窓口'),
-          link: 'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html',
-        },
-        {
-          // icon: 'ParentIcon',
-          title: this.$t('お子様をお持ちの皆様へ'),
-          link: this.localePath('/parent'),
-        },
-        {
-          // icon: 'mdi-account-multiple',
-          title: this.$t('京都府民の皆様へ'),
-          link: 'https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#A',
-        },
-        {
-          // icon: 'mdi-domain',
-          title: this.$t('企業の皆様・はたらく皆様へ'),
-          link: this.localePath('/worker'),
-          divider: true,
-        },
-        */
         // 知事からのメッセージが京都府では確認できていないのでコメントアウト
         // {
         //  title: this.$t('知事からのメッセージ'),
