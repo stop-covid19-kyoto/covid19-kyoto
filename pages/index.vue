@@ -40,6 +40,18 @@ export default Vue.extend({
     CardsKyoto,
   },
   data() {
+    const data = {
+      lastUpdate,
+      headerItem: {
+        icon: 'mdi-chart-timeline-variant',
+        title: this.$t('京都府内の最新感染状況'),
+      },
+      newsItems: News.newsItems,
+      contactInfo: {
+        url: 'http://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#C',
+        text:
+          '自分や家族の症状に不安や心配があれば、まずは電話相談等をご利用ください（帰国者・接触者相談センター）',
+      },
     return {
       tab: null,
       items: [
