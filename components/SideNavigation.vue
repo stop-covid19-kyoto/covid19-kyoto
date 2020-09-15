@@ -274,7 +274,6 @@ export default Vue.extend({
           link:
             'https://www.city.muko.kyoto.jp/kurashi/soshiki/hurusatosouseisuisinnbu/kikakukouhouka/1/30/osirase/1585896380695.html',
         },
-        /*
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('長岡京市の情報'),
