@@ -354,7 +354,7 @@ export default Vue.extend({
         },
         {
           // icon: 'mdi-chart-timeline-variant',
-          title: this.$t('井根町の情報'),
+          title: this.$t('伊根町の情報'),
           link: 'http://www.town.ine.kyoto.jp/kinkyu/1583369396903.html',
         },
         {
