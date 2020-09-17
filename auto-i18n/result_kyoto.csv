@@ -130,3 +130,6 @@ TAG_ADD,京都府内の最新感染状況
 TAG_REMOVE,京都府公式ホームページ
 TAG_REMOVE,京都府民の皆様へ
 TAG_REMOVE,感染予防と相談窓口
+RUN,2020/09/17 13:47
+TAG_ADD,伊根町の情報
+TAG_REMOVE,井根町の情報
