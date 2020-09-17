@@ -30,7 +30,7 @@ jobs:
 
     - name: copy files
       run: |
-        cp -p scraping-system/*.json data
+        cp -p scraping-system/*.json data 2>/dev/null
         rm -rf scraping-system
 
     - run: git diff
