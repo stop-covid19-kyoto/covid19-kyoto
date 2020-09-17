@@ -10,7 +10,7 @@ on:
     types: [update_data]
   schedule:
     - cron:  '15 2,13 * * *'
-  workflow_dispath:
+  workflow_dispatch:
 
 jobs:
   build:
