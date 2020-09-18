@@ -229,7 +229,7 @@ export default Vue.extend({
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('京都市の情報'),
           link:
-            'https://www.city.kyoto.lg.jp/hokenfukushi/page/0000266590.html',
+            'https://www.city.kyoto.lg.jp/',
         },
         {
           // icon: 'mdi-chart-timeline-variant',
