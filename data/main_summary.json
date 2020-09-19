@@ -4,27 +4,27 @@
     "children": [
         {
             "attr": "陽性患者数",
-            "value": null,
+            "value": 1659,
             "children": [
                 {
                     "attr": "入院中・入院調整中",
-                    "value": null
+                    "value": 62
                 },
                 {
                     "attr": "宿泊施設",
-                    "value": null
+                    "value": 8
                 },
                 {
                     "attr": "自宅療養",
-                    "value": null
+                    "value": 8
                 },
                 {
                     "attr": "死亡",
-                    "value": null
+                    "value": 25
                 },
                 {
                     "attr": "退院・解除",
-                    "value": null
+                    "value": 1554
                 }
             ]
         }
