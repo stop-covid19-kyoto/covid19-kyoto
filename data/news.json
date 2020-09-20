@@ -1,19 +1,19 @@
 {
     "newsItems": [
         {
-            "date": "2020\/09\/14",
-            "url": "https:\/\/www.pref.kyoto.jp\/kentai\/corona\/hassei1-50.html",
-            "text": "府内の感染状況"
+            "date": "2020/09/17",
+            "text": "府内の感染状況",
+            "url": "https://www.pref.kyoto.jp/kentai/corona/hassei1-50.html"
         },
         {
-            "date": "2020\/09\/14",
-            "url": "https:\/\/www.pref.kyoto.jp\/kentai\/corona\/pcrkensa.html",
-            "text": "新型コロナウイルス感染症の府内のPCR検査状況等について"
+            "date": "2020/09/17",
+            "text": "府内のPCR検査状況等",
+            "url": "https://www.pref.kyoto.jp/kentai/corona/pcrkensa.html"
         },
         {
-            "date": "2020\/09\/14",
-            "url": "http:\/\/www.pref.kyoto.jp\/kentai\/corona\/tassei_jyokyo.html",
-            "text": "京都府のモニタリング指標の状況"
+            "date": "2020/09/17",
+            "text": "モニタリング指標の状況",
+            "url": "http://www.pref.kyoto.jp/kentai/corona/tassei_jyokyo.html"
         }
     ]
 }
