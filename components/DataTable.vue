@@ -20,9 +20,12 @@
       <template v-slot:body="{ items }">
         <tbody>
           <tr v-for="item in items" :key="item.text">
+            <th class="text-start" scope="row">
+              {{ item.No === '不明' ? '不明' : item.No + '例目' }}
+            </th>
             <th class="text-start" scope="row">{{ item['公表日'] }}</th>
             <td class="text-start">{{ item['居住地'] }}</td>
-            <td class="text-start">{{ item['年代と性別など'] }}</td>
+            <td class="text-start">{{ item['年代と性別'] }}</td>
             <td class="text-center">{{ item['退院'] }}</td>
           </tr>
         </tbody>
@@ -40,10 +43,7 @@
     <template v-slot:additionalDescription>
       <ul class="ListStyleNone">
         <li>
-          {{ $t('※退院は、保健所から報告があり、確認ができているものを反映') }}
-        </li>
-        <li>
-          {{ $t('※死亡退院を含む') }}
+          {{ $t('※死亡退院・転院を含む') }}
         </li>
       </ul>
     </template>
