@@ -7,7 +7,6 @@
         :chart-id="'time-bar-chart-inspections'"
         :chart-data="inspectionsGraph"
         :date="inspectionsSummary.last_update"
-        :comment="'※ 3月13日のデータは京都府が1日ごとの実施値の推移を公開していないため、その日までの累計を入力しています。'"
         :unit="$t('件.tested')"
         :url="'https://www.pref.kyoto.jp/kentai/corona/pcrkensa.html'"
       />
