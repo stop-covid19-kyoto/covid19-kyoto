@@ -45,7 +45,7 @@ type TableDateType = {
 export default function (data: DataType[]): TableDateType {
   const datasets = data
     .map((d) => ({
-      No: d['No'] ?? '不明',
+      No: d.No ?? '不明',
       公表日: formatDateString(d['リリース日']) ?? '不明',
       居住地: d['居住地'] ?? '調査中',
       年代と性別: d['年代と性別'] ?? '不明',
