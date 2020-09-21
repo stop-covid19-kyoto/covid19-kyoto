@@ -11,6 +11,10 @@ type DataType = {
           value: number
         },
         {
+          attr: '重症者'
+          value: number
+        },
+        {
           attr: '宿泊施設'
           value: number
         },
@@ -25,6 +29,10 @@ type DataType = {
         {
           attr: '退院・解除'
           value: number
+        },
+        {
+          attr: '調整中'
+          value: number
         }
       ]
     }
@@ -35,10 +43,12 @@ type ConfirmedCasesType = {
   検査実施人数: number
   陽性者数: number
   入院中: number
+  重症者: number
   宿泊施設: number
   自宅療養: number
   死亡: number
   退院: number
+  調整中: number
 }
 
 interface ChildData {
@@ -84,9 +94,11 @@ export default (data: DataType) => {
     検査実施人数: getSelectedItem(data, '検査実施人数'),
     陽性者数: getSelectedItem(data, '陽性患者数'),
     入院中: getSelectedItem(data, '入院中・入院調整中'),
+    重症者: getSelectedItem(data, '重症者'),
     宿泊施設: getSelectedItem(data, '宿泊施設'),
     自宅療養: getSelectedItem(data, '自宅療養'),
     死亡: getSelectedItem(data, '死亡'),
     退院: getSelectedItem(data, '退院・解除'),
+    調整中: getSelectedItem(data, '調整中'),
   } as ConfirmedCasesType
 }
