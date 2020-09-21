@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-18.04
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    if: github.event.pull_request.merged && contains(github.base_ref, 'development') && contains(github.head_ref, 'update-data-') && contains(github.event.pull_request.labels.*.name, 'deploy-ready')
+    if: github.event.pull_request.merged && contains(github.base_ref, 'development') && contains(github.head_ref, 'update-data-')
     steps:
       - uses: actions/checkout@v2
         with:
