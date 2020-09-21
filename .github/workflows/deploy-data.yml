@@ -2,7 +2,7 @@ name: Production Deploy with latest approved data
 
 on:
   pull_request:
-    types: labeled
+    types: closed
 
 jobs:
   deploy:
