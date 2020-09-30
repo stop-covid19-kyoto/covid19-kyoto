@@ -2,8 +2,6 @@
 
 コントリビューターの皆様、本プロジェクトにご参加いただきありがとうございます！！
 
-何か質問があれば Discord 等でお気軽に質問してください！
-
 本サイトの開発に参加してくださる方に対して、参加方法をお伝えします。
 
 ## Issue へのコメントや Pull Request について
@@ -11,9 +9,6 @@
 * Issue を追加する場合、必ず既に同様の Issue が無いか検索をしてから作成してください。
 * Pull Request を送る場合、必ず対応する Issue 番号を追記してください。単独の Pull Request は受け付けません。
 * good first issue / help wanted / bug を優先して対応いただけると助かります
-
-## コミュニケーションへの参加方法
-* 京都府版 STOPCOVID19 Discordに参加していない場合、[こちらから参加](https://discord.gg/9dDeVZH)してください
 
 ## 参加にあたって
 * 開発に参加する前に、[Principle/行動規範](./CODE_OF_CONDUCT.md) をご一読ください。
@@ -33,4 +28,4 @@
 * 開発サイト https://dev-stop-covid19-kyoto.netlify.app/
 * 本番サイト https://stop-covid19-kyoto.netlify.app/ もしくは https://kyoto.stopcovid19.jp
 
-本 ドキュメント の更新も大歓迎です！
+本ドキュメント の更新も大歓迎です！
