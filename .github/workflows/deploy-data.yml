@@ -3,6 +3,8 @@ name: Production Deploy with latest approved data
 on:
   pull_request:
     types: closed
+  repository_dispatch:
+    types: [deploy_data]
 
 jobs:
   deploy:
