@@ -1,6 +1,26 @@
 {
     "newsItems": [
         {
+            "date": "2020/10/23",
+            "text": "インフルエンザの流行に備えた今後の対応について（令和2年10月23日）",
+            "url": "https://www.pref.kyoto.jp/kikikanri/news/coronavirus-kongonotaiou_1023.html"
+        },
+        {
+            "date": "2020/10/23",
+            "text": "府内の感染状況",
+            "url": "https://www.pref.kyoto.jp/kentai/corona/hassei1-50.html"
+        },
+        {
+            "date": "2020/10/23",
+            "text": "府内のPCR検査状況等",
+            "url": "https://www.pref.kyoto.jp/kentai/corona/pcrkensa.html"
+        },
+        {
+            "date": "2020/10/23",
+            "text": "モニタリング指標の状況",
+            "url": "https://www.pref.kyoto.jp/kentai/corona/tassei_jyokyo.html"
+        },
+        {
             "date": "2020/09/17",
             "text": "府内の感染状況",
             "url": "https://www.pref.kyoto.jp/kentai/corona/hassei1-50.html"
