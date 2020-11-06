@@ -60,9 +60,9 @@ export default Vue.extend({
       lastUpdate: lastUpdate.last_update,
       newsItems: News.newsItems,
       contactInfo: {
-        url: 'http://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#C',
+        url: 'http://www.pref.kyoto.jp/kentai/corona/soudan.html',
         text:
-          '自分や家族の症状に不安や心配があれば、まずは電話相談等をご利用ください（帰国者・接触者相談センター）',
+          '発熱症状などのある方は、まずは身近な医療機関（地域の診療所・病院）にお電話ください',
       },
     }
   },
