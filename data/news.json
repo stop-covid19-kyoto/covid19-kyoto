@@ -1,6 +1,11 @@
 {
     "newsItems": [
         {
+            "date": "2020/11/19",
+            "text": "最近の感染状況を踏まえた今後の対応について（令和2年11月19日）（PDF：3,231KB）",
+            "url": "https://www.pref.kyoto.jp/documents/20201119taiou.pdf"
+        },
+        {
             "date": "2020/10/31",
             "text": "11月1日から、新型コロナウイルス感染症の相談・受診・検査体制が変わります",
             "url": "https://www.pref.kyoto.jp/kentai/corona/soudan.html"
