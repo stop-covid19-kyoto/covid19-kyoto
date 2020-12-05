@@ -560,3 +560,32 @@ TAG_REMOVE,20代男性
 TAG_REMOVE,60代女性
 TAG_REMOVE,40代女性
 TAG_REMOVE,
+RUN,2020/12/05 22:14
+TAG_ADD,
+TAG_ADD,90代女性
+TAG_ADD,80代女性
+TAG_ADD,50代女性
+TAG_ADD,60代女性
+TAG_ADD,50代男性
+TAG_ADD,20代女性
+TAG_ADD,40代男性
+TAG_ADD,70代女性
+TAG_ADD,90代男性
+TAG_ADD,80代男性
+TAG_ADD,30代男性
+TAG_ADD,60代男性
+TAG_ADD,20代男性
+TAG_ADD,40代女性
+TAG_ADD,70代男性
+TAG_ADD,10代女性
+TAG_ADD,30代女性
+TAG_ADD,10代男性
+TAG_REMOVE,{'0代女性': '40', '0代男性': '40'}
+TAG_REMOVE,{'0代男性': '90', '0代女性': '90'}
+TAG_REMOVE,{'0代女性': '50', '0代男性': '50'}
+TAG_REMOVE,{'0代女性': '70', '0代男性': '70'}
+TAG_REMOVE,{'0代女性': '60', '0代男性': '60'}
+TAG_REMOVE,{'0代女性': '10', '0代男性': '10'}
+TAG_REMOVE,{'0代男性': '30', '0代女性': '30'}
+TAG_REMOVE,{'0代男性': '20', '0代女性': '20'}
+TAG_REMOVE,{'0代男性': '80', '0代女性': '80'}
