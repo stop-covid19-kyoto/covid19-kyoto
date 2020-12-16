@@ -6,6 +6,8 @@ WORKDIR $PROJECT_ROOTDIR
 
 COPY package.json yarn.lock $PROJECT_ROOTDIR
 
+RUN apk add python make g++
+
 RUN yarn install
 
 COPY . $PROJECT_ROOTDIR
