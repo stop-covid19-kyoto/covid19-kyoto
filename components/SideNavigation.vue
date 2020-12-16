@@ -228,8 +228,7 @@ export default Vue.extend({
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('京都市の情報'),
-          link:
-            'https://www.city.kyoto.lg.jp/',
+          link: 'https://www.city.kyoto.lg.jp/',
         },
         {
           // icon: 'mdi-chart-timeline-variant',
@@ -324,7 +323,7 @@ export default Vue.extend({
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('宇治田原町の情報'),
-          link: 'http://www.town.ujitawara.kyoto.jp/0000002634.html',
+          link: 'http://www.town.ujitawara.kyoto.jp/category/10-0-0-0-0.html',
         },
         {
           // icon: 'mdi-chart-timeline-variant',
