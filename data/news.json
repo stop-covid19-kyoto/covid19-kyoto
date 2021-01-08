@@ -1,19 +1,24 @@
 {
     "newsItems": [
         {
-            "date": "2020/12/17",
-            "text": "飲食店に対する営業時間短縮の要請について（令和2年12月17日）",
+            "date": "2021/01/08",
+            "text": "感染拡大を踏まえた今後の対応について（令和3年1月8日）",
+            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210108taiou.html"
+        },
+        {
+            "date": "2021/01/08",
+            "text": "飲食店に対する営業時間短縮の要請について（令和3年1月8日）",
             "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_201217yousei.html"
         },
         {
-            "date": "2020/12/17",
-            "text": "新型コロナウイルス感染症拡大防止協力金（令和2年12月17日）",
+            "date": "2021/01/08",
+            "text": "（第1期）新型コロナウイルス感染症拡大防止協力金（令和3年1月8日）",
             "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin.html"
         },
         {
-            "date": "2020/12/17",
-            "text": "年末年始を控えた今後の対応について（令和2年12月17日）",
-            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_201217taiou.html"
+            "date": "2021/01/08",
+            "text": "（第2期）新型コロナウイルス感染症拡大防止協力金（令和3年1月8日）",
+            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin2.html"
         },
         {
             "date": "2020/10/23",
