@@ -1,6 +1,11 @@
 {
     "newsItems": [
         {
+            "date": "2021/01/12",
+            "text": "新型コロナウイルス感染拡大防止のための京都府における緊急事態措置（令和3年1月12日）",
+            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210112sochi.html"
+        },
+        {
             "date": "2021/01/08",
             "text": "感染拡大を踏まえた今後の対応について（令和3年1月8日）",
             "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210108taiou.html"
