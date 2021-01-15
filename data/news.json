@@ -2,13 +2,13 @@
     "newsItems": [
         {
             "date": "2021/01/12",
-            "text": "新型コロナウイルス感染拡大防止のための京都府における緊急事態措置（令和3年1月12日）",
+            "text": "新型コロナウイルス感染拡大防止のための京都府における緊急事態措置（令和3年1月15日更新）",
             "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210112sochi.html"
         },
         {
-            "date": "2021/01/08",
-            "text": "感染拡大を踏まえた今後の対応について（令和3年1月8日）",
-            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210108taiou.html"
+            "date": "2021/01/15",
+            "text": "京都府緊急事態措置協力金【受付：令和3年2月8日以降開始予定】",
+            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin3.html"
         },
         {
             "date": "2021/01/08",
@@ -17,12 +17,12 @@
         },
         {
             "date": "2021/01/08",
-            "text": "（第1期）新型コロナウイルス感染症拡大防止協力金（令和3年1月8日）",
+            "text": "（第1期）新型コロナウイルス感染症拡大防止協力金【受付：令和3年2月1日迄】",
             "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin.html"
         },
         {
             "date": "2021/01/08",
-            "text": "（第2期）新型コロナウイルス感染症拡大防止協力金（令和3年1月8日）",
+            "text": "（第2期）新型コロナウイルス感染症拡大防止協力金【受付：令和3年2月8日以降開始予定】",
             "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin2.html"
         },
         {
