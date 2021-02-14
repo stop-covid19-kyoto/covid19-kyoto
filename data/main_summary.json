@@ -1,11 +1,11 @@
 {
     "attr": "検査実施人数",
-    "value": 144778,
+    "value": 0,
     "children": [
         {
             "attr": "陽性患者数",
             "value": 8846,
-            "children": [
+            "summary_sections": [
                 {
                     "attr": "入院中・入院調整中",
                     "value": 157
@@ -37,5 +37,5 @@
             ]
         }
     ],
-    "last_update": "2021/02/13 20:36"
+    "last_update": "2021/02/15 00:12"
 }
