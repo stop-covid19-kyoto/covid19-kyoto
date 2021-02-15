@@ -1,5 +1,5 @@
 {
-    "data": [
+    "newsItems": [
         {
             "date": "2021/02/03",
             "text": "新型コロナウイルス感染拡大防止のための京都府における緊急事態措置（令和3年2月3日更新）",
@@ -45,6 +45,5 @@
             "text": "モニタリング指標の状況",
             "url": "https://www.pref.kyoto.jp/kentai/corona/tassei_jyokyo.html"
         }
-    ],
-    "last_update": "2021/02/15 00:12"
+    ]
 }
