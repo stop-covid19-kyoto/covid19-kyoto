@@ -1,34 +1,39 @@
 {
     "newsItems": [
         {
-            "date": "2021/02/03",
-            "text": "新型コロナウイルス感染拡大防止のための京都府における緊急事態措置（令和3年2月3日更新）",
+            "date": "2021/02/26",
+            "text": "緊急事態から次のステージへの移行（2月26日更新）",
+            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210226taiou.html"
+        },
+        {
+            "date": "2021/02/26",
+            "text": "新型コロナウイルス感染症拡大防止協力金（3月1日～3月14日実施分）（受付：3月15日以降開始予定）",
+            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin5.html"
+        },
+        {
+            "date": "2021/02/26",
+            "text": "新型コロナウイルス感染拡大防止のための京都府における緊急事態措置（2月26日更新）",
             "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210112sochi.html"
         },
         {
-            "date": "2021/02/03",
-            "text": "京都府緊急事態措置協力金（受付：令和3年2月8日から3月1日まで）",
-            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin3.html"
-        },
-        {
-            "date": "2021/02/03",
-            "text": "京都府緊急事態措置協力金【延長分】（受付：令和3年3月8日以降開始予定）",
+            "date": "2021/02/26",
+            "text": "京都府緊急事態措置協力金【延長分】（受付：3月15日以降開始予定）",
             "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin4.html"
         },
         {
-            "date": "2021/01/08",
-            "text": "飲食店に対する営業時間短縮の要請について（令和3年1月8日）",
-            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_201217yousei.html"
+            "date": "2021/02/26",
+            "text": "京都府緊急事態措置協力金（受付：3月12日まで）",
+            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin3.html"
+        },
+        {
+            "date": "2021/02/26",
+            "text": "（第2期）新型コロナウイルス感染症拡大防止協力金（受付：3月12日まで）",
+            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin2.html"
         },
         {
             "date": "2021/02/21",
             "text": "（第1期）新型コロナウイルス感染症拡大防止協力金（受付終了）",
             "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin.html"
-        },
-        {
-            "date": "2021/02/03",
-            "text": "（第2期）新型コロナウイルス感染症拡大防止協力金（受付：令和3年2月8日から3月1日まで）",
-            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin2.html"
         },
         {
             "date": "2020/10/23",
