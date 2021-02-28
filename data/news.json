@@ -2,18 +2,13 @@
     "newsItems": [
         {
             "date": "2021/02/26",
-            "text": "緊急事態から次のステージへの移行（2月26日更新）",
+            "text": "緊急事態から次のステージへの移行（2月26日）",
             "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210226taiou.html"
         },
         {
             "date": "2021/02/26",
             "text": "新型コロナウイルス感染症拡大防止協力金（3月1日～3月14日実施分）（受付：3月15日以降開始予定）",
             "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin5.html"
-        },
-        {
-            "date": "2021/02/26",
-            "text": "新型コロナウイルス感染拡大防止のための京都府における緊急事態措置（2月26日更新）",
-            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210112sochi.html"
         },
         {
             "date": "2021/02/26",
@@ -29,11 +24,6 @@
             "date": "2021/02/26",
             "text": "（第2期）新型コロナウイルス感染症拡大防止協力金（受付：3月12日まで）",
             "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin2.html"
-        },
-        {
-            "date": "2021/02/21",
-            "text": "（第1期）新型コロナウイルス感染症拡大防止協力金（受付終了）",
-            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin.html"
         },
         {
             "date": "2020/10/23",
