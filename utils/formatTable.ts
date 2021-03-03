@@ -8,11 +8,11 @@ type Header = {
 }
 
 const headers: Header[] = [
-  { text: 'No', value: 'No' },
+  { text: 'No ※1', value: 'No' },
   { text: '公表日', value: '公表日' },
   { text: '居住地', value: '居住地' },
   { text: '年代と性別', value: '年代と性別' },
-  { text: '退院※', value: '退院', align: 'center' },
+  { text: '退院 ※2', value: '退院', align: 'center' },
 ]
 
 type DataType = {
