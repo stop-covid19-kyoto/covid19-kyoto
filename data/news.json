@@ -1,8 +1,13 @@
 {
     "newsItems": [
         {
+            "date": "2021/03/18",
+            "text": "感染再拡大防止のための今後の対策（3月18日）",
+            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210318taiou.html"
+        },
+        {
             "date": "2021/03/11",
-            "text": "新しいステージにおける感染再拡大防止対策（令和3年3月10日）",
+            "text": "新しいステージにおける感染再拡大防止対策（3月10日）",
             "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210310taiou.html"
         },
         {
