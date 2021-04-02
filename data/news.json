@@ -1,9 +1,14 @@
 {
     "newsItems": [
         {
-            "date": "2021/03/18",
-            "text": "感染再拡大防止のための今後の対策（3月18日）",
-            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210318taiou.html"
+            "date": "2021/04/02",
+            "text": "厳重警戒期到達を踏まえた感染再拡大防止対策（4月2日）",
+            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210402taiou.html"
+        },
+        {
+            "date": "2021/04/02",
+            "text": "新型コロナウイルス感染症拡大防止協力金（4月5日～4月21日実施分）(受付：要請期間終了後)",
+            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin7.html"
         },
         {
             "date": "2021/03/24",
