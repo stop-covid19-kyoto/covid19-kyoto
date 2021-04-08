@@ -1,29 +1,24 @@
 {
     "newsItems": [
         {
-            "date": "2021/02/26",
-            "text": "緊急事態から次のステージへの移行（2月26日）",
-            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210226taiou.html"
+            "date": "2021/04/07",
+            "text": "飲食時の「きょうとマナー」にご協力を！（動画を見る）（外部リンク）",
+            "url": "https://youtu.be/LYyF7KSJEz8"
         },
         {
-            "date": "2021/02/26",
-            "text": "新型コロナウイルス感染症拡大防止協力金（3月1日～3月14日実施分）（受付：3月15日以降開始予定）",
-            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin5.html"
+            "date": "2021/04/02",
+            "text": "厳重警戒期到達を踏まえた感染再拡大防止対策（4月2日）",
+            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210402taiou.html"
         },
         {
-            "date": "2021/02/26",
-            "text": "京都府緊急事態措置協力金【延長分】（受付：3月15日以降開始予定）",
-            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin4.html"
+            "date": "2021/04/02",
+            "text": "新型コロナウイルス感染症拡大防止協力金（4月5日～4月21日実施分）(受付：要請期間終了後)",
+            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin7.html"
         },
         {
-            "date": "2021/02/26",
-            "text": "京都府緊急事態措置協力金（受付：3月12日まで）",
-            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin3.html"
-        },
-        {
-            "date": "2021/02/26",
-            "text": "（第2期）新型コロナウイルス感染症拡大防止協力金（受付：3月12日まで）",
-            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin2.html"
+            "date": "2021/03/24",
+            "text": "新型コロナウイルス感染症拡大防止協力金（3月15日～3月21日実施分）(受付：4月1日～4月21日)",
+            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin6.html"
         },
         {
             "date": "2020/10/23",
@@ -36,8 +31,8 @@
             "url": "https://www.pref.kyoto.jp/kentai/corona/pcrkensa.html"
         },
         {
-            "date": "2020/10/23",
-            "text": "モニタリング指標の状況",
+            "date": "2021/03/21",
+            "text": "感染再拡大防止対策のための目安の状況",
             "url": "https://www.pref.kyoto.jp/kentai/corona/tassei_jyokyo.html"
         }
     ]
