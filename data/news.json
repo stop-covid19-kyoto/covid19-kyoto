@@ -1,19 +1,24 @@
 {
     "newsItems": [
         {
+            "date": "2021/04/09",
+            "text": "京都府まん延防止等重点措置等（4月9日）",
+            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210409taiou.html"
+        },
+        {
+            "date": "2021/04/09",
+            "text": "新型コロナウイルス感染症拡大防止協力金（まん延防止等重点措置）(受付：要請期間終了後)",
+            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin8.html"
+        },
+        {
+            "date": "2021/04/09",
+            "text": "新型コロナウイルス感染症拡大防止協力金（京都市内：4月5日～4月11日実施分　山城・乙訓地域：4月5日～4月21日実施分、4月22日～5月5日実施分）(受付：要請期間終了後)",
+            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin7.html"
+        },
+        {
             "date": "2021/04/07",
             "text": "飲食時の「きょうとマナー」にご協力を！（動画を見る）（外部リンク）",
             "url": "https://youtu.be/LYyF7KSJEz8"
-        },
-        {
-            "date": "2021/04/02",
-            "text": "厳重警戒期到達を踏まえた感染再拡大防止対策（4月2日）",
-            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210402taiou.html"
-        },
-        {
-            "date": "2021/04/02",
-            "text": "新型コロナウイルス感染症拡大防止協力金（4月5日～4月21日実施分）(受付：要請期間終了後)",
-            "url": "https://www.pref.kyoto.jp/sanroso/news/coronavirus-kyoryokukin7.html"
         },
         {
             "date": "2021/03/24",
