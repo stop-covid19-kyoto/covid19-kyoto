@@ -145,6 +145,5 @@
   "沖縄県内": "沖縄県内",
   "福岡県内": "福岡県内",
   "「調整中」には、入院先等を調整している方を計上": "「調整中」には、入院先等を調整している方を計上",
-  "`${ confirmedCasesDate.getMonth() + 1 }月${confirmedCasesDate.getDate()}日の累計": "`${ confirmedCasesDate.getMonth() + 1 }月${confirmedCasesDate.getDate()}日の累計",
-  "": ""
+  "`${ confirmedCasesDate.getMonth() + 1 }月${confirmedCasesDate.getDate()}日の累計": "`${ confirmedCasesDate.getMonth() + 1 }月${confirmedCasesDate.getDate()}日の累計"
 }
