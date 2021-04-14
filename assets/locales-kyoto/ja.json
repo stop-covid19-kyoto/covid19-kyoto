@@ -147,6 +147,5 @@
   "「調整中」には、入院先等を調整している方を計上": "「調整中」には、入院先等を調整している方を計上",
   "`${ confirmedCasesDate.getMonth() + 1 }月${confirmedCasesDate.getDate()}日の累計": "`${ confirmedCasesDate.getMonth() + 1 }月${confirmedCasesDate.getDate()}日の累計",
   "2代男性": "2代男性",
-  "岡山県内": "岡山県内",
-  "": ""
+  "岡山県内": "岡山県内"
 }
