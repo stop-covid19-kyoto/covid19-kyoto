@@ -192,9 +192,10 @@ export default Vue.extend({
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('京都府公式Twitter'),
-          link: 'https://twitter.com/KyotoPrefPR',
+          link: 'https://twitter.com/Kyoto_corona',
           divider: true,
         },
+        /*
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t(
@@ -202,6 +203,7 @@ export default Vue.extend({
           ),
           link: 'http://www.pref.kyoto.jp/index.html#tyumokujoho',
         },
+        */
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('新型コロナウイルス感染症に関連する情報について'),
@@ -222,7 +224,7 @@ export default Vue.extend({
           title: this.$t(
             '京都府新型コロナウイルス感染症対策本部会議（きょうと危機管理WEB）'
           ),
-          link: 'http://www.pref.kyoto.jp/kikiweb/information/index.html',
+          link: 'https://www.bousai.pref.kyoto.lg.jp/dis_portal/',
           divider: true,
         },
         {
@@ -359,7 +361,7 @@ export default Vue.extend({
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('与謝野町の情報'),
-          link: 'http://www.town-yosano.jp/wwwg/index.jsp',
+          link: 'https://www.town.yosano.lg.jp/',
           divider: true,
         },
         // 知事からのメッセージが京都府では確認できていないのでコメントアウト
@@ -376,7 +378,7 @@ export default Vue.extend({
           link: this.localePath('/contacts'),
         }, */
         {
-          title: this.$t('新型コロナウイルス感染症に係る緊急情報トップページ'),
+          title: this.$t('京都府ホームページ'),
           link: 'https://www.pref.kyoto.jp/',
         },
       ]
