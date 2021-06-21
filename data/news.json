@@ -1,19 +1,14 @@
 {
     "newsItems": [
         {
-            "date": "2021/06/18",
-            "text": "京都府まん延防止等重点措置等（6月21日から7月11日まで）",
+            "date": "2021/06/21",
+            "text": "京都府まん延防止等重点措置等",
             "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210618taiou.html"
         },
         {
             "date": "2021/05/26",
             "text": "京都府が行う大規模集団接種に関する情報 ",
             "url": "https://www.pref.kyoto.jp/vaccine/kyoto-daikibo.html"
-        },
-        {
-            "date": "2021/06/18",
-            "text": "京都府における緊急事態措置（6月20日まで）",
-            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210528taiou.html"
         },
         {
             "date": "2021/04/07",
