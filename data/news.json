@@ -1,8 +1,13 @@
 {
     "newsItems": [
         {
-            "date": "2021/06/21",
-            "text": "京都府まん延防止等重点措置等",
+            "date": "2021/07/08",
+            "text": "感染再拡大の抑制にむけた今後の対策（7月12日から）",
+            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210708taiou.html"
+        },
+        {
+            "date": "2021/07/08",
+            "text": "京都府まん延防止等重点措置等（7月11日まで）",
             "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210618taiou.html"
         },
         {
