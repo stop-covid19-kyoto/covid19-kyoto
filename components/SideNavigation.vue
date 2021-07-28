@@ -257,7 +257,7 @@ export default Vue.extend({
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('宮津市の情報'),
-          link: 'http://www.city.miyazu.kyoto.jp/www/info/detail.jsp?id=4431',
+          link: 'https://www.city.miyazu.kyoto.jp/site/coronavirus/',
         },
         {
           // icon: 'mdi-chart-timeline-variant',
@@ -273,7 +273,7 @@ export default Vue.extend({
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('向日市の情報'),
           link:
-            'https://www.city.muko.kyoto.jp/kurashi/soshiki/hurusatosouseisuisinnbu/kikakukouhouka/1/30/osirase/1585896380695.html',
+            'https://www.city.muko.kyoto.jp/kurashi/soshiki/hurusatosouseisuisinnbu/kikakukouhouka/1/30/osirase/1619253811300.html',
         },
         {
           // icon: 'mdi-chart-timeline-variant',
@@ -335,18 +335,18 @@ export default Vue.extend({
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('和束町の情報'),
-          link: 'http://www.town.wazuka.lg.jp/index.php',
+          link: 'https://www.town.wazuka.lg.jp/shingatacoronavirus/index.html',
         },
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('精華町の情報'),
-          link: 'https://www.town.seika.kyoto.jp/kinkyu_list/13612.html',
+          link:
+            'https://www.town.seika.kyoto.jp/kakuka/kikaku/2/oshirase/13612.html',
         },
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('南山城村の情報'),
-          link:
-            'http://www.vill.minamiyamashiro.lg.jp/category_list.php?frmCd=11-15-0-0-0',
+          link: 'https://www.vill.minamiyamashiro.lg.jp/corona/',
         },
         {
           // icon: 'mdi-chart-timeline-variant',
@@ -356,7 +356,7 @@ export default Vue.extend({
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('伊根町の情報'),
-          link: 'http://www.town.ine.kyoto.jp/kinkyu/1583369396903.html',
+          link: 'http://www.town.ine.kyoto.jp/kinkyu/1606197183199.html',
         },
         {
           // icon: 'mdi-chart-timeline-variant',
