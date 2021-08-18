@@ -1,13 +1,18 @@
 {
     "newsItems": [
         {
-            "date": "2021/08/13",
-            "text": "京都府が行うワクチン接種に関する情報（8月17日午前9時から予約開始）",
+            "date": "2021/08/17",
+            "text": "京都府が行うワクチン接種に関する情報",
             "url": "https://www.pref.kyoto.jp/vaccine/kyoto-fukaijyou.html"
         },
         {
-            "date": "2021/08/12",
-            "text": "京都府まん延防止等重点措置等（8月17日から）",
+            "date": "2021/08/17",
+            "text": "京都府における緊急事態措置（8月20日から）",
+            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210817taiou.html"
+        },
+        {
+            "date": "2021/08/17",
+            "text": "京都府まん延防止等重点措置等（8月19日まで）",
             "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210812taiou.html"
         },
         {
