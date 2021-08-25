@@ -1,9 +1,14 @@
 {
     "newsItems": [
         {
-            "date": "2021/07/30",
-            "text": "京都府まん延防止等重点措置等（8月2日から）",
-            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210730taiou.html"
+            "date": "2021/08/17",
+            "text": "京都府が行うワクチン接種に関する情報",
+            "url": "https://www.pref.kyoto.jp/vaccine/kyoto-fukaijyou.html"
+        },
+        {
+            "date": "2021/08/17",
+            "text": "京都府における緊急事態措置（9月12日まで）",
+            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210817taiou.html"
         },
         {
             "date": "2021/04/07",
