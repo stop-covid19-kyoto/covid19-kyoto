@@ -54,9 +54,7 @@
                   <div :class="$style.content">
                     <span>{{ $t('その他') }}</span>
                     <span>
-                      <strong>{{
-                        (その他 - 高度重症病床).toLocaleString()
-                      }}</strong>
+                      <strong>{{ その他.toLocaleString() }}</strong>
                       <span :class="$style.unit">{{ $t('人') }}</span>
                     </span>
                   </div>
