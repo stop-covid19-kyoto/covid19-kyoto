@@ -55,7 +55,7 @@
                     <span>{{ $t('その他') }}</span>
                     <span>
                       <strong>{{
-                        (重症者 - 高度重症病床).toLocaleString()
+                        (その他 - 高度重症病床).toLocaleString()
                       }}</strong>
                       <span :class="$style.unit">{{ $t('人') }}</span>
                     </span>
@@ -129,11 +129,11 @@ export default Vue.extend({
       required: true,
     },
     */
-    重症者: {
+    高度重症病床: {
       type: Number,
       required: true,
     },
-    高度重症病床: {
+    その他: {
       type: Number,
       required: true,
     },
