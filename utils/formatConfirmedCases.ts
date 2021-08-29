@@ -15,6 +15,10 @@ type DataType = {
           value: number
         },
         {
+          attr: '高度重症病床'
+          value: number
+        },
+        {
           attr: '宿泊施設'
           value: number
         },
@@ -44,6 +48,7 @@ type ConfirmedCasesType = {
   陽性者数: number
   入院中: number
   重症者: number
+  高度重症病床: number
   宿泊施設: number
   自宅療養: number
   死亡: number
@@ -95,6 +100,7 @@ export default (data: DataType) => {
     陽性者数: getSelectedItem(data, '陽性患者数'),
     入院中: getSelectedItem(data, '入院中・入院調整中'),
     重症者: getSelectedItem(data, '重症者'),
+    高度重症病床: getSelectedItem(data, '高度重症病床'),
     宿泊施設: getSelectedItem(data, '宿泊施設'),
     自宅療養: getSelectedItem(data, '自宅療養'),
     死亡: getSelectedItem(data, '死亡'),

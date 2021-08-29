@@ -36,14 +36,32 @@
             </span>
           </div>
           <ul :class="$style.group">
-            <li :class="[$style.box]">
+            <li :class="[$style.box, $style.parent]">
               <div :class="$style.content">
                 <span>{{ $t('重症') }}</span>
-                <span>
-                  <strong>{{ 重症者.toLocaleString() }}</strong>
-                  <span :class="$style.unit">{{ $t('人') }}</span>
-                </span>
               </div>
+              <ul :class="$style.group">
+                <li :class="[$style.box]">
+                  <div :class="$style.content">
+                    <span>{{ $t('高度重症病床') }}</span>
+                    <span>
+                      <strong>{{ 高度重症病床.toLocaleString() }}</strong>
+                      <span :class="$style.unit">{{ $t('人') }}</span>
+                    </span>
+                  </div>
+                </li>
+                <li :class="[$style.box]">
+                  <div :class="$style.content">
+                    <span>{{ $t('その他') }}</span>
+                    <span>
+                      <strong>{{
+                        (重症者 - 高度重症病床).toLocaleString()
+                      }}</strong>
+                      <span :class="$style.unit">{{ $t('人') }}</span>
+                    </span>
+                  </div>
+                </li>
+              </ul>
             </li>
           </ul>
         </li>
@@ -112,6 +130,10 @@ export default Vue.extend({
     },
     */
     重症者: {
+      type: Number,
+      required: true,
+    },
+    高度重症病床: {
       type: Number,
       required: true,
     },
@@ -200,7 +222,7 @@ $default-boxdiff: 35px;
     }
 
     &:last-child {
-      margin-left: 10px;
+      // margin-left: 10px;
       text-align: right;
       // white-space: nowrap;
       flex-shrink: 1;
@@ -276,9 +298,11 @@ $default-boxdiff: 35px;
         margin-top: px2vw(1, $vw);
       }
 
+      /*
       &:last-child {
         margin-left: 10px;
       }
+      */
     }
 
     strong {
