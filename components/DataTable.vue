@@ -43,7 +43,7 @@
     <template v-slot:additionalDescription>
       <ul class="ListStyleNone">
         <li>
-          {{ $t('※1 欠番25件あり') }}
+          {{ $t('※1 欠番27件あり') }}
         </li>
         <li>
           {{ $t('※2 死亡退院・転院を含む') }}
