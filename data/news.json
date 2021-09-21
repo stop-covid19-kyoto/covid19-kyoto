@@ -1,9 +1,9 @@
 {
     "newsItems": [
         {
-            "date": "2021/08/17",
-            "text": "京都府が行うワクチン接種に関する情報",
-            "url": "https://www.pref.kyoto.jp/vaccine/kyoto-fukaijyou.html"
+            "date": "2021/09/17",
+            "text": "京都府が行うモデルナワクチン接種に関する情報",
+            "url": "https://www.pref.kyoto.jp/vaccine/kyoto-fukaijyou2.html"
         },
         {
             "date": "2021/09/10",
@@ -21,8 +21,8 @@
             "url": "https://www.pref.kyoto.jp/kentai/corona/hassei1-50.html"
         },
         {
-            "date": "2020/10/23",
-            "text": "府内のPCR検査状況等",
+            "date": "2021/09/17",
+            "text": "PCR検査・療養者の状況等",
             "url": "https://www.pref.kyoto.jp/kentai/corona/pcrkensa.html"
         },
         {
