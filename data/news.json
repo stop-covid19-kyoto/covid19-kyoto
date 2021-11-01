@@ -1,19 +1,19 @@
 {
     "newsItems": [
         {
+            "date": "2021/10/18",
+            "text": "10月22日からの新たな日常",
+            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_211018taiou.html"
+        },
+        {
             "date": "2021/09/17",
             "text": "京都府が行うモデルナワクチン接種に関する情報",
             "url": "https://www.pref.kyoto.jp/vaccine/kyoto-fukaijyou2.html"
         },
         {
-            "date": "2021/10/01",
-            "text": "感染リスクを低減するための取組について（10月21日まで）",
-            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210928taiou.html"
-        },
-        {
-            "date": "2021/04/07",
-            "text": "飲食時の「きょうとマナー」にご協力を！（動画を見る）（外部リンク）",
-            "url": "https://youtu.be/LYyF7KSJEz8"
+            "date": "2021/10/18",
+            "text": "アストラゼネカ社製ワクチンの接種について",
+            "url": "https://www.pref.kyoto.jp/vaccine/kyoto-astrazeneca.html"
         },
         {
             "date": "2020/10/23",
