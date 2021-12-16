@@ -288,7 +288,7 @@ export default Vue.extend({
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('京田辺市の情報'),
-          link: 'https://www.kyotanabe.jp/',
+          link: 'https://www.city.kyotanabe.lg.jp/',
         },
         {
           // icon: 'mdi-chart-timeline-variant',
