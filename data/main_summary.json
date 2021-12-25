@@ -1,14 +1,14 @@
 {
     "attr": "検査実施人数",
-    "value": 469753,
+    "value": 470892,
     "children": [
         {
             "attr": "陽性患者数",
-            "value": 36061,
+            "value": 36074,
             "children": [
                 {
                     "attr": "入院中・入院調整中",
-                    "value": 34
+                    "value": 45
                 },
                 {
                     "attr": "高度重症病床",
@@ -32,14 +32,14 @@
                 },
                 {
                     "attr": "退院・解除",
-                    "value": 35722
+                    "value": 35725
                 },
                 {
                     "attr": "調整中",
-                    "value": 1
+                    "value": 0
                 }
             ]
         }
     ],
-    "last_update": "2021/12/24 16:33"
+    "last_update": "2021/12/25 20:44"
 }
