@@ -1,6 +1,11 @@
 {
     "newsItems": [
         {
+            "date": "2022/01/25",
+            "text": "オミクロン株による感染急拡大への対応（京都府まん延防止等重点措置）",
+            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_220125taiou.html"
+        },
+        {
             "date": "2022/01/12",
             "text": "社会経済活動を継続しながら感染拡大を防止するために",
             "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_220112taiou.html"
