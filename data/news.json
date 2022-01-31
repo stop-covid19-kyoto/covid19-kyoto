@@ -1,14 +1,19 @@
 {
     "newsItems": [
         {
-            "date": "2022/01/25",
-            "text": "オミクロン株による感染急拡大への対応（京都府まん延防止等重点措置）",
-            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_220125taiou.html"
+            "date": "2021/08/17",
+            "text": "京都府が行うワクチン接種に関する情報",
+            "url": "https://www.pref.kyoto.jp/vaccine/kyoto-fukaijyou.html"
         },
         {
-            "date": "2021/11/02",
-            "text": "京都府コロナワクチン接種情報サイト",
-            "url": "https://www.pref.kyoto.jp/vaccine/index.html"
+            "date": "2021/08/17",
+            "text": "京都府における緊急事態措置（9月12日まで）",
+            "url": "https://www.pref.kyoto.jp/kikikanri/news/corona_210817taiou.html"
+        },
+        {
+            "date": "2021/04/07",
+            "text": "飲食時の「きょうとマナー」にご協力を！（動画を見る）（外部リンク）",
+            "url": "https://youtu.be/LYyF7KSJEz8"
         },
         {
             "date": "2020/10/23",
@@ -16,13 +21,13 @@
             "url": "https://www.pref.kyoto.jp/kentai/corona/hassei1-50.html"
         },
         {
-            "date": "2021/09/17",
-            "text": "PCR検査・療養者の状況等",
+            "date": "2020/10/23",
+            "text": "府内のPCR検査状況等",
             "url": "https://www.pref.kyoto.jp/kentai/corona/pcrkensa.html"
         },
         {
-            "date": "2021/12/03",
-            "text": "確保病床等の状況",
+            "date": "2021/03/21",
+            "text": "感染再拡大防止対策のための目安の状況",
             "url": "https://www.pref.kyoto.jp/kentai/corona/tassei_jyokyo.html"
         }
     ]
