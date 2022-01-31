@@ -25,14 +25,14 @@ jobs:
     - name: Checkout covid19-scraping
       uses: actions/checkout@v2
       with:
-        repository: stop-covid19-kyoto/covid19-scraping-go
+        repository: stop-covid19-kyoto/covid19-scraping-rust
         ref: 'gh-pages'
-        path: 'covid19-scraping-go'
+        path: 'covid19-scraping-rust'
 
     - name: copy files
       run: |
-        cp -p covid19-scraping-go/*.json data 2>/dev/null
-        rm -rf covid19-scraping-go
+        cp -p covid19-scraping-rust/*.json data 2>/dev/null
+        rm -rf covid19-scraping-rust
 
     - run: git diff
 
