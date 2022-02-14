@@ -8,7 +8,7 @@
       <!-- 検査実施数 -->
       <tested-number-card />
       <!-- 陽性者の属性 -->
-      <confirmed-cases-attributes-card />
+      <!-- <confirmed-cases-attributes-card /> -->
     </card-row>
   </div>
 </template>
@@ -19,7 +19,7 @@ import CardRow from '@/components/cards/CardRow.vue'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
-import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
+// import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 
 export default Vue.extend({
   components: {
@@ -27,7 +27,7 @@ export default Vue.extend({
     ConfirmedCasesDetailsCard,
     ConfirmedCasesNumberCard,
     TestedNumberCard,
-    ConfirmedCasesAttributesCard,
+    // ConfirmedCasesAttributesCard,
   },
 })
 </script>
