@@ -325,7 +325,8 @@ export default Vue.extend({
         {
           // icon: 'mdi-chart-timeline-variant',
           title: this.$t('宇治田原町の情報'),
-          link: 'http://www.town.ujitawara.kyoto.jp/category/10-0-0-0-0.html',
+          link:
+            'https://www.town.ujitawara.kyoto.jp/iryo_kenko_fukushi/covid19/index.html',
         },
         {
           // icon: 'mdi-chart-timeline-variant',
