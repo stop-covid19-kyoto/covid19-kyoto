@@ -44,6 +44,7 @@ jobs:
       - run: yarn run test
       - name: generate
         run: |
+          export NODE_OPTIONS="--max-old-space-size=6144"
           echo "GOOGLE_ANALYTICS_ID=${GOOGLE_ANALYTICS_ID}" >> .env.production
           cat .env.production
           yarn run generate:deploy --fail-on-page-error
